@@ -10,3 +10,12 @@ function validasuario($user, $pwd, $con) {
     
     return $r['tipo'];
 }
+
+function listaAlunos()
+{
+    $query = "SELECT * FROM alunos '";
+
+    $result = mysqli_query($con, $query);
+    
+    return $result;
+}

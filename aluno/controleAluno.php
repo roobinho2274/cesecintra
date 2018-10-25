@@ -1,5 +1,10 @@
 <?php
 session_start();
+
+if ($_SESSION['tipoUsuario'] != 'adm') {
+    $_SESSION['msg'] = "<script>alert sem permissão de acesso</script>";
+    header("location: /projCesec/cesecintra/index.php");
+}
 ?>
 <!DOCTYPE html>
 <!--
@@ -10,17 +15,11 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Pagina Inicial</title>
+        <title>Controle de alunos</title>
     </head>
     <body>
         <?php
-        if ($_SESSION['tipoUsuario'] == "adm") {
-            echo "Administrador";
-        } else if ($_SESSION['tipoUsuario'] == "secretaria") {
-            echo "Secretaria";
-        } else if ($_SESSION['tipoUsuario'] == "professor") {
-            echo "Professor";
-        }
+        echo  "Controle aluno";
         ?>
     </body>
 </html>

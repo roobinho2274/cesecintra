@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 25-Out-2018 às 18:41
+-- Generation Time: 25-Out-2018 às 20:58
 -- Versão do servidor: 10.1.36-MariaDB
 -- versão do PHP: 7.2.10
 
@@ -114,11 +114,20 @@ CREATE TABLE `matricula` (
 
 CREATE TABLE `professor` (
   `id` int(11) NOT NULL,
-  `nome` int(11) NOT NULL,
-  `login` int(11) NOT NULL,
+  `nome` varchar(100) NOT NULL,
+  `login` varchar(20) NOT NULL,
   `senha` int(11) NOT NULL,
-  `tipo` varchar(15) NOT NULL
+  `tipo` set('adm','secretaria','professor','') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `professor`
+--
+
+INSERT INTO `professor` (`id`, `nome`, `login`, `senha`, `tipo`) VALUES
+(1, 'Robson Aparecido da Silva', 'robson', 123456, 'adm'),
+(2, 'Robinho Silva', 'binho', 123456, 'professor'),
+(3, 'José da Couves', 'ze', 123456, 'secretaria');
 
 -- --------------------------------------------------------
 
@@ -174,8 +183,7 @@ ALTER TABLE `matricula`
 --
 ALTER TABLE `professor`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `login` (`login`),
-  ADD UNIQUE KEY `senha` (`senha`);
+  ADD UNIQUE KEY `login` (`login`);
 
 --
 -- Indexes for table `turno`
