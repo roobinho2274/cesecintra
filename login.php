@@ -13,7 +13,7 @@ if (isset($_SESSION['tipoUsuario'])) {
 }
 
 $_SESSION['tipoUsuario'] = $tipo;
-
+echo "Aqui".$tipo;
 if ($tipo == "adm") {
     header('location: paginaInicialAdm.php');
 } else if ($tipo == "secretaria") {
@@ -25,6 +25,6 @@ else
 {
     $_SESSION['msg'] = "<p><span style = 'color: red'>Usuário inválido</span></p> ";
     
-     header('location: index.php');
+    header('location: index.php');
 }
 

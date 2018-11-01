@@ -1,11 +1,8 @@
 <?php
-session_start();
-$server = "localhost";
-$bd = "cesecbd";
-$user = "root";
-$pw = "";
+$servidor = "localhost";
+$usuario = "root";
+$senha = "";
+$dbname = "cesecbd";
 
-$con = mysqli_connect($server, $user, $pw, $bd);
-
-
-
+//Criar a conexao
+$con = mysqli_connect($servidor, $usuario, $senha, $dbname);
