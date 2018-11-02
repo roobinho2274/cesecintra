@@ -1,13 +1,9 @@
 <?php
 session_start();
 include_once '../funcoes.php';
+include_once '../conexao.php';
 ?>
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 
 <html>
     <head>
@@ -31,7 +27,7 @@ and open the template in the editor.
                 unset($_SESSION['msn']);
             }
             ?>
-            <form action="../disciplinas/cadDis.php" method="POST">
+            <form action="cadDis.php" method="POST">
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">Nome</label>
                     <div class="col-sm-10">
@@ -44,13 +40,13 @@ and open the template in the editor.
                         <legend class="col-form-label col-sm-2 pt-0">Modalidade</legend>
                         <div class="col-sm-10">
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="ensino" value="EM" checked>
+                                <input class="form-check-input" type="radio" name="ensino" value="2" checked>
                                 <label class="form-check-label" >
                                     Ensino Medio
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="ensino" value="EF">
+                                <input class="form-check-input" type="radio" name="ensino" value="1">
                                 <label class="form-check-label">
                                     Ensino Fundamental
                                 </label>
@@ -65,7 +61,7 @@ and open the template in the editor.
                         <select class="form-control" name="prof">
                             <?php
                             $query = "SELECT * FROM professor WHERE professor.tipo = 'professor'";
-                            $resultado = executa($query);
+                            $resultado = executa($query, $con);
                             while ($r = mysqli_fetch_assoc($resultado)) {
                                 echo "<option value=" . $r['id'] . ">" . $r['nome'] . "</option>";
                             }

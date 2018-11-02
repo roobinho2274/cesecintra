@@ -30,7 +30,7 @@ and open the template in the editor.
                 <input type="submit" class="btn btn-primary btn-block" value="Controle Aluno" formaction="aluno/controleAluno.php"/><br><br>
                 <input type="submit" class="btn btn-primary btn-block " value="Controle Professores" formaction="professor/controleProfessor.php"/><br><br>
                 <input type="submit" class="btn btn-primary btn-block" value="Controle Secretarias" formaction="secretarias/controleSecretarias.php"/><br><br>
-                <input type="submit" class="btn btn-primary btn-block" value="Controle Disciplinas" formaction="disciplinas/controleDisciplinas.php"/><br><br>
+                <input type="submit" class="btn btn-primary btn-block" value="Controle Disciplinas" formaction="disciplina/controleDisciplinas.php"/><br><br>
                 <input type="submit" class="btn btn-primary btn-block" value="Controle Matriculas" formaction="matriculas/controleMatriculas.php"/><br><br>
             </form>
 

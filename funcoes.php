@@ -11,7 +11,7 @@ function validasuario($user, $pwd, $con) {
     return $r['tipo'];
 }
 
-function listaAlunos()
+function listaAlunos($con)
 {
     $query = "SELECT * FROM alunos '";
 
@@ -19,9 +19,9 @@ function listaAlunos()
     
     return $result;
 }
-function executa($query)
+function executa($query, $con)
 {
-    include_once 'conexao.php';
+   
     $res = mysqli_query($con, $query);
     return $res;
 }
