@@ -19,3 +19,9 @@ function listaAlunos()
     
     return $result;
 }
+function executa($query)
+{
+    include_once 'conexao.php';
+    $res = mysqli_query($con, $query);
+    return $res;
+}
