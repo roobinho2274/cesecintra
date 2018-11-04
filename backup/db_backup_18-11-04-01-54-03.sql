@@ -44,8 +44,13 @@ CREATE TABLE `disciplina` (
   PRIMARY KEY (`id`),
   KEY `idProf` (`idProf`),
   CONSTRAINT `disciplina_ibfk_1` FOREIGN KEY (`idProf`) REFERENCES `professor` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
+INSERT INTO disciplina VALUES ("1","Linguagem de program","1","2");
+INSERT INTO disciplina VALUES ("2","Portugues","1","4");
+INSERT INTO disciplina VALUES ("3","Ingles","2","4");
+INSERT INTO disciplina VALUES ("4","CiÃªncia","2","5");
+INSERT INTO disciplina VALUES ("5","Fisica","1","2");
 
 
 DROP TABLE IF EXISTS frequencia;
@@ -109,6 +114,8 @@ CREATE TABLE `professor` (
 INSERT INTO professor VALUES ("1","Robson Aparecido da Silva","robson","123456","adm");
 INSERT INTO professor VALUES ("2","Robinho Silva","binho","123456","professor");
 INSERT INTO professor VALUES ("3","José da Couves","ze","123456","secretaria");
+INSERT INTO professor VALUES ("4","Cassandra","cassandra","123456","professor");
+INSERT INTO professor VALUES ("5","Regiane","regiane","123456","professor");
 
 
 DROP TABLE IF EXISTS turno;

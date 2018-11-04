@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once (" ../funcoes.php");
+include_once ("../funcoes.php");
 include_once ("../conexao.php");
 ?>
 <!DOCTYPE html>

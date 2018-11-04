@@ -16,20 +16,21 @@ session_start();
     </head>
     <body>
         <div class = "container" style="background-color: buttonface" >
+            
+            <h2>Opções do administrador</h2>
             <?php
             if (isset($_SESSION['bd'])) {
                 echo $_SESSION['bd'];
                 unset($_SESSION['bd']);
             }
             ?>
-            <h2>Opções do administrador</h2>
             <form name="direciona" action="paginaInicialAdm.php">
                 <input type="submit" class="btn btn-primary btn-block" value="Controle Aluno" formaction="aluno/controleAluno.php"/><br><br>
                 <input type="submit" class="btn btn-primary btn-block " value="Controle Professores" formaction="professor/controleProfessor.php"/><br><br>
                 <input type="submit" class="btn btn-primary btn-block" value="Controle Secretarias" formaction="secretarias/controleSecretarias.php"/><br><br>
                 <input type="submit" class="btn btn-primary btn-block" value="Controle Disciplinas" formaction="disciplina/controleDisciplinas.php"/><br><br>
                 <input type="submit" class="btn btn-primary btn-block" value="Controle Matriculas" formaction="matriculas/controleMatriculas.php"/><br><br>
-                <input type="submit" class="btn btn-primary btn-block" value="Backup Banco" formaction="matriculas/controleMatriculas.php"/><br><br>
+                <input type="submit" class="btn btn-primary btn-block" value="Backup Banco" formaction="../cesecintra/backupBD.php"/><br><br>
 
             </form>
 
