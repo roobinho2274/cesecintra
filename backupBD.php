@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 include_once("conexao.php");
 //Ler as tabelas
 $result_tabela = "SHOW TABLES";
@@ -78,6 +78,9 @@ $nome_arquivo = $diretorio."db_backup_".$data;
 $handle = fopen($nome_arquivo.'.sql', 'w+');
 fwrite($handle, $result);
 fclose($handle);
+
+$_SESSION['bd'] = "<h2>BackUp bem sussedido</h2";
+header("Location: ../paginaInicialAdm.php");
 
 //Montar o link do arquivo
 //$download = $nome_arquivo . ".sql";

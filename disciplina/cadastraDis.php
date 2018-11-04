@@ -1,7 +1,7 @@
 <?php
 session_start();
-include_once '../funcoes.php';
-include_once '../conexao.php';
+include_once (" ../funcoes.php");
+include_once ("../conexao.php");
 ?>
 <!DOCTYPE html>
 
@@ -22,6 +22,8 @@ include_once '../conexao.php';
         <div class = "container" style="background-color: buttonface" >
             <h5>DISCIPLINAS</h5>
             <?php
+            /*Verifica se a variável global que indica falha na inserção está
+            Setada, o que indica uma falha na inserção no banco*/
             if (isset($_SESSION['msn'])) {
                 echo $_SESSION['msn'];
                 unset($_SESSION['msn']);
@@ -60,6 +62,8 @@ include_once '../conexao.php';
                     <div class="col-sm-10">
                         <select class="form-control" name="prof">
                             <?php
+                            /*Faz a busca por todos os usuários do tipo porfessor no banco
+                            e preenche um select*/
                             $query = "SELECT * FROM professor WHERE professor.tipo = 'professor'";
                             $resultado = executa($query, $con);
                             while ($r = mysqli_fetch_assoc($resultado)) {

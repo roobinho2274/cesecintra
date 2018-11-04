@@ -5,7 +5,7 @@ if (isset($_SESSION['msg'])) {
     echo $_SESSION['msg'];
     unset($_SESSION['msg']);
 }
-//Codigo que desctroi a variável de sessão que controla o acesso
+//Codigo que destroi a variável de sessão que controla o acesso
 if (isset($_SESSION['tipoUsuario'])) {
     unset($_SESSION['tipoUsuario']);
 }
@@ -35,11 +35,6 @@ if (isset($_SESSION['tipoUsuario'])) {
                     <label >Senha</label>
                     <input type="password" class="form-control" placeholder="Password" name = "pwd">
                 </div>
-                <div class="form-group form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Guardar Senha</label>
-                </div>
-
                 <input type="submit" class="btn btn-success" value="ENTRAR">
             </form>
             <!-- <form name="inicio" action="login.php" method="POST">
