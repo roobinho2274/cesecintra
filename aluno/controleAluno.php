@@ -1,25 +1,41 @@
 <?php
 session_start();
 
+
 if ($_SESSION['tipoUsuario'] != 'adm') {
+    echo $_SESSION['tipoUsuario'];
     $_SESSION['msg'] = "<script>alert sem permissão de acesso</script>";
-    header("location: /projCesec/cesecintra/index.php");
+    header("location: /PROJETOCESEC/cesecintra/index.php");
 }
 ?>
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
-        <meta charset="UTF-8">
-        <title>Controle de alunos</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="../css/bootstrap.css" >
+        
+        <title>Controle de Alunos</title>
+
     </head>
     <body>
-        <?php
-        echo  "Controle aluno";
-        ?>
+        
+        <div class = "container" style="background-color: buttonface" >
+            <h2>CONTROLE ALUNO</h2>
+            <form >
+                <input type="submit" class="btn btn-secondary btn-block" value="CADASTRA ALUNO" formaction="cadastroAluno.php"/><br><br>
+                <input type="submit" class="btn btn-secondary btn-block" value="CONSULTA ALUNO" formaction="consultaAluno.php"/><br><br>
+                <input type="submit" class="btn btn-secondary btn-block" value="ALTERA ALUNO" formaction="alteraAluno.php"/><br><br>
+                <input type="submit" class="btn btn-secondary btn-block" value="DELETA ALUNO" formaction="deletaAluno.php"/><br><br>
+            </form>
+
+            
+        </div>
+        
+        <script src="../js/jquery-3.3.1.slim.min.js"></script>
+        <script src="../js/popper.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
     </body>
 </html>

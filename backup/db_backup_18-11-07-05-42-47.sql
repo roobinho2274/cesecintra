@@ -1,4 +1,4 @@
-
+DROP TABLE IF EXISTS aluno;
 
 CREATE TABLE `aluno` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -49,8 +49,9 @@ CREATE TABLE `disciplina` (
 INSERT INTO disciplina VALUES ("1","Linguagem de program","1","2");
 INSERT INTO disciplina VALUES ("2","Portugues","1","4");
 INSERT INTO disciplina VALUES ("3","Ingles","2","4");
-INSERT INTO disciplina VALUES ("4","Ciência","2","5");
+INSERT INTO disciplina VALUES ("4","Ci�ncia","2","5");
 INSERT INTO disciplina VALUES ("5","Fisica","1","2");
+INSERT INTO disciplina VALUES ("6","Português","2","2");
 
 
 DROP TABLE IF EXISTS frequencia;

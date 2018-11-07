@@ -1,4 +1,5 @@
 <?php
+session_start();
 //Inclui os arquivos que contém as conexões e as funções em PHP
 include_once ("funcoes.php");
 include_once ("conexao.php");
