@@ -44,13 +44,14 @@ CREATE TABLE `disciplina` (
   PRIMARY KEY (`id`),
   KEY `idProf` (`idProf`),
   CONSTRAINT `disciplina_ibfk_1` FOREIGN KEY (`idProf`) REFERENCES `professor` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 INSERT INTO disciplina VALUES ("1","Linguagem de program","1","2");
 INSERT INTO disciplina VALUES ("2","Portugues","1","4");
 INSERT INTO disciplina VALUES ("3","Ingles","2","4");
 INSERT INTO disciplina VALUES ("4","Ciência","2","5");
 INSERT INTO disciplina VALUES ("5","Fisica","1","2");
+INSERT INTO disciplina VALUES ("6","Ingles","2","4");
 
 
 DROP TABLE IF EXISTS frequencia;
