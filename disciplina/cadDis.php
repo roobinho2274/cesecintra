@@ -23,10 +23,10 @@ $resultado = executa($query2, $con);
  * da variável Global $_SESSION['msn']
  */
 if ($resultado) {
-    $_SESSION['msn'] = "<span style= color: gren>Inserido com sucesso!</span>";
+    $_SESSION['msn'] = "<div class='alert alert-success' role='alert'> Inserido com sucesso!</div>";
     header("Location: ../disciplina/listaDis.php");
 } else {
-    $_SESSION['msn'] = "<span style= color: red>Falha ao inserir!</span>";
+    $_SESSION['msn'] = "<div class='alert alert-danger' role='alert'> Falha ao Inserir!</div>";
     header("Location: ../disciplina/cadastraDis.php");
 }
 
