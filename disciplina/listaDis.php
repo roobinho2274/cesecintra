@@ -4,11 +4,7 @@ session_start();
 //Inclui os arquivos de conexáo e funções
 include_once ("../conexao.php");
 include_once ("../funcoes.php");
-//Verifica se a variável global de mensagem está setada, a exibe e depois limpa
-if (isset($_SESSION['msn'])) {
-    echo $_SESSION['msn'];
-    unset($_SESSION['msn']);
-}
+
 //Query para consulta no banco de todas as disciplinas
 $query = "SELECT * FROM disciplina";
 //Recebe o resultad da execução da query anterios pela função executa
@@ -30,12 +26,19 @@ $resultado = mysqli_query($con, $query);
         <div class = "container" >
             <table class="table table-sm table-striped table-bordered table-hover" >
                 <h2>Lista de Disciplinas</h2>
-                <thead class="table-dark">
+                <?php
+                //Verifica se a variável global de mensagem está setada, a exibe e depois limpa
+                if (isset($_SESSION['msn'])) {
+                    echo $_SESSION['msn'];
+                    unset($_SESSION['msn']);
+                }
+                ?>
+                <thead class = "table-dark">
                     <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Nome</th>
-                        <th scope="col" class="d-none d-md-table-cell">Curso</th>
-                        <th scope="col">Professor</th>
+                        <th scope = "col">ID</th>
+                        <th scope = "col">Nome</th>
+                        <th scope = "col" class = "d-none d-md-table-cell">Curso</th>
+                        <th scope = "col">Professor</th>
                     </tr>
                 </thead>
                 <tbody><?php
@@ -43,7 +46,7 @@ $resultado = mysqli_query($con, $query);
                         echo"<tr>"
                         . "<th scope = 'row'>" . $r['id'] . "</th>"
                         . "<td>" . $r['descricao'] . "</td>";
-                        
+
                         if ($r['idGrauEnsino'] == 1) {
                             echo "<td class='d-none d-md-table-cell'>Ensino Médio</td>";
                         } elseif ($r['idGrauEnsino'] == 2) {
@@ -59,8 +62,9 @@ $resultado = mysqli_query($con, $query);
                     ?>
                 </tbody>
             </table>
+            <a class="btn btn-primary" href="../disciplina/controleDisciplinas.php" role="button">Voltar</a>
         </div>
-        <a href="controleDisciplinas.php">Voltar</a>
+
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="../js/jquery-3.3.1.slim.min.js"></script>

@@ -42,13 +42,13 @@ include_once ("../conexao.php");
                         <legend class="col-form-label col-sm-2 pt-0">Modalidade</legend>
                         <div class="col-sm-10">
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="ensino" value="2" checked>
+                                <input class="form-check-input" type="radio" name="ensino" value="1" checked>
                                 <label class="form-check-label" >
                                     Ensino Medio
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="ensino" value="1">
+                                <input class="form-check-input" type="radio" name="ensino" value="2">
                                 <label class="form-check-label">
                                     Ensino Fundamental
                                 </label>
@@ -77,6 +77,8 @@ include_once ("../conexao.php");
                 <div class="form-group row">
                     <div class="col-sm-10">
                         <button type="submit" class="btn btn-primary">Cadastrar</button>
+                        <button type="submit" class="btn btn-primary" formaction="../disciplina/controleDisciplinas.php">Voltar</button>
+                        
                     </div>
                 </div>
             </form> 

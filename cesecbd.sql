@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 25-Out-2018 às 20:58
+-- Generation Time: 14-Nov-2018 às 02:39
 -- Versão do servidor: 10.1.36-MariaDB
 -- versão do PHP: 7.2.10
 
@@ -63,10 +63,25 @@ CREATE TABLE `aluno` (
 
 CREATE TABLE `disciplina` (
   `id` int(11) NOT NULL,
-  `descricao` varchar(20) NOT NULL,
+  `descricao` varchar(100) NOT NULL,
   `idGrauEnsino` int(11) NOT NULL,
   `idProf` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `disciplina`
+--
+
+INSERT INTO `disciplina` (`id`, `descricao`, `idGrauEnsino`, `idProf`) VALUES
+(1, 'Linguagem de programaÃ§Ã£o', 2, 5),
+(2, 'PortuguÃªs', 1, 2),
+(5, 'Fisica', 1, 2),
+(6, 'Ingles', 2, 4),
+(7, 'PortuguÃªs', 1, 4),
+(8, 'Fisica', 2, 2),
+(9, 'RedaÃ§Ã£o', 1, 4),
+(10, 'ReligiÃ£o', 2, 2),
+(11, 'ReligiÃ£o', 1, 5);
 
 -- --------------------------------------------------------
 
@@ -127,7 +142,9 @@ CREATE TABLE `professor` (
 INSERT INTO `professor` (`id`, `nome`, `login`, `senha`, `tipo`) VALUES
 (1, 'Robson Aparecido da Silva', 'robson', 123456, 'adm'),
 (2, 'Robinho Silva', 'binho', 123456, 'professor'),
-(3, 'José da Couves', 'ze', 123456, 'secretaria');
+(3, 'José da Couves', 'ze', 123456, 'secretaria'),
+(4, 'Cassandra', 'cassandra', 123456, 'professor'),
+(5, 'Regiane', 'regiane', 123456, 'professor');
 
 -- --------------------------------------------------------
 
@@ -205,7 +222,7 @@ ALTER TABLE `aluno`
 -- AUTO_INCREMENT for table `disciplina`
 --
 ALTER TABLE `disciplina`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `frequencia`
