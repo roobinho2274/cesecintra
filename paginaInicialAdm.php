@@ -15,6 +15,7 @@ session_start();
 
     </head>
     <body>
+        <h2> PAGINA ADMINISTRADOR</h2>
         <div class = "container" style="background-color: buttonface" >
            
             <form name="delta" action="delDisc.php">

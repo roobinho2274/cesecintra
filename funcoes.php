@@ -6,22 +6,20 @@ function validasuario($user, $pwd, $con) {
 
     $result = mysqli_query($con, $query);
     $r = mysqli_fetch_assoc($result);
-   echo $query;
-    
+    echo $query;
+
     return $r['tipo'];
 }
 
-function listaAlunos($con)
-{
-    $query = "SELECT * FROM alunos '";
+function listaAlunos($con) {
+    $query = "SELECT * FROM aluno ";
 
     $result = mysqli_query($con, $query);
-    
     return $result;
 }
-function executa($query, $con)
-{
-   
+
+function executa($query, $con) {
+
     $res = mysqli_query($con, $query);
     return $res;
 }
