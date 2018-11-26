@@ -62,7 +62,7 @@ $resultado = mysqli_query($con, $query);
                     ?>
                 </tbody>
             </table>
-            <a class="btn btn-primary" href="../disciplina/controleDisciplinas.php" role="button">Voltar</a>
+            <a class="btn btn-primary " href="../disciplina/controleDisciplinas.php" role="button">Voltar</a>
         </div>
 
         <!-- Optional JavaScript -->
