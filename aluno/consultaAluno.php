@@ -30,8 +30,8 @@ if ($_SESSION['tipoUsuario'] != 'adm') {
                 echo $_SESSION['msg'];
                 unset($_SESSION['msg']);
                 }
-            ?>
-            <form action="cadAluno.php" method="POST">
+            echo '
+            <form action="altAluno.php" method="POST">
                 <br/>
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">*NOME :</label>
@@ -84,7 +84,7 @@ if ($_SESSION['tipoUsuario'] != 'adm') {
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">SEXO :</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="inputEmail3"  name="sexo">
+                        <input type="text" class="form-control" id="inputEmail3"  name="reservista">
                     </div>
                 </div>
                 <div class="form-group row">
@@ -182,6 +182,7 @@ if ($_SESSION['tipoUsuario'] != 'adm') {
                 <button class="btn btn-primary" type="submit">CADASTRAR</button>
                 <input class="btn btn-primary" type="reset" value="LIMPAR">
             </form>
+            ';?>
             <script src="../js/jquery-3.3.1.slim.min.js"></script>
             <script src="../js/popper.min.js"></script>
             <script src="../js/bootstrap.min.js"></script>

@@ -1,8 +1,8 @@
 <?php
-session_start();
-//Inclui os arquvis de conexão e funções
-include_once ("../conexao.php");
-include_once ("../funcoes.php");
+    session_start();
+    //Inclui os arquvis de conexão e funções
+    include_once ("../conexao.php");
+    include_once ("../funcoes.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -68,6 +68,7 @@ include_once ("../funcoes.php");
                  * paginas confome o resultado, também define a mensagem a ser exibida através 
                  * da variável Global $_SESSION['msn']
                  */
+                
                 if ($resultado) {
                     Echo "<div class='alert alert-success' role='alert'>Aluno inserido com sucesso</div>";
                     echo
