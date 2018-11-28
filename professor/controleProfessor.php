@@ -13,7 +13,7 @@
             <form class="text-center mt-3 bg-danger p-2 ">
                  <input type="submit" class="mt-5 btn btn-secondary btn-block strong" value="Cadastrar novo Professor" formaction="CadastraProf.php"/><br><br>
                  <input type="submit" class="btn btn-secondary btn-block strong" value="Consultar os Professores" formaction="listaProfessor.php"/><br><br>
-                 <input type="submit" class="btn btn-secondary btn-block strong" value="Alterar os dados dos Professores" formaction="#"/><br><br>
+                 <input type="submit" class="btn btn-secondary btn-block strong" value="Alterar os dados dos Professores" formaction="alteraProf.php"/><br><br>
                  <input type="submit" class="btn btn-secondary btn-block strong" value="Deletar Professor" formaction="#"/><br><br>
 				 
 				 <a class="btn btn-secondary text-light strong" href="../paginaInicialAdm.php"> Voltar</a>

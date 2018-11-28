@@ -1,3 +1,16 @@
 .strong{
 	font-weight:bold;
 }
+.botaoesquerdo {
+    width: 45%;
+    font-size: 16px;    
+    text-align: center;
+    float:left
+}
+.botaodireito{
+    width: 45%;
+    font-size: 16px;
+    text-align: center;
+    float:right;
+    margin-left:10px;
+}
