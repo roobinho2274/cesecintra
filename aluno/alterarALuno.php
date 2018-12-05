@@ -34,19 +34,19 @@ if ($_SESSION['tipoUsuario'] != 'adm') {
                     unset($_SESSION['msg']);
                 }
                 mysqli_select_db($con, $dbname );
+                
+                $id = filter_input(INPUT_POST,'id',FILTER_SANITIZE_STRING);
 
                 $query = sprintf('SELECT rg,cpf,nome,orgaoExpedidor,mae,pai,tituloEleitor,"
                         . "reservista,sexo,estadoCivil,logradouro,bairro,complemento,numeroResidencial,"
-                        . "cidade,cep,estado,telefone,email,celular,status,grauensino FROM aluno');
-                
-                $dado = mysqli_query($con, $query) or die (mysqli_error());
+                        . "cidade,cep,estado,telefone,email,celular,status,grauensino FROM aluno id= "'.$id.'" ');
+                echo $query;
+                $dado = mysqli_query($con, $query);
 
-                $linha = mysqli_fetch_assoc($dado);
-                $total = mysqli_num_rows($dado);
                 
-                while ($row = $dado->fetch_assoc()) {
+                while ($row = mysqli_fetch_assoc($dado)) {
                     
-                    echo '<form action="altAluno.php" method="POST">'
+                 /*   echo '<form action="altAluno.php" method="POST">'
                             . 'RG : <input type="text" class="form-control" id="inputEmail3" value="'.$row['rg'].'" name="RG">'
                             . 'CPF : <input type="text" class="form-control" id="inputEmail3" value="'.$row['cpf'].'" name="CPF">'
                             . 'Nome : <input type="text" class="form-control" id="inputEmail3" value="'.$row['nome'].'"  name="Nome">'
@@ -70,7 +70,7 @@ if ($_SESSION['tipoUsuario'] != 'adm') {
                             . 'Status : <input type="text" class="form-control" id="inputEmail3"  name="Status">'
                             . 'Grau de Ensino : <input type="text" class="form-control" id="inputEmail3"  name="grauEnsino">'
                         . '</form>'
-                            ;
+                            ;*/
                 }   
             ?>
             

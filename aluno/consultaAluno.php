@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+include_once ("../conexao.php");
+include_once ("../funcoes.php");
 
 if ($_SESSION['tipoUsuario'] != 'adm') {
     echo $_SESSION['tipoUsuario'];
@@ -30,159 +32,32 @@ if ($_SESSION['tipoUsuario'] != 'adm') {
                 echo $_SESSION['msg'];
                 unset($_SESSION['msg']);
                 }
-            echo '
-            <form action="altAluno.php" method="POST">
-                <br/>
-                <div class="form-group row">
-                    <label class="col-sm-2 col-form-label">*NOME :</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="inputEmail3"  name="nome">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label class="col-sm-2 col-form-label">*RG :</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="inputEmail3"  name="rg">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label class="col-sm-2 col-form-label">*CPF :</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="inputEmail3"  name="cpf">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label class="col-sm-2 col-form-label">*ORGÃO EXPEDIDOR :</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="inputEmail3"  name="orgaoexpedidor">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label class="col-sm-2 col-form-label">*NOME DA MÃE :</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="inputEmail3"  name="nomedamae">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label class="col-sm-2 col-form-label">*NOME DO PAI :</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="inputEmail3"  name="nomedopai">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label class="col-sm-2 col-form-label">*TITULO DE ELEITOR :</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="inputEmail3"  name="tituloeleitor">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label class="col-sm-2 col-form-label">RESERVISTA :</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="inputEmail3"  name="reservista">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label class="col-sm-2 col-form-label">SEXO :</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="inputEmail3"  name="reservista">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label class="col-sm-2 col-form-label">ESTADO CÍVIL :</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="inputEmail3"  name="estadocivil">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label class="col-sm-2 col-form-label">ENDEREÇO</label>
-                </div>
-                <div class="form-group row">
-                    <div class="col-10">
-                        <input type="text" class="form-control" placeholder="LOGRADOURO" name="logradouro">
-                    </div>
-                    <div class="col-2">
-                        <input type="text" class="form-control" placeholder="NUMERO" name="numeroresidencia">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <div class="col">
-                        <input type="text" class="form-control" placeholder="BAIRRO" name="bairro">
-                    </div>
-                    <div class="col">
-                        <input type="text" class="form-control" placeholder="COMPLEMENTO" name="complemento">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <div class="col-6">
-                        <input type="text" class="form-control" placeholder="CIDADE" name="cidade">
-                    </div>
-                    <div class="col-4">
-                        <input type="text" class="form-control" placeholder="CEP" name="cep">
-                    </div>
-                    <div class="col-2">
-                        <input type="text" class="form-control" placeholder="UF" name="estado">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label class="col-sm-2 col-form-label">TELEFONE :</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="inputEmail3"  name="telefone">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label class="col-sm-2 col-form-label">E-MAIL :</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="inputEmail3"  name="email">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label class="col-sm-2 col-form-label">CELULAR :</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="inputEmail3"  name="celular">
-                    </div>
-                </div>
-                <fieldset class="form-group">
-                    <div class="row">
-                        <legend class="col-form-label col-sm-2 pt-0">STATUS</legend>
-                        <div class="col-sm-10">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="status" value="1" checked>
-                                <label class="form-check-label" for="gridRadios1">
-                                    ATIVO
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="status" value="0">
-                                <label class="form-check-label" for="gridRadios2">
-                                    INATIVO
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </fieldset>
-                <fieldset class="form-group">
-                    <div class="row">
-                        <legend class="col-form-label col-sm-2 pt-0">STATUS</legend>
-                        <div class="col-sm-10">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="grauensino"  value="1">
-                                <label class="form-check-label" for="gridRadios1">
-                                    ENSINO MÉDIO
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="grauensino" value="0">
-                                <label class="form-check-label" for="gridRadios2">
-                                    ENSINO FUNDAMENTAL
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </fieldset>
-                <button class="btn btn-primary" type="submit">CADASTRAR</button>
-                <input class="btn btn-primary" type="reset" value="LIMPAR">
-            </form>
-            ';?>
+            ?>
+            
+            <table style="width: 100%" class="text-center">
+                
+                <thead>
+                <td>Id</td><td>Nome</td><td>Email</td><td>CPF</td><td>Status</td><td>---</td><td>---</td>
+                </thead>
+                <tr>
+                    <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                </tr>
+                <?php 
+                    $sql = "SELECT nome,email,id,cpf,status from aluno";
+                    $dados = mysqli_query($con, $sql);
+                    while($row = mysqli_fetch_assoc($dados)){
+                        
+                        echo '<tr><td>'.$row['id'].'</td><td>'.$row['nome'].'</td><td>'.$row['email'].'</td><td>'.$row['cpf'].'</td><td>'.$row['status'].'</td>';
+                        echo '<form action = "alterarAluno.php"><td><input type = "submit" value="Alterar" class="btn-success"><input type="hidden" value="'.$row['id'].' name = "id"></form></td>';
+                        echo '<form action = "deletarAluno.php"><td><input type = "submit" value="Deletar" class="btn-success"><input type="hidden" value="'.$row['id'].' name = "id"></form></td>';
+                        echo '</tr>';
+                    }
+                ?>
+                
+            </table>
+            <br/>
+            <a class="btn btn-secondary strong form-control" style="width: 10%; margin-left: 45%" href="../aluno/controleAluno.php" role="button">Voltar</a>
+            
             <script src="../js/jquery-3.3.1.slim.min.js"></script>
             <script src="../js/popper.min.js"></script>
             <script src="../js/bootstrap.min.js"></script>

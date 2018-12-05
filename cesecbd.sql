@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.8.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 14-Nov-2018 às 02:39
--- Versão do servidor: 10.1.36-MariaDB
--- versão do PHP: 7.2.10
+-- Generation Time: 30-Nov-2018 às 18:34
+-- Versão do servidor: 10.1.33-MariaDB
+-- PHP Version: 7.2.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -21,6 +21,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `cesecbd`
 --
+CREATE DATABASE IF NOT EXISTS `cesecbd` DEFAULT CHARACTER SET utf16 COLLATE utf16_general_ci;
+USE `cesecbd`;
 
 -- --------------------------------------------------------
 
@@ -54,6 +56,15 @@ CREATE TABLE `aluno` (
   `datacadastro` date NOT NULL,
   `grauensino` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `aluno`
+--
+
+INSERT INTO `aluno` (`id`, `rg`, `cpf`, `nome`, `orgaoExpedidor`, `mae`, `pai`, `tituloEleitor`, `reservista`, `sexo`, `estadoCivil`, `logradouro`, `bairro`, `complemento`, `numeroResidencial`, `cidade`, `cep`, `estado`, `telefone`, `email`, `celular`, `status`, `datacadastro`, `grauensino`) VALUES
+(1, '1212312312', 23423423423, 'JoÃ£ozinho Neto de FÃ¡tima', 'MGDELE', 'FÃ¡tima da Silva', 'JÃµazinho Junior', 123412341234, 123123, 'Masculino', 'Solteiro', 'Rua Alberto de FÃ¡tima Noronha', 'Can Can', 'Casa', 345, 'BrazÃ³polis', 37530000, 'MG', 998123123, 'alunoI3A@gmail.com', 998121212, '1', '2018-11-28', '1'),
+(2, '1212312314', 23423423424, 'Aluno', 'MGSPFC', 'Fátima da Silva212', 'Jõazinho Junior121', 123412341236, 123124, 'Masculino', 'Solteiro', 'Rua Alberto de Fátima Noronha', 'Can Can', 'Casa', 345, 'Brazópolis', 37530000, 'MG', 998123128, 'alunoI3Aaa@gmail.com', 998121214, '1', '2018-11-28', '1'),
+(3, '1212312319', 23423423429, 'Alunoasf', 'MGSPFG', 'FÃ¡tima da Silva219', 'JÃµazinho Junior129', 123412341239, 123129, 'Masculino', 'Solteiro', 'Rua Alberto de FÃ¡tima Noronha', 'Can Can', 'Casa', 345, 'BrazÃ³polis', 37530000, 'MG', 998123129, 'alunoI3Aaa@gmail.come', 998121219, '1', '2018-11-28', '1');
 
 -- --------------------------------------------------------
 
@@ -216,13 +227,13 @@ ALTER TABLE `turno`
 -- AUTO_INCREMENT for table `aluno`
 --
 ALTER TABLE `aluno`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `disciplina`
 --
 ALTER TABLE `disciplina`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `frequencia`
