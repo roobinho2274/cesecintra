@@ -44,7 +44,7 @@ if ($_SESSION['tipoUsuario'] != 'adm') {
 
                 while ($row = mysqli_fetch_assoc($dado)){
             ?>
-            <form action="cadAluno.php" method="POST">
+            <form action="altAluno.php" method="POST">
                 <br/>
                 <div class="form-group row">
                         <label class="col-sm-2 col-form-label">*NOME :</label>
@@ -192,6 +192,7 @@ if ($_SESSION['tipoUsuario'] != 'adm') {
                             </div>
                         </div>
                     </fieldset>
+                <input type ="hidden" value="<?php echo $id;?>" name="id">
                     <button class="btn btn-primary" type="submit">CADASTRAR</button>
                     <input class="btn btn-primary" type="reset" value="LIMPAR">
             </form>
