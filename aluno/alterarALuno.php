@@ -37,41 +37,167 @@ if ($_SESSION['tipoUsuario'] != 'adm') {
                 
                 $id = filter_input(INPUT_POST,'id',FILTER_SANITIZE_STRING);
 
-                $query = sprintf('SELECT rg,cpf,nome,orgaoExpedidor,mae,pai,tituloEleitor,"
-                        . "reservista,sexo,estadoCivil,logradouro,bairro,complemento,numeroResidencial,"
-                        . "cidade,cep,estado,telefone,email,celular,status,grauensino FROM aluno id= "'.$id.'" ');
-                echo $query;
+                $query = sprintf('SELECT rg,cpf,nome,orgaoExpedidor,mae,pai,tituloEleitor,'
+                        . 'reservista,sexo,estadoCivil,logradouro,bairro,complemento,numeroResidencial,'
+                        . 'cidade,cep,estado,telefone,email,celular,status,grauensino FROM aluno WHERE id= "'.$id.'" ');
                 $dado = mysqli_query($con, $query);
 
-                
-                while ($row = mysqli_fetch_assoc($dado)) {
+                while ($row = mysqli_fetch_assoc($dado)){
+            ?>
+            <form action="cadAluno.php" method="POST">
+                <br/>
+                <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">*NOME :</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" value="<?php echo $row['nome'];?>" id="inputEmail3"  name="nome">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">*RG :</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" value="<?php echo $row['rg'];?>" id="inputEmail3"  name="rg">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">*CPF :</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" value="<?php echo $row['cpf'];?>" id="inputEmail3"  name="cpf">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">*ORGÃO EXPEDIDOR :</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" value="<?php echo $row['orgaoExpedidor'];?>" id="inputEmail3"  name="orgaoexpedidor">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">*NOME DA MÃE :</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" value="<?php echo $row['mae'];?>" id="inputEmail3"  name="nomedamae">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">*NOME DO PAI :</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" value="<?php echo $row['pai'];?>" id="inputEmail3"  name="nomedopai">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">*TITULO DE ELEITOR :</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" value="<?php echo $row['tituloEleitor'];?>" id="inputEmail3"  name="tituloEleitor">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">RESERVISTA :</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" value="<?php echo $row['reservista'];?>" id="inputEmail3"  name="reservista">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">SEXO :</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" value="<?php echo $row['sexo'];?>" id="inputEmail3"  name="sexo">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">ESTADO CÍVIL :</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" value="<?php echo $row['estadoCivil'];?>" id="inputEmail3"  name="estadocivil">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">ENDEREÇO</label>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-10">
+                            <input type="text" class="form-control" value="<?php echo $row['logradouro'];?>" placeholder="LOGRADOURO" name="logradouro">
+                        </div>
+                        <div class="col-2">
+                            <input type="text" class="form-control" value="<?php echo $row['numeroResidencial'];?>" placeholder="NUMERO" name="numeroResidencial">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col">
+                            <input type="text" class="form-control" value="<?php echo $row['bairro'];?>" placeholder="BAIRRO" name="bairro">
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control" value="<?php echo $row['complemento'];?>" placeholder="COMPLEMENTO" name="complemento">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-6">
+                            <input type="text" class="form-control" value="<?php echo $row['cidade'];?>" placeholder="CIDADE" name="cidade">
+                        </div>
+                        <div class="col-4">
+                            <input type="text" class="form-control" value="<?php echo $row['cep'];?>" placeholder="CEP" name="cep">
+                        </div>
+                        <div class="col-2">
+                            <input type="text" class="form-control" value="<?php echo $row['estado'];?>" placeholder="UF" name="estado">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">TELEFONE :</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" value="<?php echo $row['telefone'];?>" id="inputEmail3"  name="telefone">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">E-MAIL :</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" value="<?php echo $row['email'];?>" id="inputEmail3"  name="email">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">CELULAR :</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" value="<?php echo $row['celular'];?>" id="inputEmail3"  name="celular">
+                        </div>
+                    </div>
+                    <fieldset class="form-group">
+                        <div class="row">
+                            <legend class="col-form-label col-sm-2 pt-0">STATUS</legend>
+                            <div class="col-sm-10">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="status" value="1" checked>
+                                    <label class="form-check-label" for="gridRadios1">
+                                        ATIVO
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="status" value="0">
+                                    <label class="form-check-label" for="gridRadios2">
+                                        INATIVO
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <div class="row">
+                            <legend class="col-form-label col-sm-2 pt-0">STATUS</legend>
+                            <div class="col-sm-10">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="grauensino"  value="1">
+                                    <label class="form-check-label" for="gridRadios1">
+                                        ENSINO MÉDIO
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="grauensino" value="0">
+                                    <label class="form-check-label" for="gridRadios2">
+                                        ENSINO FUNDAMENTAL
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <button class="btn btn-primary" type="submit">CADASTRAR</button>
+                    <input class="btn btn-primary" type="reset" value="LIMPAR">
+            </form>
                     
-                 /*   echo '<form action="altAluno.php" method="POST">'
-                            . 'RG : <input type="text" class="form-control" id="inputEmail3" value="'.$row['rg'].'" name="RG">'
-                            . 'CPF : <input type="text" class="form-control" id="inputEmail3" value="'.$row['cpf'].'" name="CPF">'
-                            . 'Nome : <input type="text" class="form-control" id="inputEmail3" value="'.$row['nome'].'"  name="Nome">'
-                            . 'Orgão Expedidor : <input type="text" class="form-control" id="inputEmail3" value="'.$row['orgaoExpedidor'].'" name="orgaoExpedidor">'
-                            . 'Nome da Mãe : <input type="text" class="form-control" id="inputEmail3" value="'.$row['mae'].'" name="nomeMae">'
-                            . 'Nome do Pai : <input type="text" class="form-control" id="inputEmail3" value="'.$row['pai'].'" name="nomePai">'
-                            . 'Titulo de Eleitor : <input type="text" class="form-control" id="inputEmail3" value="'.$row['tituloEleitor'].'" name="tituloEleitor">'
-                            . 'N° Reservista : <input type="text" class="form-control" id="inputEmail3" value="'.$row['reservista'].'" name="numReservista">'
-                            . 'Sexo : <input type="text" class="form-control" id="inputEmail3"  name="Sexo">'
-                            . 'Estado Civil : <input type="text" class="form-control" id="inputEmail3"  name="estadoSolteiro">'
-                            . 'Logradouro : <input type="text" class="form-control" id="inputEmail3"  name="Logradouro">'
-                            . 'Bairro : <input type="text" class="form-control" id="inputEmail3"  name="Bairro">'
-                            . 'Complemento : <input type="text" class="form-control" id="inputEmail3"  name="Complemento">'
-                            . 'Nº Residêncial : <input type="text" class="form-control" id="inputEmail3"  name="numResidencial">'
-                            . 'Cidade : <input type="text" class="form-control" id="inputEmail3"  name="Cidade">'
-                            . 'CEP : <input type="text" class="form-control" id="inputEmail3"  name="CEP">'
-                            . 'Estado : <input type="text" class="form-control" id="inputEmail3"  name="Estado">'
-                            . 'Telefone : <input type="text" class="form-control" id="inputEmail3"  name="Telefone">'
-                            . 'E-mail : <input type="text" class="form-control" id="inputEmail3"  name="email">'
-                            . 'Celular : <input type="text" class="form-control" id="inputEmail3"  name="celular">'
-                            . 'Status : <input type="text" class="form-control" id="inputEmail3"  name="Status">'
-                            . 'Grau de Ensino : <input type="text" class="form-control" id="inputEmail3"  name="grauEnsino">'
-                        . '</form>'
-                            ;*/
-                }   
+            <?php
+                }
             ?>
             
             

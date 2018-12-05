@@ -48,8 +48,8 @@ if ($_SESSION['tipoUsuario'] != 'adm') {
                     while($row = mysqli_fetch_assoc($dados)){
                         
                         echo '<tr><td>'.$row['id'].'</td><td>'.$row['nome'].'</td><td>'.$row['email'].'</td><td>'.$row['cpf'].'</td><td>'.$row['status'].'</td>';
-                        echo '<form action = "alterarAluno.php"><td><input type = "submit" value="Alterar" class="btn-success"><input type="hidden" value="'.$row['id'].' name = "id"></form></td>';
-                        echo '<form action = "deletarAluno.php"><td><input type = "submit" value="Deletar" class="btn-success"><input type="hidden" value="'.$row['id'].' name = "id"></form></td>';
+                        echo '<td><form method="post" action = "alterarAluno.php"><input type="hidden" value="'.$row['id'].'" name = "id"><input type = "submit" value="Alterar" class="btn-success"></form></td>';
+                        echo '<td><form method="post" action = "deleteAluno.php"><input type="hidden" value="'.$row['id'].'" name = "id"><input type = "submit" value="Deletar" class="btn-success"></form></td>';
                         echo '</tr>';
                     }
                 ?>
