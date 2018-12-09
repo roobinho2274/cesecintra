@@ -3,14 +3,17 @@ session_start();
 include_once ("../funcoes.php");
 include_once ("../conexao.php");
 
-//Recebe o código da disciplina a ser alterada
+//Recebe o código da pessoa referente a matricula a ser alterada
 $cod = filter_input(INPUT_POST, 'matr', FILTER_SANITIZE_NUMBER_INT);
+if ($cod == ""){
+	header("Location: ../matriculas/deletaMat.php");
+}
 //String de alteração no banco
 $query = "SELECT * FROM matricula WHERE idAluno = $cod";
 //execução da estring SQL e coloca o resultado em $res
 $r = mysqli_query($con, $query);
 //$res = mysqli_fetch_assoc($r);
-//$_SESSION['disciplina'] = $res['id'];
+//$_SESSION['verify'] = "Ok";
 
 $queryNome = "SELECT nome FROM aluno WHERE id = $cod";
 $result = mysqli_query($con, $queryNome);
