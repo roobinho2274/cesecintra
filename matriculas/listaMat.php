@@ -6,7 +6,7 @@ include_once ("../conexao.php");
 include_once ("../funcoes.php");
 
 //Query para consulta no banco de todas as disciplinas
-$query = "SELECT * FROM matricula";
+$query = "SELECT * FROM matricula ORDER BY id";
 //Recebe o resultad da execução da query anterios pela função executa
 $resultado = mysqli_query($con, $query);
 //Mostra o resultado na tela
@@ -41,12 +41,13 @@ $resultado = mysqli_query($con, $query);
                         <th scope = "col">Turno</th>
                         <th scope = "col">Horário</th>
                         <th scope = "col">Status</th>
+                        <th scope = "col" class = "d-none d-md-table-cell">Nota 1</th>
+                        <th scope = "col" class = "d-none d-md-table-cell">Nota 2</th>
+                        <th scope = "col" class = "d-none d-md-table-cell">Nota 3</th>
+                        <th scope = "col" class = "d-none d-md-table-cell">Nota 4</th>
+                        <th scope = "col" class = "d-none d-md-table-cell">Nota 5</th>
+                        <th scope = "col" class = "d-none d-md-table-cell">Média</th>
                         <!--
-                            <th scope = "col" class = "d-none d-md-table-cell">Nota 1</th>
-                            <th scope = "col" class = "d-none d-md-table-cell">Nota 2</th>
-                            <th scope = "col" class = "d-none d-md-table-cell">Nota 3</th>
-                            <th scope = "col" class = "d-none d-md-table-cell">Nota 4</th>
-                            <th scope = "col" class = "d-none d-md-table-cell">Nota 5</th>
                             <th scope = "col">Professor</th>
                         -->
                     </tr>
@@ -72,6 +73,18 @@ $resultado = mysqli_query($con, $query);
                             echo "<td>".$r['horaAula']."</td>";
 
                             echo "<td>".$r['status']."</td>";
+
+                            echo "<td class='d-none d-md-table-cell'>".$r['nota1']."</td>";
+
+                            echo "<td class='d-none d-md-table-cell'>".$r['nota2']."</td>";
+
+                            echo "<td class='d-none d-md-table-cell'>".$r['nota3']."</td>";
+
+                            echo "<td class='d-none d-md-table-cell'>".$r['nota4']."</td>";
+
+                            echo "<td class='d-none d-md-table-cell'>".$r['nota5']."</td>";
+
+                            echo "<td class='d-none d-md-table-cell'>".$r['media']."</td>";
 
                             echo"</tr>";
                             /*
