@@ -18,13 +18,15 @@ $id = $idBd['MAX(id)'] + 1;
 $query2 = "INSERT INTO disciplina(id,descricao,idGrauEnsino,idProf)VALUES ($id,'$nome',$ensino,$professor) ";
 //Executa a $query2 no banco através da função Executa
 $resultado = executa($query2, $con);
-/*Verifica se a inserção foi feita corretamente e direciona à outras 
+/* Verifica se a inserção foi feita corretamente e direciona à outras 
  * paginas confome o resultado, também define a mensagem a ser exibida através 
  * da variável Global $_SESSION['msn']
  */
 if ($resultado) {
     $_SESSION['msn'] = "<div class='alert alert-success' role='alert'> Inserido com sucesso!</div>";
-    header("Location: ../disciplina/listaDis.php");
+    ?><label>INSERIDA COM SUCESSO</label><br>
+    <a href="controleDisciplinas.php">VOLTAT</a>
+    <?php
 } else {
     $_SESSION['msn'] = "<div class='alert alert-danger' role='alert'> Falha ao Inserir!</div>";
     header("Location: ../disciplina/cadastraDis.php");

@@ -77,7 +77,7 @@ if ($_SESSION['tipoUsuario'] != 'adm') {
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-sm-2 col-form-label">*NOME DO PAI :</label>
+                        <label class="col-sm-2 col-form-label">NOME DO PAI :</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" value="<?php echo $row['pai'];?>" id="inputEmail3"  name="nomedopai">
                         </div>
@@ -137,35 +137,35 @@ if ($_SESSION['tipoUsuario'] != 'adm') {
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-sm-2 col-form-label">TELEFONE :</label>
+                        <label class="col-sm-2 col-form-label">*TELEFONE :</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" value="<?php echo $row['telefone'];?>" id="inputEmail3"  name="telefone">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-sm-2 col-form-label">E-MAIL :</label>
+                        <label class="col-sm-2 col-form-label">*E-MAIL :</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" value="<?php echo $row['email'];?>" id="inputEmail3"  name="email">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-sm-2 col-form-label">CELULAR :</label>
+                        <label class="col-sm-2 col-form-label">*CELULAR :</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" value="<?php echo $row['celular'];?>" id="inputEmail3"  name="celular">
                         </div>
                     </div>
                     <fieldset class="form-group">
                         <div class="row">
-                            <legend class="col-form-label col-sm-2 pt-0">STATUS</legend>
+                            <legend class="col-form-label col-sm-2 pt-0">*STATUS</legend>
                             <div class="col-sm-10">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="status" value="1" checked>
+                                    <input class="form-check-input" type="radio" name="status"  value="1" <?php if($row['status'] == 1){echo 'checked';} ?>>
                                     <label class="form-check-label" for="gridRadios1">
                                         ATIVO
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="status" value="0">
+                                    <input class="form-check-input" type="radio" name="status" value="0" <?php if($row['status'] == 0){echo 'checked';} ?>>
                                     <label class="form-check-label" for="gridRadios2">
                                         INATIVO
                                     </label>
@@ -175,16 +175,16 @@ if ($_SESSION['tipoUsuario'] != 'adm') {
                     </fieldset>
                     <fieldset class="form-group">
                         <div class="row">
-                            <legend class="col-form-label col-sm-2 pt-0">STATUS</legend>
+                            <legend class="col-form-label col-sm-2 pt-0">NIVEL DE ESCOLARIDADE</legend>
                             <div class="col-sm-10">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="grauensino"  value="1">
+                                    <input class="form-check-input" type="radio" name="grauensino"<?php if($row['grauensino'] == 1){echo 'checked';} ?>  value="1">
                                     <label class="form-check-label" for="gridRadios1">
                                         ENSINO MÉDIO
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="grauensino" value="0">
+                                    <input class="form-check-input" type="radio" name="grauensino"<?php if($row['grauensino'] == 0){echo 'checked';} ?> value="0">
                                     <label class="form-check-label" for="gridRadios2">
                                         ENSINO FUNDAMENTAL
                                     </label>
@@ -193,9 +193,11 @@ if ($_SESSION['tipoUsuario'] != 'adm') {
                         </div>
                     </fieldset>
                 <input type ="hidden" value="<?php echo $id;?>" name="id">
-                    <button class="btn btn-primary" type="submit">CADASTRAR</button>
-                    <input class="btn btn-primary" type="reset" value="LIMPAR">
+                    <button class="btn btn-primary" type="submit">ALTERAR</button> 
+                    <button type="submit" formaction="../aluno/controleAluno.php" class="btn btn-primary">VOLTAR</button>
             </form>
+            
+           
                     
             <?php
                 }

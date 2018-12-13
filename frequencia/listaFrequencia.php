@@ -7,11 +7,11 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Secretaria</title>
+        <title></title>
     </head>
     <body>
         <?php
-         echo "Pagina inicial Secretaria";
+        // put your code here
         ?>
     </body>
 </html>

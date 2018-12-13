@@ -23,4 +23,6 @@ if ($_SESSION['tipoUsuario'] != 'adm') {
                 
                 $resultado = executa($query, $con);
                 
+                header("Location: ../aluno/consultaAluno.php");
+                
             
