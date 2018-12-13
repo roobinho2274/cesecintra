@@ -159,13 +159,13 @@ if ($_SESSION['tipoUsuario'] != 'adm') {
                             <legend class="col-form-label col-sm-2 pt-0">STATUS</legend>
                             <div class="col-sm-10">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="status" value="1" checked>
+                                    <input class="form-check-input" type="radio" name="status"  value="1" <?php if($row['status'] == 1){echo 'checked';} ?>>
                                     <label class="form-check-label" for="gridRadios1">
                                         ATIVO
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="status" value="0">
+                                    <input class="form-check-input" type="radio" name="status" value="0" <?php if($row['status'] == 0){echo 'checked';} ?>>
                                     <label class="form-check-label" for="gridRadios2">
                                         INATIVO
                                     </label>
@@ -178,13 +178,13 @@ if ($_SESSION['tipoUsuario'] != 'adm') {
                             <legend class="col-form-label col-sm-2 pt-0">STATUS</legend>
                             <div class="col-sm-10">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="grauensino"  value="1">
+                                    <input class="form-check-input" type="radio" name="grauensino"<?php if($row['grauensino'] == 1){echo 'checked';} ?>  value="1">
                                     <label class="form-check-label" for="gridRadios1">
                                         ENSINO MÉDIO
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="grauensino" value="0">
+                                    <input class="form-check-input" type="radio" name="grauensino"<?php if($row['grauensino'] == 0){echo 'checked';} ?> value="0">
                                     <label class="form-check-label" for="gridRadios2">
                                         ENSINO FUNDAMENTAL
                                     </label>
@@ -193,9 +193,9 @@ if ($_SESSION['tipoUsuario'] != 'adm') {
                         </div>
                     </fieldset>
                 <input type ="hidden" value="<?php echo $id;?>" name="id">
-                    <button class="btn btn-primary" type="submit">CADASTRAR</button>
-                    <input class="btn btn-primary" type="reset" value="LIMPAR">
+                    <button class="btn btn-primary" type="submit">ALTERAR</button>
             </form>
+            <a href="../aluno/controleAluno.php"><button class="btn btn-primary">VOLTAR</button></a>
                     
             <?php
                 }
