@@ -13,7 +13,7 @@
 			
 			if ($res) {
     			$_SESSION['msn'] = "<div class='alert alert-success' role='alert'> Alterado com sucesso!</div>";
-				header("Location: ../matriculas/controleMatriculas.php");
+				header("Location: ../matriculas/listaMat.php");
 			}else{
         		$_SESSION['msn'] = "<div class='alert alert-danger' role='alert'> Falha ao alterar!</div>";
 				header("Location: ../matriculas/deletaMat.php");

@@ -2,15 +2,6 @@
 session_start();
 ?>
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<script>
-    function direciona()
-    {}
-</script>
 <html>
     <head>
         <!-- Required meta tags -->
@@ -21,11 +12,11 @@ and open the template in the editor.
         <link rel="stylesheet" href="../css/bootstrap.css" >
 
 
-        <title>Pagina matricula</title>
+        <title>Página matrícula</title>
 
     </head>
     <body>
-        <h2>MATRICULAS</h2>
+        <h2>MATRÍCULAS</h2>
         <div class = "container" style="background-color: buttonface" >
             <form >
                 <input type="submit" class="btn btn-secondary btn-block" value="REALIZAR MATRICULA" formaction="cadastraMat.php"/><br><br>

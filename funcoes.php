@@ -1,32 +1,40 @@
 <?php
 
-function validasuario($user, $pwd, $con) {
-    $query = "SELECT * FROM professor WHERE professor.login LIKE '" . $user .
-            "' AND professor.senha LIKE '" . $pwd . "'";
+    function validasuario($user, $pwd, $con) {
+        $query = "SELECT * FROM professor WHERE professor.login LIKE '" . $user .
+                "' AND professor.senha LIKE '" . $pwd . "'";
 
+<<<<<<< HEAD
+        $result = mysqli_query($con, $query);
+        $r = mysqli_fetch_assoc($result);
+        echo $query;
+=======
     $result = mysqli_query($con, $query);
     $r = mysqli_fetch_assoc($result);
     //echo $query;
+>>>>>>> 0f02d83929cd437a2e2d00abff5f4989a1e0946e
 
-    return $r['tipo'];
-}
+        return $r['tipo'];
+    }
 
-function listaAlunos($con) {
-    $query = "SELECT * FROM aluno ";
+    function listaAlunos($con) {
+        $query = "SELECT * FROM aluno ORDER BY nome";
 
-    $result = mysqli_query($con, $query);
-    return $result;
-}
+        $result = mysqli_query($con, $query);
+        return $result;
+    }
 
-function executa($query, $con) {
+    function executa($query, $con) {
 
-    $res = mysqli_query($con, $query);
-    return $res;
-}
+        $res = mysqli_query($con, $query);
+        return $res;
+    }
 
-function listaDisciplinas($con){
-    $query = "SELECT * FROM disciplina";
+    function listaDisciplinas($con){
+        $query = "SELECT * FROM disciplina ORDER BY descricao";
 
-    $result = mysqli_query($con, $query);
-    return  $result;
-}
+        $result = mysqli_query($con, $query);
+        return  $result;
+    }
+
+?>

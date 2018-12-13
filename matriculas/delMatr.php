@@ -14,8 +14,8 @@ $query = "SELECT * FROM matricula WHERE idAluno = $cod";
 $r = mysqli_query($con, $query);
 //$res = mysqli_fetch_assoc($r);
 //$_SESSION['verify'] = "Ok";
-
-$queryNome = "SELECT nome FROM aluno WHERE id = $cod";
+ 
+$queryNome = "SELECT nome FROM aluno WHERE id = $cod ORDER BY nome";
 $result = mysqli_query($con, $queryNome);
 $resu = mysqli_fetch_assoc($result);
 
@@ -52,7 +52,7 @@ $nome = $resu['nome'];
 	            while ($res = mysqli_fetch_assoc($r)) {
 	                
 					$id = $res['idDisciplina'];
-					$query2 = "SELECT * FROM disciplina WHERE id = $id";
+					$query2 = "SELECT * FROM disciplina WHERE id = $id ORDER BY descricao";
 					$rs = mysqli_query($con, $query2);
 					$res2 = mysqli_fetch_assoc($rs);
 	                    
