@@ -23,3 +23,10 @@ function executa($query, $con) {
     $res = mysqli_query($con, $query);
     return $res;
 }
+
+function listaDisciplinas($con){
+    $query = "SELECT * FROM disciplina";
+
+    $result = mysqli_query($con, $query);
+    return  $result;
+}

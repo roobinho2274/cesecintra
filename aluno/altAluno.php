@@ -28,6 +28,7 @@
                 //Atribuindo valor recebido por POST aos variaveis
                 $nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_STRING);
                 $rg = filter_input(INPUT_POST, 'rg', FILTER_SANITIZE_STRING);
+                $id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_STRING);
                 $cpf = filter_input(INPUT_POST, 'cpf', FILTER_SANITIZE_STRING);
                 $nomedamae = filter_input(INPUT_POST, 'nomedamae', FILTER_SANITIZE_STRING);
                 $nomedopai = filter_input(INPUT_POST, 'nomedopai', FILTER_SANITIZE_STRING);
@@ -38,7 +39,7 @@
                 $logradouro = filter_input(INPUT_POST, 'logradouro', FILTER_SANITIZE_STRING);
                 $bairro = filter_input(INPUT_POST, 'bairro', FILTER_SANITIZE_STRING);
                 $complemento = filter_input(INPUT_POST, 'complemento', FILTER_SANITIZE_STRING);
-                $numeroresidencia = filter_input(INPUT_POST, 'numeroresidencia', FILTER_SANITIZE_STRING);
+                $numeroresidencia = filter_input(INPUT_POST, 'numeroResidencial', FILTER_SANITIZE_STRING);
                 $cidade = filter_input(INPUT_POST, 'cidade', FILTER_SANITIZE_STRING);
                 $cep = filter_input(INPUT_POST, 'cep', FILTER_SANITIZE_STRING);
                 $estado = filter_input(INPUT_POST, 'estado', FILTER_SANITIZE_STRING);
@@ -48,20 +49,10 @@
                 $status = filter_input(INPUT_POST, 'status', FILTER_SANITIZE_STRING);
                 $grauensino = filter_input(INPUT_POST, 'grauensino', FILTER_SANITIZE_STRING);
                 $orgaoexpedidor = filter_input(INPUT_POST, 'orgaoexpedidor', FILTER_SANITIZE_STRING);
-                //Monta a Query SQL que vai retornar o maior ID na tabela Aluno
-                $queryid = "SELECT MAX(id) FROM aluno";
-                //Recebe através da Dunção executa o maior indice cadastrado em Disciplina
-                $idBd = mysqli_fetch_assoc(executa($queryid, $con));
-                //Incrementa o valor recebido para realizar o novo cadastro
-                $id = $idBd['MAX(id)'] + 1;
-                //Monta a Query de inserção no Banco com os dados do POST e o ID calculado na linha anterior
-                $query = "INSERT INTO aluno(rg,cpf,nome,orgaoExpedidor,mae,pai,tituloEleitor,"
-                        . "reservista,sexo,estadoCivil,logradouro,bairro,complemento,numeroResidencial,"
-                        . "cidade,cep,estado,telefone,email,celular,status,datacadastro,grauensino)"
-                        . "VALUES ('$rg',$cpf,'$nome','$orgaoexpedidor','$nomedamae','$nomedopai','$tituloeleitor'"
-                        . ",'$reservista','$sexo','$estadocivil','$logradouro','$bairro','$complemento',"
-                        . "'$numeroresidencia','$cidade','$cep','$estado',$telefone,'$email','$celular',"
-                        . "'$status',NOW(),'$grauensino') ";
+                $query = "UPDATE aluno set rg = '$rg',cpf = '$cpf',nome = '$nome',orgaoExpedidor = '$orgaoexpedidor',mae = '$nomedamae',"
+                        . "pai = '$nomedopai',tituloEleitor = '$tituloeleitor', reservista = '$reservista',sexo = '$sexo',"
+                        . "estadoCivil = '$estadocivil',logradouro = '$logradouro',bairro = '$bairro',complemento = '$complemento',numeroResidencial = '$numeroresidencia',"
+                        . "cidade = '$cidade',cep = '$cep',estado = '$estado',telefone = '$telefone',email = '$email',celular = '$celular',status = '$status',grauensino = '$grauensino' where id = '$id'";
                 //Executa a $query2 no banco através da função Executa
                 $resultado = executa($query, $con);
                 /* Verifica se a inserção foi feita corretamente e direciona à outras 
@@ -70,7 +61,7 @@
                  */
                 
                 if ($resultado) {
-                    Echo "<div class='alert alert-success' role='alert'>Aluno inserido com sucesso</div>";
+                    Echo "<div class='alert alert-success' role='alert'>Aluno Atualizado com sucesso</div>";
                     echo
                     "<div class='row'>"
                     . "<div class='col-sm'>"

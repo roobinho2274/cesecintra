@@ -1,0 +1,149 @@
+[33mcommit e5745df4a8f7cd0cdbaad06973bb8e936300528a[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: e1d5f17 b979cdf
+Author: Robson Silva <robsonsilva@gmail.com>
+Date:   Wed Nov 28 14:26:13 2018 -0200
+
+    Merge branch 'master' of https://github.com/roobinho2274/cesecintra
+    Merge com professor
+
+[33mcommit e1d5f17eb53d9d35982e5cbd01f0db70ddd2c39c[m
+Author: Robson Silva <robsonsilva@gmail.com>
+Date:   Wed Nov 28 14:22:59 2018 -0200
+
+    Cadastro Professor pelo João
+
+[33mcommit b979cdf462cd97f75839d21abb99294f9600a383[m
+Author: JoaoOt <otaviomonas01@gmail.com>
+Date:   Tue Nov 27 00:42:25 2018 -0200
+
+    inicio joao
+
+[33mcommit bd64f838a729247c1c6cf36c9b3f98d36c5f06f2[m
+Author: roobinho2274 <robsonsilva.si@gmail.com>
+Date:   Tue Nov 27 00:22:39 2018 -0200
+
+    teste
+
+[33mcommit 4e89091c3fd17f36b2a32bcb9d68bfc8336160c3[m
+Author: joaootavio <otaviomonas01@gmail.com>
+Date:   Mon Nov 26 00:29:26 2018 -0200
+
+    Primeiro Commit dos Professores
+
+[33mcommit 4f50b93c988525a48bd600b3431267d8fdeb1d36[m
+Author: joaootavio <otaviomonas01@gmail.com>
+Date:   Mon Nov 26 00:10:49 2018 -0200
+
+    Primeiro Commit Professor
+
+[33mcommit 9c0653918f09d4e344719968a5a52efd2f50bf17[m
+Author: Robson Silva <robsonsilva@gmail.com>
+Date:   Fri Nov 16 21:47:22 2018 -0200
+
+    Arrumando o layout do cadastro de aluno, atualizando cronograma
+    e iniciando o cadstro da matricula
+
+[33mcommit 701d21024862824c1585455ce79a935c762e5ad5[m
+Merge: 9ccb17b a932be1
+Author: Tobias Augusto <tobiasdias11@gmail.com>
+Date:   Wed Nov 14 15:00:47 2018 -0200
+
+    Atualizando Tobias
+
+[33mcommit a932be1c234970c3868cae9de8f303ed63067f1f[m
+Author: Robson Silva <robsonsilva@gmail.com>
+Date:   Tue Nov 13 23:41:47 2018 -0200
+
+    Termino do CRUD disciplina e bootstrap de alertas
+
+[33mcommit 8d2604cf1f59622289d49f09055fd97b60924c40[m
+Author: Robson Silva <robsonsilva@gmail.com>
+Date:   Thu Nov 8 00:29:28 2018 -0200
+
+    Limpeza da pasta de Backup
+
+[33mcommit 9ccb17be6c70c8ae95273b8554e7a8ff1448eeb7[m
+Author: Tobias Augusto <tobiasdias11@gmail.com>
+Date:   Wed Nov 7 16:28:36 2018 -0200
+
+    Banco de Dados Atualizado
+
+[33mcommit 833b4ab9d0eb8cced5c8c95e61718072e8e64b70[m
+Author: Tobias Augusto <tobiasdias11@gmail.com>
+Date:   Wed Nov 7 16:22:03 2018 -0200
+
+    Cadastro de Aluno Feito
+
+[33mcommit f35ca043f20459798d6cb4bf9aff1135026a7796[m
+Author: Robson Silva <robsonsilva@gmail.com>
+Date:   Sun Nov 4 11:02:34 2018 -0200
+
+    Comentarios nos arquivos feitos, Lista Disciplinas, backup banco
+
+[33mcommit 82b3bf17569fb55ace77bab22d30d44bcf4ba757[m
+Author: Robson Silva <robsonsilva@gmail.com>
+Date:   Sun Nov 4 11:02:28 2018 -0200
+
+    Comentarios nos arquivos feitos, Lista Disciplinas, backup banco
+
+[33mcommit c96d782038f7435145820614059afc9a3e17cc59[m
+Author: Robson Silva <robsonsilva@gmail.com>
+Date:   Fri Nov 2 09:55:05 2018 -0300
+
+    cadastro de disciplinas pronto
+
+[33mcommit e670982d3fc4f34ca287af0e3657fb55926d7552[m
+Author: Robson Silva <robsonsilva@gmail.com>
+Date:   Thu Nov 1 22:55:52 2018 -0300
+
+    cadastro de disciplinas quase pronto
+
+[33mcommit 2b0f91abb5a7ed0716e592ff9b28b6a7fc195f91[m
+Author: Robson Silva <robsonsilva@gmail.com>
+Date:   Thu Nov 1 20:15:58 2018 -0300
+
+    Inclusão do arquivo para gerar BackUp e bootStrap
+
+[33mcommit 6e80220313e324e7eb5c0275a31dfc392350cab2[m
+Author: roobinho2274 <robsonsilva.si@gmail.com>
+Date:   Wed Oct 31 15:32:19 2018 -0300
+
+    Delete TOTO.txt
+    
+    Excluindo TOTO
+
+[33mcommit de39ceeb34f7b53732a0917de5f1da6feb2961de[m
+Author: Robson Silva <robsonsilva@gmail.com>
+Date:   Wed Oct 31 15:28:44 2018 -0300
+
+    Enchendo saco do tobias
+
+[33mcommit d68314f81a61a9800ed6324538f6f926b264088b[m
+Author: Robson Silva <robsonsilva@gmail.com>
+Date:   Wed Oct 31 15:21:47 2018 -0300
+
+    Atualização do Cronograma e alerta no login
+
+[33mcommit 5c19e4ed57b0795f83706ced23c3a82c2d9ce490[m
+Author: Robson Silva <robsonsilva@gmail.com>
+Date:   Wed Oct 31 14:23:38 2018 -0300
+
+    Atualização do Cronograma
+
+[33mcommit c8ef17bc315c234766b2f179859d682fe460ae4d[m
+Author: Robson Silva <robsonsilva@gmail.com>
+Date:   Thu Oct 25 16:57:11 2018 -0300
+
+    Criação das pastas e arquivos das paginas originais
+
+[33mcommit 9835082914ecc9e62c7990dece1b18c15e2c85eb[m
+Author: Robson Silva <robsonsilva@gmail.com>
+Date:   Thu Oct 25 15:52:15 2018 -0300
+
+    Primeiro Commit on line
+
+[33mcommit 6390a0bfa93ba66791c65729e020704bead3c422[m
+Author: roobinho2274 <robsonsilva.si@gmail.com>
+Date:   Wed Oct 24 13:40:23 2018 -0300
+
+    Initial commit
