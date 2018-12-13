@@ -28,6 +28,7 @@ if ($_SESSION['tipoUsuario'] != 'adm') {
                 <input type="submit" class="btn btn-secondary btn-block" value="CADASTRA ALUNO" formaction="cadastroAluno.php"/><br><br>
                 <input type="submit" class="btn btn-secondary btn-block" value="CONSULTA ALUNO" formaction="consultaAluno.php"/><br><br>
             </form>
+            <a class="btn btn-secondary text-light strong" href="../paginaInicialAdm.php"> Voltar</a>
 
             
         </div>

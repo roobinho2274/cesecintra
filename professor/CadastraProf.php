@@ -26,7 +26,9 @@
 				
                 <label class=""><b>Senha</b></label>
                 <input type="password" class="form-control"  placeholder="Entre com a senha" name="senha" required  > <br/> 
-                
+                 
+                <input type ="radio" name="tipo" value = "professor">Professor<br>
+                <input type ="radio" name="tipo" value = "secretaria">Secretario
                 <?php
                     echo '<div class="strong">';
                     if (isset($_SESSION['msn'])) {
