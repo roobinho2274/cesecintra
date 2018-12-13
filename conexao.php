@@ -1,8 +1,8 @@
 <?php
 
-$servidor = "localhost  ";
-$usuario = "root";
-$senha = "";
+$servidor = "cesecbd.mysql.dbaas.com.br";
+$usuario = "cesecbd";
+$senha = "Cesec2018";
 $dbname = "cesecbd";
 
 //Criar a conexao

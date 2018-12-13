@@ -6,7 +6,7 @@ function validasuario($user, $pwd, $con) {
 
     $result = mysqli_query($con, $query);
     $r = mysqli_fetch_assoc($result);
-    echo $query;
+    //echo $query;
 
     return $r['tipo'];
 }

@@ -23,6 +23,7 @@ if (isset($_SESSION['tipoUsuario'])) {
         <title>Login</title>
     </head>
     <body>
+
         <div class = "container" >
             <h2 style="align-content: center">Login</h2>
             <form action="login.php" method="POST">
