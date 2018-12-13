@@ -41,6 +41,7 @@ $resultado = mysqli_query($con, $query);
                         <th scope = "col">Turno</th>
                         <th scope = "col">Horário</th>
                         <th scope = "col">Status</th>
+                        <th scope = "col">Data Matrícula</th>
                         <th scope = "col" class = "d-none d-md-table-cell">Nota 1</th>
                         <th scope = "col" class = "d-none d-md-table-cell">Nota 2</th>
                         <th scope = "col" class = "d-none d-md-table-cell">Nota 3</th>
@@ -74,6 +75,8 @@ $resultado = mysqli_query($con, $query);
 
                             echo "<td>".$r['status']."</td>";
 
+                            echo "<td>".$r['dataMatricula']."</td>";
+                    
                             echo "<td class='d-none d-md-table-cell'>".$r['nota1']."</td>";
 
                             echo "<td class='d-none d-md-table-cell'>".$r['nota2']."</td>";

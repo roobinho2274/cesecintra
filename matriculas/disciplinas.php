@@ -14,7 +14,7 @@
 		$nome = teste($con, $idDisciplin);
 		
 		$result[] = array(
-			'id'   => $r['id'],
+			'id'   => $r['idDisciplina'],
 			'nome' => $nome,
 		);
 	}

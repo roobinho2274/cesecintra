@@ -30,13 +30,13 @@
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">Alunos</label>
                     <div class="col-sm-10"> 
-                        <select class="form-control" name="aluno" id="combobox_aluno">
+                        <select class="form-control" name="aluno7" id="combobox_aluno">
                             <option value="">Selecione o aluno</option>
                             <?php 
-                                $result_cat_post = "SELECT * FROM aluno ORDER BY nome";
-                                $resultado_cat_post = mysqli_query($con, $result_cat_post);
-                                while($row_cat_post = mysqli_fetch_assoc($resultado_cat_post) ) {
-                                    echo '<option value="'.$row_cat_post['id'].'">'.$row_cat_post['nome'].'</option>';
+                                $sql = "SELECT * FROM aluno ORDER BY nome";
+                                $res = mysqli_query($con, $sql);
+                                while($r = mysqli_fetch_assoc($res) ) {
+                                    echo '<option value="'.$r['id'].'">'.$r['nome'].'</option>';
                                 }
                             ?>
                         </select>
@@ -46,7 +46,7 @@
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">Disciplinas</label>
                     <div class="col-sm-10"> 
-                        <select class="form-control" name="disc" id="combobox_disc">
+                        <select class="form-control" name="disc7" id="combobox_disc">
                             <option value="">Selecione a disciplina</option>
                         </select>
                     </div>
