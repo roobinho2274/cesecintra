@@ -1,17 +1,13 @@
 <?php
-session_start();
-include_once ("../funcoes.php");
-include_once ("../conexao.php");
+    session_start();
+    include_once ("../funcoes.php");
+    include_once ("../conexao.php");
 
-$alunos = listaAlunos($con);
-$disciplinas = listaDisciplinas($con);
+    $alunos = listaAlunos($con);
+    $disciplinas = listaDisciplinas($con);
 ?>
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+
 <html>
     <head>
         <meta charset="UTF-8">
@@ -29,12 +25,12 @@ and open the template in the editor.
                     unset($_SESSION['msn']);
                 }
             ?>
-            <form action="cadMat.php" method="POST" >
+            <form action="cadMatBD.php" method="POST" >
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">Aluno</label>
                     <div class="col-sm-10">
                         <select class="form-control" name="aluno">
-                            <option value="">Selecione o alunos</option>
+                            <option value="">Selecione o aluno</option>
                             <?php
                                 while ($r = mysqli_fetch_assoc($alunos)) {
                                     echo "<option value=" . $r['id'] . ">" . $r['nome'] . "</option>";
@@ -53,7 +49,7 @@ and open the template in the editor.
                                     if ($r['grauensino'] == $rs['idGrauEnsino']) {
                                         
                                     echo  '<div class="input-group-text">
-                                                <input type="checkbox" aria-label="Checkbox for following text input" value="'.$rs['id'].'" checked>'.$rs['descricao'].'
+                                                <input type="checkbox" aria-label="Checkbox for following text input" value="'.$rs['id'].'" name="sel[]"checked>'.$rs['descricao'].'
                                             </div>';    
                                     }
                                 }
@@ -65,7 +61,7 @@ and open the template in the editor.
                 </fieldset>
                   <div class="form-group row">
                     <div class="col-sm-10">
-                        <button type="" class="btn btn-primary">Cadastrar</button>
+                        <button type="submit" class="btn btn-primary">Cadastrar</button>
                         <button type="submit" class="btn btn-primary" formaction="../matriculas/controleMatriculas.php">Voltar</button>
                         
                     </div>

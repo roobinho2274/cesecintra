@@ -35,8 +35,8 @@ include_once ("../conexao.php");
                             <option value="">Selecione o aluno</option>
                             <?php
                                 /* Faz a busca por todos os alunos para preencher o select */
-                                $query = "SELECT * FROM aluno";
-                                $resultado = executa($query, $con);
+                                $query = "SELECT * FROM aluno ORDER BY nome";
+                                $resultado = mysqli_query($con, $query);
                                 while ($r = mysqli_fetch_assoc($resultado)) {
                                     echo "<option value=" . $r['id'] . ">" . $r['nome'] . "";
                                 }    
@@ -54,7 +54,7 @@ include_once ("../conexao.php");
                 </div>
             </form> 
 
-            <script src="../js/jquery-3.3.1.slim.min.js"></script>
+            <script src="../js/jquery-3.3.1.slim.min.js"></script> 
             <script src="../js/popper.min.js"></script>
             <script src="../js/bootstrap.min.js"></script>
         </div>
