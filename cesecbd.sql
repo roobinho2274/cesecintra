@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.1
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 30-Nov-2018 às 18:34
--- Versão do servidor: 10.1.33-MariaDB
--- PHP Version: 7.2.6
+-- Generation Time: 13-Dez-2018 às 14:07
+-- Versão do servidor: 10.1.36-MariaDB
+-- versão do PHP: 7.2.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -21,8 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `cesecbd`
 --
-CREATE DATABASE IF NOT EXISTS `cesecbd` DEFAULT CHARACTER SET utf16 COLLATE utf16_general_ci;
-USE `cesecbd`;
 
 -- --------------------------------------------------------
 
@@ -62,9 +60,8 @@ CREATE TABLE `aluno` (
 --
 
 INSERT INTO `aluno` (`id`, `rg`, `cpf`, `nome`, `orgaoExpedidor`, `mae`, `pai`, `tituloEleitor`, `reservista`, `sexo`, `estadoCivil`, `logradouro`, `bairro`, `complemento`, `numeroResidencial`, `cidade`, `cep`, `estado`, `telefone`, `email`, `celular`, `status`, `datacadastro`, `grauensino`) VALUES
-(1, '1212312312', 23423423423, 'JoÃ£ozinho Neto de FÃ¡tima', 'MGDELE', 'FÃ¡tima da Silva', 'JÃµazinho Junior', 123412341234, 123123, 'Masculino', 'Solteiro', 'Rua Alberto de FÃ¡tima Noronha', 'Can Can', 'Casa', 345, 'BrazÃ³polis', 37530000, 'MG', 998123123, 'alunoI3A@gmail.com', 998121212, '1', '2018-11-28', '1'),
-(2, '1212312314', 23423423424, 'Aluno', 'MGSPFC', 'Fátima da Silva212', 'Jõazinho Junior121', 123412341236, 123124, 'Masculino', 'Solteiro', 'Rua Alberto de Fátima Noronha', 'Can Can', 'Casa', 345, 'Brazópolis', 37530000, 'MG', 998123128, 'alunoI3Aaa@gmail.com', 998121214, '1', '2018-11-28', '1'),
-(3, '1212312319', 23423423429, 'Alunoasf', 'MGSPFG', 'FÃ¡tima da Silva219', 'JÃµazinho Junior129', 123412341239, 123129, 'Masculino', 'Solteiro', 'Rua Alberto de FÃ¡tima Noronha', 'Can Can', 'Casa', 345, 'BrazÃ³polis', 37530000, 'MG', 998123129, 'alunoI3Aaa@gmail.come', 998121219, '1', '2018-11-28', '1');
+(1, '1111111111', 1111111111, 'Tobias Pereira dos Santos', 'SSPMG', 'Maria Tobias', 'JoÃ£o Tobias', 1111111111, 0, '', '', '', '', '', 0, '', 0, 'MG', 35991083257, 'robinho2274@gmail.com', 35991083257, '1', '2018-12-13', '1'),
+(2, '222222222', 222222222, 'Jonas Henrique', 'SSMG', 'Laurelise Costa', NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1234567890, 'jonas@gmail.com', 87654321, 'ATIVO', '2018-12-13', '1');
 
 -- --------------------------------------------------------
 
@@ -155,7 +152,8 @@ INSERT INTO `professor` (`id`, `nome`, `login`, `senha`, `tipo`) VALUES
 (2, 'Robinho Silva', 'binho', 123456, 'professor'),
 (3, 'José da Couves', 'ze', 123456, 'secretaria'),
 (4, 'Cassandra', 'cassandra', 123456, 'professor'),
-(5, 'Regiane', 'regiane', 123456, 'professor');
+(5, 'Regiane', 'regiane', 123456, 'professor'),
+(6, 'JoÃ£o OtÃ¡vio', 'jotavio', 123456, 'professor');
 
 -- --------------------------------------------------------
 
@@ -179,8 +177,7 @@ ALTER TABLE `aluno`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `rg` (`rg`),
   ADD UNIQUE KEY `cpf` (`cpf`),
-  ADD UNIQUE KEY `tituloEleitor` (`tituloEleitor`),
-  ADD UNIQUE KEY `reservista` (`reservista`);
+  ADD UNIQUE KEY `tituloEleitor` (`tituloEleitor`);
 
 --
 -- Indexes for table `disciplina`
@@ -194,8 +191,8 @@ ALTER TABLE `disciplina`
 --
 ALTER TABLE `frequencia`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `idDisciplina` (`idDisciplina`),
-  ADD KEY `idAluno` (`idAluno`);
+  ADD KEY `idAluno` (`idAluno`),
+  ADD KEY `idDisciplina` (`idDisciplina`);
 
 --
 -- Indexes for table `matricula`
@@ -220,34 +217,6 @@ ALTER TABLE `turno`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `aluno`
---
-ALTER TABLE `aluno`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT for table `disciplina`
---
-ALTER TABLE `disciplina`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
-
---
--- AUTO_INCREMENT for table `frequencia`
---
-ALTER TABLE `frequencia`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `turno`
---
-ALTER TABLE `turno`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- Constraints for dumped tables
 --
 
@@ -261,16 +230,16 @@ ALTER TABLE `disciplina`
 -- Limitadores para a tabela `frequencia`
 --
 ALTER TABLE `frequencia`
-  ADD CONSTRAINT `frequencia_ibfk_1` FOREIGN KEY (`idAluno`) REFERENCES `aluno` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `frequencia_ibfk_2` FOREIGN KEY (`idDisciplina`) REFERENCES `disciplina` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `frequencia_ibfk_2` FOREIGN KEY (`idDisciplina`) REFERENCES `disciplina` (`id`),
+  ADD CONSTRAINT `frequencia_ibfk_3` FOREIGN KEY (`idAluno`) REFERENCES `aluno` (`id`);
 
 --
 -- Limitadores para a tabela `matricula`
 --
 ALTER TABLE `matricula`
-  ADD CONSTRAINT `matricula_ibfk_1` FOREIGN KEY (`idAluno`) REFERENCES `aluno` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE,
-  ADD CONSTRAINT `matricula_ibfk_2` FOREIGN KEY (`idDisciplina`) REFERENCES `disciplina` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE,
-  ADD CONSTRAINT `matricula_ibfk_3` FOREIGN KEY (`idTurno`) REFERENCES `turno` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE;
+  ADD CONSTRAINT `matricula_ibfk_4` FOREIGN KEY (`idDisciplina`) REFERENCES `disciplina` (`id`),
+  ADD CONSTRAINT `matricula_ibfk_5` FOREIGN KEY (`idAluno`) REFERENCES `aluno` (`id`),
+  ADD CONSTRAINT `matricula_ibfk_6` FOREIGN KEY (`idTurno`) REFERENCES `turno` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
