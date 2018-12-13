@@ -28,7 +28,6 @@
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="../css/bootstrap.css" >
 
-
         <title>Matricula a ser alterada</title>
 
     </head>
@@ -167,13 +166,13 @@
                                 if ($res['status'] == "INATIVO") {
                                     echo '
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="status" value="ativo">
+                                            <input class="form-check-input" type="radio" name="status" value="ATIVO">
                                             <label class="form-check-label" >
                                                 ATIVO
                                             </label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="status" value="inativo" checked>
+                                            <input class="form-check-input" type="radio" name="status" value="INATIVO" checked>
                                             <label class="form-check-label">
                                                 INATIVO
                                             </label>
@@ -183,13 +182,13 @@
 
                                     echo '
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="status" value="ativo" checked>
+                                            <input class="form-check-input" type="radio" name="status" value="ATIVO" checked>
                                             <label class="form-check-label" >
                                                 ATIVO
                                             </label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="status" value="inativo">
+                                            <input class="form-check-input" type="radio" name="status" value="INATIVO">
                                             <label class="form-check-label">
                                                 INATIVO
                                             </label>
