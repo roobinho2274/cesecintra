@@ -39,26 +39,8 @@
                         </select>
                     </div>
                 </div>
-                <?php ?>
-                <fieldset class="form-group">
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                           <?php
-                                while ($rs = mysqli_fetch_assoc($disciplinas)) {
-                                    // echo "".$r['grauensino'] ." -- ".$rs['idGrauEnsino']."<br/>" ;
-                                    if ($r['grauensino'] == $rs['idGrauEnsino']) {
-                                        
-                                    echo  '<div class="input-group-text">
-                                                <input type="checkbox" aria-label="Checkbox for following text input" value="'.$rs['id'].'" name="sel[]"checked>'.$rs['descricao'].'
-                                            </div>';    
-                                    }
-                                }
-                            
-                           ?>
-
-                        </div>
-                    </div>
-                </fieldset>
+                
+                
                   <div class="form-group row">
                     <div class="col-sm-10">
                         <button type="submit" class="btn btn-primary">Cadastrar</button>
