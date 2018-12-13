@@ -34,6 +34,7 @@ and open the template in the editor.
                  <input type="submit" class="btn btn-secondary btn-block" value="ALTERA DISCIPLINA" formaction="alteraDis.php"/><br><br>
                  <input type="submit" class="btn btn-secondary btn-block" value="DELETA DISCIPLINA" formaction="deletaDis.php"/><br><br>
             </form>
+            <a class="btn btn-secondary text-light strong" href="../paginaInicialAdm.php"> Voltar</a>
 
             <script src="../js/jquery-3.3.1.slim.min.js"></script>
             <script src="../js/popper.min.js"></script>

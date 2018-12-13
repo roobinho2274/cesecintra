@@ -6,7 +6,7 @@ include_once ("../funcoes.php");
 $nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_STRING);
 $login = filter_input(INPUT_POST, 'login', FILTER_SANITIZE_STRING);
 $senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_STRING);
-$tipo = 'professor';
+$tipo = filter_input(INPUT_POST, 'tipo', FILTER_SANITIZE_STRING);
 
 $query1 = "SELECT MAX(id) FROM professor ";
 
