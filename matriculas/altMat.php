@@ -43,50 +43,6 @@
                 }
             ?>
             <form action="altMatBD.php" method="POST">
-                <div class="form-group row">
-                    <label class="col-sm-2 col-form-label">Aluno</label>
-                    <div class="col-sm-10">
-                         <select class="form-control" name="aluno" id="combobox_aluno">
-                            <?php
-                                $sql = "SELECT nome FROM aluno WHERE id = $id_aluno";
-                                $res2 = mysqli_query($con, $sql);
-                                $r2 = mysqli_fetch_assoc($res2);
-                            ?>
-                            <option value="<?php echo $id_aluno ?>"><?php  echo $r2['nome']; ?></option>
-                            <?php 
-                                $sql2 = "SELECT * FROM aluno WHERE id <> '$id_aluno' ORDER BY nome";
-                                $res3 = mysqli_query($con, $sql2);
-                                while($r3 = mysqli_fetch_assoc($res3) ) {
-                                    echo '<option value="'.$r3['id'].'">'.$r3['nome'].'</option>';
-                                }
-                            ?>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="form-group row">
-                    <label class="col-sm-2 col-form-label">Disciplina</label>
-                    <div class="col-sm-10">
-                        <select class="form-control" name="disc">
-                            <?php
-                                $sql3 = "SELECT descricao FROM disciplina WHERE id = $id_disciplina";
-                                $res3 = mysqli_query($con, $sql3);
-                                $r4 = mysqli_fetch_assoc($res3);
-                            ?>
-
-                            <option value="<?php echo $id_disciplina ?>"><?php  echo $r4['descricao']; ?></option>
-
-                            <?php
-                                /* Faz a busca por todos as disciplinas para preencher o select */
-                                $query = "SELECT * FROM disciplina WHERE id <> '$id_disciplina' ORDER BY descricao";
-                                $resultado = mysqli_query($con, $query);
-                                while ($r5 = mysqli_fetch_assoc($resultado)) {
-                                    echo "<option value=" . $r5['id'] . ">" . $r5['descricao'] . "</option>";    
-                                }
-                            ?>
-                        </select>
-                    </div>
-                </div>
 
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">Turno</label>
@@ -208,48 +164,49 @@
                     </div>
                 </div>
 
-
+            <!--
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">1º Nota</label>
                     <div class="col-sm-10"> 
-                        <input type="number" step="any" min="0" class="form-control" name="nota1" value="<?php echo $res['nota1'] ?>">
+                        <input type="number" step="any" min="0" class="form-control" name="nota1" value="<?php //echo $res['nota1'] ?>">
                     </div>
                 </div>
 
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">2º Nota</label>
                     <div class="col-sm-10">
-                        <input type="number" step="any" min="0" class="form-control" name="nota2" value="<?php echo $res['nota2'] ?>">
+                        <input type="number" step="any" min="0" class="form-control" name="nota2" value="<?php //echo $res['nota2'] ?>">
                     </div>
                 </div>
 
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">3º Nota</label>
                     <div class="col-sm-10">
-                        <input type="number" step="any" min="0" class="form-control" name="nota3" value="<?php echo $res['nota3'] ?>">
+                        <input type="number" step="any" min="0" class="form-control" name="nota3" value="<?php //echo $res['nota3'] ?>">
                     </div>
                 </div>
 
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">4º Nota</label>
                     <div class="col-sm-10">
-                        <input type="number" step="any" min="0" class="form-control" name="nota4" value="<?php echo $res['nota4'] ?>">
+                        <input type="number" step="any" min="0" class="form-control" name="nota4" value="<?php //echo $res['nota4'] ?>">
                     </div>
                 </div>
 
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">5º Nota</label>
                     <div class="col-sm-10">
-                        <input type="number" step="any" min="0" class="form-control" name="nota6" value="<?php echo $res['nota5'] ?>">
+                        <input type="number" step="any" min="0" class="form-control" name="nota6" value="<?php //echo $res['nota5'] ?>">
                     </div>
                 </div>
 
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">Média</label>
                     <div class="col-sm-10">
-                        <input type="number" step="any" min="0" class="form-control" name="media" value="<?php echo $res['media'] ?>">
+                        <input type="number" step="any" min="0" class="form-control" name="media" value="<?php //echo $res['media'] ?>">
                     </div>
                 </div>
+            -->
 
                 <div class="form-group row">
                     <div class="col-sm-10">

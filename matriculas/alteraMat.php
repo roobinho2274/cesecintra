@@ -18,13 +18,13 @@
         <div class = "container" style="background-color: buttonface" >
             <h5>MATRÍCULAS</h5>
             <?php
-                /*
-                Verifica se a variável global que indica falha na exclusão está setada, o que indica uma falha na inserção no banco ou valor inválido 
+                
+                //Verifica se a variável global que indica falha na exclusão está setada, o que indica uma falha na inserção no banco ou valor inválido 
                 if (isset($_SESSION['msn'])) {
                     echo $_SESSION['msn'];
                     unset($_SESSION['msn']);
                 }
-                */
+                
             ?>
             <form action="altMat.php" method="POST">
                 <div class="form-group row">
@@ -36,12 +36,23 @@
                                 $sql = "SELECT * FROM aluno ORDER BY nome";
                                 $res = mysqli_query($con, $sql);
                                 while($r = mysqli_fetch_assoc($res) ) {
-                                    echo '<option value="'.$r['id'].'">'.$r['nome'].'</option>';
+                                    $sql2 = "SELECT * FROM matricula WHERE idAluno = '".$r['id']."'";
+                                    $res2 = mysqli_query($con, $sql2);
+                                    $r2 = mysqli_fetch_assoc($res2);
+                                    if ($r2) {
+                                        echo '<option value="'.$r['id'].'">'.$r['nome'].'</option>';
+                                        
+                                    }
                                 }
                             ?>
                         </select>
                      </div>
                 </div>
+                <?php  
+                    $sql2 = "SELECT COUNT(case idAluno when '1' then 1 else null end) FROM matricula";
+                    $res2 = mysqli_query($con, $sql2);
+                    $r2 = mysqli_fetch_row($res);
+                ?>
 
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">Disciplinas</label>
