@@ -29,7 +29,7 @@
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">Aluno</label>
                     <div class="col-sm-10">
-                        <select class="form-control" name="aluno">
+                        <select class="form-control" name="aluno" id="combobox_aluno">
                             <option value="">Selecione o aluno</option>
                             <?php
                                 while ($r = mysqli_fetch_assoc($alunos)) {
@@ -42,19 +42,7 @@
                 <?php ?>
                 <fieldset class="form-group">
                     <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                           <?php
-                                while ($rs = mysqli_fetch_assoc($disciplinas)) {
-                                    // echo "".$r['grauensino'] ." -- ".$rs['idGrauEnsino']."<br/>" ;
-                                    if ($r['grauensino'] == $rs['idGrauEnsino']) {
-                                        
-                                    echo  '<div class="input-group-text">
-                                                <input type="checkbox" aria-label="Checkbox for following text input" value="'.$rs['id'].'" name="sel[]"checked>'.$rs['descricao'].'
-                                            </div>';    
-                                    }
-                                }
-                            
-                           ?>
+                        <div class="input-group-prepend" id="div_checkbox">
 
                         </div>
                     </div>
@@ -67,9 +55,32 @@
                     </div>
                 </div>
             </form> 
-        </div>    
-            <script src="../js/jquery-3.3.1.slim.min.js"></script>
+            <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+            <script type="text/javascript">google.load("jquery", "1.4.2");</script>
+            
+            <script type="text/javascript">
+                $(function(){
+                    $('#combobox_aluno').change(function(){
+                        //alert("asdas");
+                        if( $(this).val() ) {
+                            $.getJSON('disciplinasCB.php?search=',{combobox_aluno: $(this).val(), ajax: 'true'}, function(j){
+                                var checkbox = ''; 
+                                for (var i = 0; i < j.length; i++) {
+                                    checkbox += '<div class="input-group-text"><input type="checkbox" aria-label="Checkbox for following text input" value="' + j[i].id + '" name="sel[]" checked>' + j[i].nome + '</div>';
+                                }   
+                                $('#div_checkbox').html(checkbox).show();
+                            });
+                        } else {
+                            $('#div_checkbox').html('').show();
+                        }
+                    });
+                });
+            </script>
+           
+           <!-- <script src="../js/jquery-3.3.1.slim.min.js"></script> -->
             <script src="../js/popper.min.js"></script>
             <script src="../js/bootstrap.min.js"></script>
+        </div>    
+
     </body>
 </html>
