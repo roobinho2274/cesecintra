@@ -39,11 +39,9 @@
                         </select>
                     </div>
                 </div>
-                <?php ?>
                 <fieldset class="form-group">
                     <div class="input-group mb-3">
                         <div class="input-group-prepend" id="div_checkbox">
-
                         </div>
                     </div>
                 </fieldset>
@@ -51,10 +49,10 @@
                     <div class="col-sm-10">
                         <button type="submit" class="btn btn-primary">Cadastrar</button>
                         <button type="submit" class="btn btn-primary" formaction="../matriculas/controleMatriculas.php">Voltar</button>
-                        
                     </div>
                 </div>
             </form> 
+
             <script type="text/javascript" src="https://www.google.com/jsapi"></script>
             <script type="text/javascript">google.load("jquery", "1.4.2");</script>
             
@@ -68,11 +66,14 @@
                                 for (var i = 0; i < j.length; i++) {
                                     checkbox += '<div class="input-group-text"><input type="checkbox" aria-label="Checkbox for following text input" value="' + j[i].id + '" name="sel[]" checked>' + j[i].nome + '</div>';
                                 }   
+                                $('#div_checkbox').html('').show();
                                 $('#div_checkbox').html(checkbox).show();
                             });
                         } else {
                             $('#div_checkbox').html('').show();
+                            return;//gambiarra
                         }
+                            $('#div_checkbox').html('<div class="alert alert-danger"><h5>Não há matriculas disponíveis para o aluno selecionado!</h5></div>').show();
                     });
                 });
             </script>
