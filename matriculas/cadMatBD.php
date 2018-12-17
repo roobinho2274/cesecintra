@@ -25,7 +25,17 @@
 			$horaAula = filter_input(INPUT_POST, 'horaAula', FILTER_SANITIZE_STRING);
 		*/
 
+		$i = 0;
+		$num = "";
 		foreach ($_POST['sel'] as $codigo) {
+		
+			$i++;
+
+			if (isset($_POST[(string)$i])) {
+				$turno = $_POST[(string)$i];
+			}else{
+				header("Location: ../matriculas/cadastraMat.php");
+			}
 		
 			//Monta a Query SQL que vai retornar o maior ID na tabela matricula
 	        $queryid = "SELECT MAX(id) FROM matricula";
@@ -39,7 +49,7 @@
 			//$query = "INSERT INTO matricula(id,idAluno,idDisciplina,idTurno,dataMatricula,dataConclusao,status,nota1,nota2,nota3,nota4,nota5,media,horaAula) VALUES ('$id','$idAluno','$idDisciplina','$idTurno',NOW(),'$dataConclusao','$status','$nota1','$nota2','$nota3','$nota4','$nota5','$media','$horaAula')";
     		//unset($_SESSION['sel']);
 
-    		$query = "INSERT INTO matricula(id, idAluno, idDisciplina, idTurno, dataMatricula) VALUES ('$id', '$idAluno', '$idDisciplina', '1',NOW())";
+    		$query = "INSERT INTO matricula(id, idAluno, idDisciplina, idTurno, dataMatricula) VALUES ('$id', '$idAluno', '$idDisciplina', '$turno',NOW())";
 			$res = mysqli_query($con, $query); 
 			
 			if ($res) {
