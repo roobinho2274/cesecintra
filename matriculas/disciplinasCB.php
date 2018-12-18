@@ -8,14 +8,16 @@
 	$res = mysqli_query($con, $sql);
 
 	$modalidade = getModalidade($con, $id_aluno);
+	$turno = getTurno($con, $id_aluno);	
 	
 	while ($r = mysqli_fetch_assoc($res) ) {
 		
 		$grau = $r['idGrauEnsino'];
 		$disciplina = $r['id'];
 		$matricula = isMatricula($con, $id_aluno, $disciplina);
+		$turnoDisc = $r['turno'];
 
-		if ($grau == $modalidade && !$matricula) {
+		if ($grau == $modalidade && $turno == $turnoDisc && !$matricula) {
 			$result[] = array(
 				'id'   => $r['id'],
 				'nome' => $r['descricao'],
@@ -35,6 +37,17 @@
 		$resp = $r2['grauensino'];
 		
 		return $resp;
+	}
+
+	function getTurno($con3, $idAluno2){
+		
+		$sql4 = "SELECT * FROM aluno WHERE id = $idAluno2";
+		$res3 = mysqli_query($con3, $sql4);
+		$r4 = mysqli_fetch_assoc($res3);
+		
+		$resp1 = $r4['turno'];
+		
+		return $resp1;
 	}
 
 	function isMatricula($con2, $idAluno1, $idDisciplina){

@@ -38,7 +38,6 @@ $resultado = mysqli_query($con, $query);
                         <th scope = "col">ID</th>
                         <th scope = "col">Nome</th>
                         <th scope = "col">Disciplina</th>
-                        <th scope = "col">Turno</th>
                         <th scope = "col">Horário</th>
                         <th scope = "col">Status</th>
                         <th scope = "col">Data Matrícula</th>
@@ -49,6 +48,7 @@ $resultado = mysqli_query($con, $query);
                         <th scope = "col" class = "d-none d-md-table-cell">Nota 5</th>
                         <th scope = "col" class = "d-none d-md-table-cell">Média</th>
                         <!--
+                            <th scope = "col">Turno</th>
                             <th scope = "col">Professor</th>
                         -->
                     </tr>
@@ -67,9 +67,9 @@ $resultado = mysqli_query($con, $query);
                             $resDisciplina = mysqli_fetch_assoc(executa($queryDisciplina, $con));
                             echo "<td >" . $resDisciplina['descricao'] . "</td>";
 
-                            $queryTurno = "SELECT descricao FROM turno WHERE id =" . $r['idTurno'] . ";";
-                            $resTurno = mysqli_fetch_assoc(executa($queryTurno, $con));
-                            echo "<td >" . $resTurno['descricao'] . "</td>";
+                            //$queryTurno = "SELECT descricao FROM turno WHERE id =" . $r['idTurno'] . ";";
+                            //$resTurno = mysqli_fetch_assoc(executa($queryTurno, $con));
+                            //echo "<td >" . $resTurno['descricao'] . "</td>";
 
                             echo "<td>".$r['horaAula']."</td>";
 

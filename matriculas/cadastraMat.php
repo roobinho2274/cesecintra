@@ -64,7 +64,7 @@
                             $.getJSON('disciplinasCB.php?search=',{combobox_aluno: $(this).val(), ajax: 'true'}, function(j){
                                 var checkbox = ''; 
                                 for (var i = 0; i < j.length; i++) {
-                                    checkbox += '<div class="input-group-text"><input type="checkbox" aria-label="Checkbox for following text input" value="' + j[i].id + '" name="sel[]" checked>' + j[i].nome + '<fieldset class="form-group"><div class="row"><legend class="col-form-label col-sm-2 pt-0">Turno</legend><div class="col-sm-10"><div class="form-check"><input class="form-check-input" type="radio" name="'+(i+1)+'" value="1"><label class="form-check-label" >MATUTINO</label></div><div class="form-check"><input class="form-check-input" type="radio" name="'+(i+1)+'" value="2"><label class="form-check-label" >VESPERTINO</label></div><div class="form-check"><input class="form-check-input" type="radio" name="'+(i+1)+'" value="3"><label class="form-check-label">NOTURNO</label></div></div></div></fieldset></div>';
+                                    checkbox += '<div class="input-group-text"><input type="checkbox" aria-label="Checkbox for following text input" value="' + j[i].id + '" name="sel[]" checked>' + j[i].nome + '</div>';
                                 }   
                                 $('#div_checkbox').html('').show();
                                 $('#div_checkbox').html(checkbox).show();
