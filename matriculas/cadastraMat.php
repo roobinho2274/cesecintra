@@ -39,13 +39,10 @@
                         </select>
                     </div>
                 </div>
-                <fieldset class="form-group">
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend" id="div_checkbox">
-                        </div>
-                    </div>
-                </fieldset>
-                  <div class="form-group row">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend" id="div_checkbox"></div>
+                </div>
+                <div class="form-group row">
                     <div class="col-sm-10">
                         <button type="submit" class="btn btn-primary">Cadastrar</button>
                         <button type="submit" class="btn btn-primary" formaction="../matriculas/controleMatriculas.php">Voltar</button>
