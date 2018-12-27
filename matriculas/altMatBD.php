@@ -28,9 +28,8 @@
 
         $conclu = NULL;
 
-        echo "$horario";
 
-        $queryAltera = "UPDATE matricula SET idTurno = '$turno', dataConclusao = '$conclu', status = '$status', horaAula = '$horario'  WHERE id = '$codigo'";
+        $queryAltera = "UPDATE matricula SET dataConclusao = '$conclu', status = '$status', horaAula = '$horario'  WHERE id = '$codigo'";
 
         /*
             if ($conclusao == "nao" && $res['dataConclusao'] == NULL) {
@@ -41,23 +40,19 @@
         */
 
         if($conclusao == "sim" && $res['dataConclusao'] == NULL){
-            $queryAltera = "UPDATE matricula SET idTurno = '$turno', dataConclusao = NOW(), status = '$status', horaAula = '$horario' WHERE id = '$codigo'";
+            $queryAltera = "UPDATE matricula SET dataConclusao = NOW(), status = '$status', horaAula = '$horario' WHERE id = '$codigo'";
         }else if($conclusao == "sim" && $res['dataConclusao'] != NULL || $conclusao == "nao" && $res['dataConclusao'] == NULL){
-            $queryAltera = "UPDATE matricula SET idTurno = '$turno', status = '$status', horaAula = '$horario' WHERE id = '$codigo'";
+            $queryAltera = "UPDATE matricula SET status = '$status', horaAula = '$horario' WHERE id = '$codigo'";
         }
-
-        // echo " $aluno"." $disciplina"." $turno"." $conclusao"." $status"." $horario"." $nota1"." $nota2"." $nota3"." $nota4"." $nota5"." $media";
-
-       // echo "$queryAltera";
 
         unset($_SESSION['matricula']);
 
         $r = mysqli_query($con, $queryAltera);
         if ($r) {
             $_SESSION['msn'] = "<div class='alert alert-success' role='alert'> Alterado com sucesso!</div>";
-           // header("Location: ../matriculas/listaMat.php");
+            header("Location: ../matriculas/listaMat.php");
         } else {
             $_SESSION['msn'] = "<div class='alert alert-danger' role='alert'> Falha ao alterar!</div>";
-           // header("Location: ../matriculas/alteraMat.php");
+            header("Location: ../matriculas/alteraMat.php");
         }
     }

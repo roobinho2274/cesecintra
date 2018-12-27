@@ -43,30 +43,31 @@
                 }
             ?>
             <form action="altMatBD.php" method="POST">
+                <!--
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Turno</label>
+                        <div class="col-sm-10">
+                            <select class="form-control" name="turno">
+                                <?php
+                                    $sql4 = 'SELECT descricao FROM turno WHERE id = '.$res['idTurno'].'';
+                                    $res4 = mysqli_query($con, $sql4);
+                                    $r6 = mysqli_fetch_assoc($res4);
+                                ?>
 
-                <div class="form-group row">
-                    <label class="col-sm-2 col-form-label">Turno</label>
-                    <div class="col-sm-10">
-                        <select class="form-control" name="turno">
-                            <?php
-                                $sql4 = 'SELECT descricao FROM turno WHERE id = '.$res['idTurno'].'';
-                                $res4 = mysqli_query($con, $sql4);
-                                $r6 = mysqli_fetch_assoc($res4);
-                            ?>
+                                <option value="<?php echo $res['idTurno'] ?>"><?php  echo $r6['descricao']; ?></option>
 
-                            <option value="<?php echo $res['idTurno'] ?>"><?php  echo $r6['descricao']; ?></option>
-
-                            <?php
-                                /* Faz a busca por todos as disciplinas para preencher o select */
-                                $query = 'SELECT * FROM turno WHERE id <> '.$res['idTurno'].'';
-                                $resultado = mysqli_query($con, $query);
-                                while ($r5 = mysqli_fetch_assoc($resultado)) {
-                                    echo "<option value=" . $r5['id'] . ">" . $r5['descricao'] . "</option>";    
-                                }
-                            ?>
-                        </select>
+                                <?php
+                                    /* Faz a busca por todos as disciplinas para preencher o select */
+                                    $query = 'SELECT * FROM turno WHERE id <> '.$res['idTurno'].'';
+                                    $resultado = mysqli_query($con, $query);
+                                    while ($r5 = mysqli_fetch_assoc($resultado)) {
+                                        echo "<option value=" . $r5['id'] . ">" . $r5['descricao'] . "</option>";    
+                                    }
+                                ?>
+                            </select>
+                        </div>
                     </div>
-                </div>
+                -->
 
 
                 <fieldset class="form-group">

@@ -18,7 +18,7 @@ include_once ("../conexao.php");
     </head>
     <body>
         <div class = "container" style="background-color: buttonface" >
-            <h5>MATRÍCULAS</h5>
+            <h5>DELETAR MATRÍCULAS</h5>
             <?php
             /* Verifica se a variável global que indica falha na exclusão está
               Setada, o que indica uma falha na inserção no banco ou valor inválido */
@@ -29,20 +29,25 @@ include_once ("../conexao.php");
             ?>
             <form action="delMatr.php" method="POST">
                 <div class="form-group row">
-                    <label class="col-sm-2 col-form-label">Matrículas: </label>
-                    <div class="col-sm-10">
+                    <label class="col-sm-2 col-form-label">Alunos</label>
+                    <div class="col-sm-10"> 
                         <select class="form-control" name="matr">
                             <option value="">Selecione o aluno</option>
-                            <?php
-                                /* Faz a busca por todos os alunos para preencher o select */
-                                $query = "SELECT * FROM aluno ORDER BY nome";
-                                $resultado = mysqli_query($con, $query);
-                                while ($r = mysqli_fetch_assoc($resultado)) {
-                                    echo "<option value=" . $r['id'] . ">" . $r['nome'] . "";
-                                }    
+                            <?php 
+                                $sql = "SELECT * FROM aluno ORDER BY nome";
+                                $res = mysqli_query($con, $sql);
+                                while($r = mysqli_fetch_assoc($res) ) {
+                                    $sql2 = "SELECT * FROM matricula WHERE idAluno = '".$r['id']."'";
+                                    $res2 = mysqli_query($con, $sql2);
+                                    $r2 = mysqli_fetch_assoc($res2);
+                                    if ($r2) {
+                                        echo '<option value="'.$r['id'].'">'.$r['nome'].'</option>';
+                                        
+                                    }
+                                }
                             ?>
                         </select>
-                    </div>
+                     </div>
                 </div>
 
                 <div class="form-group row">

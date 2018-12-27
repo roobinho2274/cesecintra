@@ -22,7 +22,6 @@
 			$nota4 = filter_input(INPUT_POST, 'nota4', FILTER_SANITIZE_STRING);
 			$nota5 = filter_input(INPUT_POST, 'nota5', FILTER_SANITIZE_STRING);
 			$media = filter_input(INPUT_POST, 'media', FILTER_SANITIZE_STRING);
-			$horaAula = filter_input(INPUT_POST, 'horaAula', FILTER_SANITIZE_STRING);
 		*/
 
 		foreach ($_POST['sel'] as $codigo) {
@@ -36,6 +35,13 @@
 
 			$idDisciplina = $codigo;
 
+			$sql = "SELECT * FROM disciplina WHERE id = '$idDisciplina'";
+			$resHora = mysqli_query($con, $sql);
+			$r = mysqli_fetch_assoc($resHora);
+			$horaAula =  $r['horario'];
+
+			
+
 			//$query = "INSERT INTO matricula(id,idAluno,idDisciplina,idTurno,dataMatricula,dataConclusao,status,nota1,nota2,nota3,nota4,nota5,media,horaAula) VALUES ('$id','$idAluno','$idDisciplina','$idTurno',NOW(),'$dataConclusao','$status','$nota1','$nota2','$nota3','$nota4','$nota5','$media','$horaAula')";
     		//unset($_SESSION['sel']);
 
@@ -44,7 +50,7 @@
 			// $r = mysqli_fetch_assoc($resTurno);
 			// $turno = $r['turno'];
 
-    		$query = "INSERT INTO matricula(id, idAluno, idDisciplina, dataMatricula) VALUES ('$id', '$idAluno', '$idDisciplina', NOW())";
+    		$query = "INSERT INTO matricula(id, idAluno, idDisciplina, dataMatricula, status, horaAula) VALUES ('$id', '$idAluno', '$idDisciplina', NOW(), 'ATIVO', '$horaAula')";
 			$res = mysqli_query($con, $query); 
 			
 			if ($res) {
