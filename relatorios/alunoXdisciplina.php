@@ -20,25 +20,25 @@ $resultado = mysqli_query($con, $query);
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="../css/bootstrap.css" >
 
-        <title>Relatório de matrículas</title>
+        <title>Relatório de disciplinas</title>
     </head>
     <body>
         <div class = "container" style="background-color: buttonface">	
-            <h2>Relatório de Matrículas</h2>
+            <h2>Relatório de Disciplinas</h2>
     		<div class="form-group row">
-                <label class="col-sm-2 col-form-label">Alunos</label>
+                <label class="col-sm-2 col-form-label">Disciplinas</label>
                 <div class="col-sm-10"> 
-                    <select class="form-control" name="aluno7" id="combobox_aluno">
-                        <option value="">Selecione o aluno</option>
+                    <select class="form-control" name="aluno7" id="combobox_disc">
+                        <option value="">Selecione a disciplina</option>
                         <?php 
-                            $sql = "SELECT * FROM aluno ORDER BY nome";
+                            $sql = "SELECT * FROM disciplina ORDER BY descricao";
                             $res = mysqli_query($con, $sql);
                             while($r = mysqli_fetch_assoc($res) ) {
-                                $sql2 = "SELECT * FROM matricula WHERE idAluno = '".$r['id']."'";
+                                $sql2 = "SELECT * FROM matricula WHERE idDisciplina = '".$r['id']."'";
                                 $res2 = mysqli_query($con, $sql2);
                                 $r2 = mysqli_fetch_assoc($res2);
                                 if ($r2) {
-                                    echo '<option value="'.$r['id'].'">'.$r['nome'].'</option>';
+                                    echo '<option value="'.$r['id'].'">'.$r['descricao'].'</option>';
                                     
                                 }
                             }
@@ -78,11 +78,12 @@ $resultado = mysqli_query($con, $query);
             
             <script type="text/javascript">
                 $(function(){
-                    $('#combobox_aluno').change(function(){
+                    $('#combobox_disc').change(function(){
                         if( $(this).val() ) {
-                            $.getJSON('tmatricula.php?search=',{combobox_aluno: $(this).val(), ajax: 'true'}, function(j){
+                            $.getJSON('taluno.php?search=',{combobox_disc: $(this).val(), ajax: 'true'}, function(j){
                                 var options = '<tr>'; 
                                 for (var i = 0; i < j.length; i++) {
+                                    
                                     options += "<th scope = 'row'>" + j[i].id + "</th>";
                                     options += "<td>" + j[i].nome + "</td>";
                                     options += "<td>" + j[i].disciplina + "</td>";

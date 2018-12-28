@@ -27,11 +27,11 @@ include_once ("../conexao.php");
                 unset($_SESSION['msn']);
             }
             ?>
-            <form action="delMatr.php" method="POST">
+            <form action="delMatrBD.php" method="POST">
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">Alunos</label>
                     <div class="col-sm-10"> 
-                        <select class="form-control" name="matr">
+                        <select class="form-control" name="matr" id="combobox_aluno">
                             <option value="">Selecione o aluno</option>
                             <?php 
                                 $sql = "SELECT * FROM aluno ORDER BY nome";
@@ -47,19 +47,45 @@ include_once ("../conexao.php");
                                 }
                             ?>
                         </select>
-                     </div>
+                    </div>
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend" id="div_checkbox"></div>
                 </div>
 
                 <div class="form-group row">
                     <div class="col-sm-10">
                         <button type="submit" class="btn btn-primary">Excluir</button>
                         <button type="submit" class="btn btn-primary" formaction="../matriculas/controleMatriculas.php">Voltar</button>
-
                     </div>
                 </div>
             </form> 
 
-            <script src="../js/jquery-3.3.1.slim.min.js"></script> 
+            <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+            <script type="text/javascript">google.load("jquery", "1.4.2");</script>
+            
+            <script type="text/javascript">
+                $(function(){
+                    $('#combobox_aluno').change(function(){
+                        //alert("asdas");
+                        if( $(this).val() ) {
+                            $.getJSON('matriculasD.php?search=',{combobox_aluno: $(this).val(), ajax: 'true'}, function(j){
+                                var checkbox = ''; 
+                                for (var i = 0; i < j.length; i++) {
+                                    checkbox += '<div class="input-group-text"><input type="checkbox" aria-label="Checkbox for following text input" value="' + j[i].id + '" name="sel[]">' + j[i].nome + '</div>';
+                                }   
+                                $('#div_checkbox').html('').show();
+                                $('#div_checkbox').html(checkbox).show();
+                            });
+                        } else {
+                            $('#div_checkbox').html('').show();
+                        }
+                    });
+                });
+            </script>
+           
+           <!-- <script src="../js/jquery-3.3.1.slim.min.js"></script> -->
             <script src="../js/popper.min.js"></script>
             <script src="../js/bootstrap.min.js"></script>
         </div>

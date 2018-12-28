@@ -80,14 +80,14 @@
                     $('#combobox_aluno').change(function(){
                         if( $(this).val() ) {
                             $.getJSON('disciplinas.php?search=',{combobox_aluno: $(this).val(), ajax: 'true'}, function(j){
-                                var options = '<option value="">Escolha a disciplina</option>'; 
+                                var options = '<option value="">Selecione a disciplina</option>'; 
                                 for (var i = 0; i < j.length; i++) {
                                     options += '<option value="' + j[i].id + '">' + j[i].nome + '</option>';
                                 }   
                                 $('#combobox_disc').html(options).show();
                             });
                         } else {
-                            $('#combobox_disc').html('<option value="">Escolha a disciplina</option>');
+                            $('#combobox_disc').html('<option value="">Selecione a disciplina</option>');
                         }
                     });
                 });

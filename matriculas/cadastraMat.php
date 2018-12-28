@@ -39,9 +39,11 @@
                         </select>
                     </div>
                 </div>
+                
                 <div class="input-group mb-3">
                     <div class="input-group-prepend" id="div_checkbox"></div>
                 </div>
+                
                 <div class="form-group row">
                     <div class="col-sm-10">
                         <button type="submit" class="btn btn-primary">Cadastrar</button>
