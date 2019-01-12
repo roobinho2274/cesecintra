@@ -13,6 +13,8 @@
         <link rel="stylesheet" href="../css/bootstrap.css" >
 
         <title>Altera Matarícula</title>
+        
+        <script src="../js/jquery-3.3.1.min.js"></script>
     </head>
     <body>
         <div class = "container" style="background-color: buttonface" >
@@ -70,11 +72,7 @@
                         <button type="submit" class="btn btn-primary" formaction="../matriculas/controleMatriculas.php">Voltar</button>
                     </div>
                 </div>
-            </form> 
-
-            <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-            <script type="text/javascript">google.load("jquery", "1.4.2");</script>
-            
+            </form>            
             <script type="text/javascript">
                 $(function(){
                     $('#combobox_aluno').change(function(){

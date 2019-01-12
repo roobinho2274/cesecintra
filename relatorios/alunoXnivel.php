@@ -21,11 +21,13 @@ $resultado = mysqli_query($con, $query);
         <link rel="stylesheet" href="../css/bootstrap.css" >
 
         <title>Relatório de nível</title>
+
+        <script src="../js/jquery-3.3.1.min.js"></script>
     </head>
     <body>
-        <div class = "container" style="background-color: buttonface">	
+        <div class = "container" style="background-color: buttonface">  
             <h2>Relatório de Nivel</h2>
-    		<div class="form-group row">
+            <div class="form-group row">
                 <label class="col-sm-2 col-form-label">Nível</label>
                 <div class="col-sm-10"> 
                     <select class="form-control" name="aluno7" id="combobox_nivel">
@@ -69,8 +71,6 @@ $resultado = mysqli_query($con, $query);
             </table>
             <a class="btn btn-primary " href="../matriculas/controleMatriculas.php" role="button">Voltar</a>
         
-			<script type="text/javascript" src="https://www.google.com/jsapi"></script>
-            <script type="text/javascript">google.load("jquery", "1.4.2");</script>
             
             <script type="text/javascript">
                 $(function(){

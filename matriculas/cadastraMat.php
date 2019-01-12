@@ -13,6 +13,8 @@
         <meta charset="UTF-8">
         <title>Cadastro de matricula</title>
         <link rel="stylesheet" href="../css/bootstrap.css" >
+
+        <script src="../js/jquery-3.3.1.min.js"></script>
     </head>
     <body>
         <div class = "container" style="background-color: buttonface" >
@@ -51,10 +53,6 @@
                     </div>
                 </div>
             </form> 
-
-            <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-            <script type="text/javascript">google.load("jquery", "1.4.2");</script>
-            
             <script type="text/javascript">
                 $(function(){
                     $('#combobox_aluno').change(function(){

@@ -21,6 +21,8 @@ $resultado = mysqli_query($con, $query);
         <link rel="stylesheet" href="../css/bootstrap.css" >
 
         <title>Relatório de matrículas</title>
+
+        <script src="../js/jquery-3.3.1.min.js"></script>
     </head>
     <body>
         <div class = "container" style="background-color: buttonface">	
@@ -72,9 +74,6 @@ $resultado = mysqli_query($con, $query);
                 </tbody>
             </table>
             <a class="btn btn-primary " href="../matriculas/controleMatriculas.php" role="button">Voltar</a>
-        
-			<script type="text/javascript" src="https://www.google.com/jsapi"></script>
-            <script type="text/javascript">google.load("jquery", "1.4.2");</script>
             
             <script type="text/javascript">
                 $(function(){

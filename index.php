@@ -1,15 +1,4 @@
 <!--Verificar as variaveis de sessão-->
-<?php
-session_start();
-if (isset($_SESSION['msg'])) {
-    echo $_SESSION['msg'];
-    unset($_SESSION['msg']);
-}
-//Codigo que destroi a variável de sessão que controla o acesso
-if (isset($_SESSION['tipoUsuario'])) {
-    unset($_SESSION['tipoUsuario']);
-}
-?>
 
 <html>
     <head>
@@ -22,6 +11,17 @@ if (isset($_SESSION['tipoUsuario'])) {
 
         <title>Login</title>
     </head>
+	<?php
+	session_start();
+	if (isset($_SESSION['msg'])) {
+		echo $_SESSION['msg'];
+		unset($_SESSION['msg']);
+	}
+	//Codigo que destroi a variável de sessão que controla o acesso
+	if (isset($_SESSION['tipoUsuario'])) {
+		unset($_SESSION['tipoUsuario']);
+	}
+	?>
     <body>
 
         <div class = "container" >
