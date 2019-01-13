@@ -30,7 +30,7 @@
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">Alunos</label>
                     <div class="col-sm-10"> 
-                        <select class="form-control" name="aluno7" id="combobox_aluno">
+                        <select class="form-control" name="aluno" id="combobox_aluno">
                             <option value="">Selecione o aluno</option>
                             <?php 
                                 $sql = "SELECT * FROM aluno ORDER BY nome";
