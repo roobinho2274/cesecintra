@@ -147,3 +147,31 @@
 	box-shadow: 2px 2px rgba(0, 0, 0, 0.31);
 }
 /*-----------------------------------------------------------------*/
+/*------------------- ESTILO DO ADM ------------------------------*/
+
+.botõesOpções{
+	background-color:rgba(102,205,208,0.70);
+	color:white;
+	font-size:16px;
+	border:1px solid white;
+	border-radius:8px;
+	box-shadow: 2px 2px rgba(0, 0, 0, 0.31);
+	font-weight:bold;
+}
+.corpoDasOpções{
+	background-color:rgba(116,183,185,0.70);
+	color:white;
+	border:3px solid white;
+	border-radius:10px;
+	box-shadow: 4px 5px rgba(0, 0, 0, 0.21);
+}
+.btnVoltarMENUADM{
+	background-color:rgba(102,205,208,0.70);
+	color:white;
+	border:2px solid white;
+	border-radius:5px;
+	box-shadow: 2px 2px rgba(0, 0, 0, 0.31);
+	max-width: 50%;
+}
+
+/*-----------------------------------------------------------------*/

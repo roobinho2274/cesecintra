@@ -33,7 +33,7 @@ include_once ("../conexao.php");
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">Nome</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" placeholder="Nome" name="nome">
+                        <input type="text" class="form-control" placeholder="Nome" name="nome" required>
                     </div>
                 </div>
 
@@ -57,6 +57,28 @@ include_once ("../conexao.php");
                         </div>
                     </div>
                 </fieldset>
+
+                <fieldset class="form-group">
+                    <div class="row">
+                        <legend class="col-form-label col-sm-2 pt-0">Turno</legend>
+                        <div class="col-sm-10">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="turno" value="1" checked>
+                                <label class="form-check-label" >
+                                    Matutino
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="turno" value="2">
+                                <label class="form-check-label">
+                                    Noturno
+                                </label>
+                            </div>
+
+                        </div>
+                    </div>
+                </fieldset>
+
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">Professor</label>
                     <div class="col-sm-10">
@@ -75,9 +97,16 @@ include_once ("../conexao.php");
                 </div>
 
                 <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Horário</label>
+                    <div class="col-sm-10">
+                        <input type="time" class="form-control" name="horario" required>
+                    </div>
+                </div>
+
+                <div class="form-group row">
                     <div class="col-sm-10">
                         <button type="submit" class="btn btn-primary">Cadastrar</button>
-                        <button type="submit" class="btn btn-primary" formaction="../disciplina/controleDisciplinas.php">Voltar</button>
+                        <a href="../disciplina/controleDisciplinas.php" class="btn btn-primary">Voltar</a>
                         
                     </div>
                 </div>
