@@ -23,21 +23,7 @@
         $nota4 = $rown['nota4'];
         $nota5 = $rown['nota5'];
     }
-    if($nota1 == null){
-        $nota1 = 0;
-    }
-    if($nota2 == null){
-        $nota2 = 0;
-    }
-    if($nota3 == null){
-        $nota3 = 0;
-    }
-    if($nota4 == null){
-        $nota4 = 0;
-    }
-    if($nota5 == null){
-        $nota5 = 0;
-    }   
+    
     
 ?>
 <!DOCTYPE html>
@@ -100,6 +86,7 @@
                         <input type="number" <?php echo 'value ="'.$nota5.'"'; ?> class="form-control"  name="nota5">
                     </div>
                 </div>
+
                 <button type="submit" class="btn btn-primary">Inserir Notas</button>
                 <button type="submit" class="btn btn-primary" formaction="../Nota/listaAluno.php">Voltar</button>
             </form>

@@ -29,7 +29,7 @@ if ($_SESSION['tipoUsuario'] == 'adm' || $_SESSION['tipoUsuario'] == 'secretaria
             <h2>CONTROLE NOTA</h2>
             <form >
                 <input type="submit" class="btn btn-secondary btn-block" value="REGISTRAR/ALTERAR NOTA" formaction="listaAluno.php"/><br><br>
-                <input type="submit" class="btn btn-secondary btn-block" value="CONSULTAR NOTAS" formaction="consultaAluno.php"/><br><br>
+                <input type="submit" class="btn btn-secondary btn-block" value="CONSULTAR NOTAS" formaction="consultaNota.php"/><br><br>
 
             </form>
             <a class="btn btn-secondary text-light strong" href="../paginaInicialAdm.php"> Voltar</a>
