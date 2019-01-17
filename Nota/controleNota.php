@@ -26,10 +26,11 @@ if ($_SESSION['tipoUsuario'] == 'adm' || $_SESSION['tipoUsuario'] == 'secretaria
     <body>
         
         <div class = "container" style="background-color: buttonface" >
-            <h2>CONTROLE ALUNO</h2>
+            <h2>CONTROLE NOTA</h2>
             <form >
-                <input type="submit" class="btn btn-secondary btn-block" value="REGISTRAR NOTA" formaction="cadastroAluno.php"/><br><br>
-                <input type="submit" class="btn btn-secondary btn-block" value="CONSULTA ALUNO" formaction="consultaAluno.php"/><br><br>
+                <input type="submit" class="btn btn-secondary btn-block" value="REGISTRAR/ALTERAR NOTA" formaction="listaAluno.php"/><br><br>
+                <input type="submit" class="btn btn-secondary btn-block" value="CONSULTAR NOTAS" formaction="consultaAluno.php"/><br><br>
+
             </form>
             <a class="btn btn-secondary text-light strong" href="../paginaInicialAdm.php"> Voltar</a>
 

@@ -68,6 +68,7 @@
                 <input type="submit" class="btn btn-light botõesOpções btn-block mb-3" value="Controle Disciplinas" formaction="disciplina/controleDisciplinas.php"/>
                 <input type="submit" class="btn btn-light botõesOpções btn-block mb-3" value="Controle Matriculas" formaction="matriculas/controleMatriculas.php"/>
                 <input type="submit" class="btn btn-light botõesOpções btn-block mb-3" value="Controle Frequência" formaction="frequencia/controleFrequencia.php"/>
+                <input type="submit" class="btn btn-light botõesOpções btn-block mb-3" value="Controle Nota" formaction="Nota/controleNota.php"/>
 				<input type="submit" class="btn btn-light botõesOpções btn-block mb-3" value="Menu de Relatorios" formaction="relatorios/opçoesrelatorios.php"/>
 
 		</form>

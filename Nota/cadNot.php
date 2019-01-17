@@ -29,18 +29,19 @@
                 $nota3 = filter_input(INPUT_POST, 'nota3', FILTER_SANITIZE_STRING);
                 $nota4 = filter_input(INPUT_POST, 'nota4', FILTER_SANITIZE_STRING);
                 $nota5 = filter_input(INPUT_POST, 'nota5', FILTER_SANITIZE_STRING);
-                $id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_STRING);
-                
-                $query = "UPDATE matricula SET nota1 = '$nota1' nota2 = '$nota2' nota3 = '$nota3' nota4 = '$nota4' nota5 = '$nota5' WHERE id='$id'";
-                
-                mysqli_query($con, $query);
+                $id_aluno = filter_input(INPUT_POST, 'id_aluno', FILTER_SANITIZE_STRING);
+                $id_disciplina = filter_input(INPUT_POST, 'id_disciplina', FILTER_SANITIZE_STRING);
+                                
+                $query = "UPDATE matricula SET nota1 = '$nota1', nota2 = '$nota2', nota3 = '$nota3', nota4 = '$nota4', nota5 = '$nota5' WHERE idAluno='$id_aluno' and idDisciplina='$id_disciplina'";
 
+                $resultado = mysqli_query($con, $query);
+                
                 if ($resultado) {
                     Echo "<div class='alert alert-success' role='alert'>Nota inserida com sucesso</div>";
                     echo
                     "<div class='row'>"
                     . "<div class='col-sm'>"
-                    . "<a class='btn btn-primary btn-block' href='../Nota/registroNota.php?cod'" . $id . " role='button'>Cadastrar mais Notas</a>"
+                    . "<a class='btn btn-primary btn-block' href='../Nota/listaAluno.php?cod' role='button'>Cadastrar mais Notas</a>"
                     . "</div>";
                     echo ""
                     . "<div class='col-sm'>"
@@ -49,7 +50,7 @@
                     . "</div>";
                 } else {
                     $_SESSION['msg'] = "<div class='alert alert-danger' role='alert'>Falha ao registrar Nota</div>";
-                    header("Location: ../aluno/cadastroAluno.php");
+                    header("Location: ../Nota/listaAluno.php");
                 }
             } else {
                 echo $_SESSION['tipoUsuario'];

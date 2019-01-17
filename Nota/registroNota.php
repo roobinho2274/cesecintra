@@ -14,62 +14,29 @@ if ($_SESSION['tipoUsuario'] == 'adm' || $_SESSION['tipoUsuario'] == 'secretaria
 ?>
 <html>
     <head>
-        <meta charset="UTF-8">
-        <title>Registro de Nota</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="../css/bootstrap.css" >
+        
+        <title>Registra/Alterar Notas</title>
+
     </head>
     <body>
+        
         <div class = "container" style="background-color: buttonface" >
-            <h5>NOTA</h5>
-            <?php
-                /* Verifica se a variável global que indica falha na inserção está
-                  Setada, o que indica uma falha na inserção no banco */
-                if (isset($_SESSION['msn'])) {
-                    echo $_SESSION['msn'];
-                    unset($_SESSION['msn']);
-                }
-            ?>
-            <form action="cadNot.php" method="POST">
+            <h2>Registrar/Alterar Notas</h2>
+            <form action="cadNot.php">
                 
-                <div class="form-group row">
-                    <label class="col-sm-2 col-form-label">Nota 1 :</label>
-                    <div class="col-sm-10">
-                        <input type="number" class="form-control" name="nota1">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label class="col-sm-2 col-form-label">Nota 2 :</label>
-                    <div class="col-sm-10">
-                        <input type="number" class="form-control" name="nota2">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label class="col-sm-2 col-form-label">Nota 3 :</label>
-                    <div class="col-sm-10">
-                        <input type="number" class="form-control" name="nota3">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label class="col-sm-2 col-form-label">Nota 4 :</label>
-                    <div class="col-sm-10">
-                        <input type="number" class="form-control" name="nota4">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label class="col-sm-2 col-form-label">Nota 5 :</label>
-                    <div class="col-sm-10">
-                        <input type="number" class="form-control" name="nota5">
-                    </div>
-                </div>
-                
-                <button class="btn btn-primary" type="submit">CADASTRAR NOTA</button>
-                <input class="btn btn-primary" type="reset" value="LIMPAR">
-                
-            </form> 
-           
-           <!-- <script src="../js/jquery-3.3.1.slim.min.js"></script> -->
-            <script src="../js/popper.min.js"></script>
-            <script src="../js/bootstrap.min.js"></script>
-        </div>    
+            </form>
+            <a class="btn btn-secondary text-light strong" href="../paginaInicialAdm.php"> Voltar</a>
+
+            
+        </div>
+        
+        <script src="../js/jquery-3.3.1.slim.min.js"></script>
+        <script src="../js/popper.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
     </body>
 </html>
