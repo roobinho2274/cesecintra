@@ -198,11 +198,30 @@ if ($_SESSION['tipoUsuario'] != 'adm') {
                         </div>
                     </div>
                 </fieldset>
+                <fieldset class="form-group">
+                    <div class="row">
+                        <legend class="col-form-label col-sm-2 pt-0">*TURNO EM QUE DESEJA ESTUDAR</legend>
+                        <div class="col-sm-10">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="turno" checked value="1">
+                                <label class="form-check-label" for="gridRadios1">
+                                    MATUTINO
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="turno" value="0">
+                                <label class="form-check-label" for="gridRadios2">
+                                    NOTURNO
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
                 <button class="btn btn-primary" type="submit">CADASTRAR</button>
                 <input class="btn btn-primary" type="reset" value="LIMPAR">
                 
             </form>
-            <a href="../aluno/controleAluno.php"<button class="btn btn-primary">VOLTAR</button></a>
+            <a href="../aluno/controleAluno.php"><button class="btn btn-primary">VOLTAR</button></a>
             <script src="../js/jquery-3.3.1.slim.min.js"></script>
             <script src="../js/popper.min.js"></script>
             <script src="../js/bootstrap.min.js"></script>

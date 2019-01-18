@@ -20,15 +20,17 @@ if ($_SESSION['tipoUsuario'] == 'adm' || $_SESSION['tipoUsuario'] == 'secretaria
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="../css/bootstrap.css" >
         
-        <title>Registra/Alterar Notas</title>
+        <title>Controle de Notas</title>
 
     </head>
     <body>
         
         <div class = "container" style="background-color: buttonface" >
-            <h2>Registrar/Alterar Notas</h2>
-            <form action="cadNot.php">
-                
+            <h2>CONTROLE NOTA</h2>
+            <form >
+                <input type="submit" class="btn btn-secondary btn-block" value="REGISTRAR/ALTERAR NOTA" formaction="listaAluno.php"/><br><br>
+                <input type="submit" class="btn btn-secondary btn-block" value="CONSULTAR NOTAS" formaction="consultaNota.php"/><br><br>
+
             </form>
             <a class="btn btn-secondary text-light strong" href="../paginaInicialAdm.php"> Voltar</a>
 

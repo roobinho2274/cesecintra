@@ -48,6 +48,7 @@
                 $status = filter_input(INPUT_POST, 'status', FILTER_SANITIZE_STRING);
                 $grauensino = filter_input(INPUT_POST, 'grauensino', FILTER_SANITIZE_STRING);
                 $orgaoexpedidor = filter_input(INPUT_POST, 'orgaoexpedidor', FILTER_SANITIZE_STRING);
+                $turno = filter_input(INPUT_POST, 'turno', FILTER_SANITIZE_STRING);
                 //Monta a Query SQL que vai retornar o maior ID na tabela Aluno
                 $queryid = "SELECT MAX(id) FROM aluno";
                 //Recebe através da Dunção executa o maior indice cadastrado em Disciplina
@@ -55,13 +56,13 @@
                 //Incrementa o valor recebido para realizar o novo cadastro
                 $id = $idBd['MAX(id)'] + 1;
                 //Monta a Query de inserção no Banco com os dados do POST e o ID calculado na linha anterior
-                $query = "INSERT INTO aluno(rg,cpf,nome,orgaoExpedidor,mae,pai,tituloEleitor,"
+                $query = "INSERT INTO aluno(id,rg,cpf,nome,orgaoExpedidor,mae,pai,tituloEleitor,"
                         . "reservista,sexo,estadoCivil,logradouro,bairro,complemento,numeroResidencial,"
-                        . "cidade,cep,estado,telefone,email,celular,status,datacadastro,grauensino)"
-                        . "VALUES ('$rg',$cpf,'$nome','$orgaoexpedidor','$nomedamae','$nomedopai','$tituloeleitor'"
+                        . "cidade,cep,estado,telefone,email,celular,status,datacadastro,grauensino,turno)"
+                        . "VALUES ('$id',$rg',$cpf,'$nome','$orgaoexpedidor','$nomedamae','$nomedopai','$tituloeleitor'"
                         . ",'$reservista','$sexo','$estadocivil','$logradouro','$bairro','$complemento',"
                         . "'$numeroresidencia','$cidade','$cep','$estado',$telefone,'$email','$celular',"
-                        . "'$status',NOW(),'$grauensino') ";
+                        . "'$status',NOW(),'$grauensino','$turno') ";
                 //Executa a $query2 no banco através da função Executa
                 $resultado = executa($query, $con);
                 /* Verifica se a inserção foi feita corretamente e direciona à outras 
