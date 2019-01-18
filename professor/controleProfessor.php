@@ -30,7 +30,7 @@
 					<ul class="navbar-nav">
 						
 						<li class="nav-item botoesDoMenu ml-2 mr-2">
-							<a class="nav-link text-light " href="aluno/controleAluno.php">Controle do Aluno</a>
+							<a class="nav-link text-light " href="../aluno/controleAluno.php">Controle do Aluno</a>
 						</li>
 
 						<li class="nav-item botoesDoMenu ml-2 mr-2">

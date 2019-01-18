@@ -7,13 +7,12 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<link rel="shortcut icon" href="imagens/CesecLogo.png">
-		<?php
-		session_start();
-		?>
-        <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="css/bootstrap.css" >
 		<link rel="stylesheet" href="css/Professor.css" >
     </head>
+		<?php
+		session_start();
+		?>
     <body style="background-color:#65AFB2;">
 		
 		<nav class="container-fluid mx-auto navbar navbar-expand-lg corpoMenu main-nav navbar-dark sticky-top " style="font-weight:bold; ">
@@ -57,22 +56,22 @@
 				</div>
 			</ul>	
 		</nav>
-       
-        <div class="container corpoDasOpções mt-5 pt-2" style="">
-		<hr class="hrBranco"/>
-		<h2 class=" mb-3">Página do Administrador</h2>
-		<hr class="hrBranco"/>
-		<form action="">
-                <input type="submit" class="btn btn-light botõesOpções btn-block mb-3" value="Controle Aluno" formaction="aluno/controleAluno.php"/>
-                <input type="submit" class="btn btn-light botõesOpções btn-block mb-3" value="Controle Servidor" formaction="professor/controleProfessor.php"/>
-                <input type="submit" class="btn btn-light botõesOpções btn-block mb-3" value="Controle Disciplinas" formaction="disciplina/controleDisciplinas.php"/>
-                <input type="submit" class="btn btn-light botõesOpções btn-block mb-3" value="Controle Matriculas" formaction="matriculas/controleMatriculas.php"/>
-                <input type="submit" class="btn btn-light botõesOpções btn-block mb-3" value="Controle Frequência" formaction="frequencia/controleFrequencia.php"/>
-				<input type="submit" class="btn btn-light botõesOpções btn-block mb-3" value="Menu de Relatorios" formaction="relatorios/opçoesrelatorios.php"/>
+       <div class="pl-2 pr-2 mb-4 ">
+			<div class="container corpoDasOpções mt-5 pt-2" style="">
+			<hr class="hrBranco"/>
+			<h2 class=" mb-3">Página do Administrador</h2>
+			<hr class="hrBranco"/>
+			<form action="">
+					<input type="submit" class="btn btn-light botõesOpções btn-block mb-3" value="Controle do Aluno" formaction="aluno/controleAluno.php"/>
+					<input type="submit" class="btn btn-light botõesOpções btn-block mb-3" value="Controle do Funcionário" formaction="professor/controleProfessor.php"/>
+					<input type="submit" class="btn btn-light botõesOpções btn-block mb-3" value="Controle das Disciplinas" formaction="disciplina/controleDisciplinas.php"/>
+					<input type="submit" class="btn btn-light botõesOpções btn-block mb-3" value="Controle das Matriculas" formaction="matriculas/controleMatriculas.php"/>
+					<input type="submit" class="btn btn-light botõesOpções btn-block mb-3" value="Controle da Frequência" formaction="frequencia/controleFrequencia.php"/>
+					<input type="submit" class="btn btn-light botõesOpções btn-block mb-3" value="Menu de relatórios" formaction="relatorios/opcoesrelatorios.php"/>
 
-		</form>
+			</form>
+			</div>
 		</div>
-		
 	</body>
             <script src="js/jquery-3.3.1.slim.min.js"></script>
             <script src="js/popper.min.js"></script>

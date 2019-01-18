@@ -1,55 +1,93 @@
-<?php
-session_start();
-include_once ("../funcoes.php");
-include_once ("../conexao.php");
-?>
 <!DOCTYPE html>
-
 <html>
     <head>
-        <!-- Required meta tags -->
+		<title>Cadastrar nova disciplina</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
         <!-- Bootstrap CSS -->
+		<link rel="shortcut icon" href="../imagens/CesecLogo.png">
         <link rel="stylesheet" href="../css/bootstrap.css" >
-
-
-        <title>Pagina Administrador</title>
-
+		<link rel="stylesheet" href="../css/Professor.css" >
     </head>
-    <body>
-        <div class = "container" style="background-color: buttonface" >
-            <h5>DISCIPLINAS</h5>
-            <?php
-            /*Verifica se a variável global que indica falha na inserção está
-            Setada, o que indica uma falha na inserção no banco*/
-            if (isset($_SESSION['msn'])) {
-                echo $_SESSION['msn'];
-                unset($_SESSION['msn']);
-            }
-            ?>
-            <form action="cadDis.php" method="POST">
+	<?php
+		session_start();
+		include_once ("../funcoes.php");
+		include_once ("../conexao.php");
+	?>
+    <body style="background-color:#65AFB2;">
+		
+		<nav class="container-fluid mx-auto navbar navbar-expand-lg corpoMenu main-nav navbar-dark sticky-top " style="font-weight:bold; ">
+				<!-- Brand/logo -->
+			<ul class="nav navbar-nav mx-auto">		
+				<div class="navbar-brand">
+					<a class="navbar-btn mx-auto"  href="../paginaInicialAdm.php">
+						<img src="../imagens/LogoProMenu.png" alt="logo" style="width:60px;">
+					</a>	
+						
+					<button class="navbar-toggler mx-auto" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+						<span class="navbar-toggler-icon"></span>
+					</button>		
+				</div>	
+				
+				
+				<div class="collapse navbar-collapse text-center" id="collapsibleNavbar">
+
+					<ul class="navbar-nav">
+						
+						<li class="nav-item botoesDoMenu ml-2 mr-2">
+							<a class="nav-link text-light " href="../aluno/controleAluno.php">Controle do Aluno</a>
+						</li>
+
+						<li class="nav-item botoesDoMenu ml-2 mr-2">
+							<a class="nav-link text-light" href="../professor/controleProfessor.php">Controle do Funcionário</a>
+						</li>
+
+						<li class="nav-item botoesDoMenu ml-2 mr-2">
+							<a class="nav-link text-light" href="controleDisciplinas.php">Controle das Disciplinas</a>
+						</li>
+
+						<li class="nav-item botoesDoMenu ml-2 mr-2">
+							<a class="nav-link text-light" href="../matriculas/controleMatriculas.php">Controle das Matriculas</a>
+						</li>					
+
+						<li class="nav-item botoesDoMenu ml-2 mr-2">
+							<a class="nav-link text-light " href="../frequencia/controleFrequencia.php">Controle de Frequência</a>
+						</li>
+					</ul>
+				</div>
+			</ul>	
+		</nav>
+	
+	<div class="pl-2 pr-2">
+        <div class=" mt-5 container corpoDaDisciplina">
+		<hr class="hrBranco">
+            <h2>Cadastrar disciplina</h2>
+		<hr class="hrBranco">
+		<div class="MensagemDisciplina mb-2">
+			Prencha todos os campos para cadastrar uma nova disciplina.
+		</div>
+
+            <form action="cadDis.php" method="POST" class="text-center pl-2 pr-2">
                 <div class="form-group row">
-                    <label class="col-sm-2 col-form-label">Nome</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" placeholder="Nome" name="nome" required>
+                    <label class="col-sm-12 col-form-label MensagemDisciplina" >Nome da disciplina:</label>
+                    <div class="col-sm-12">
+                        <input type="text" class="form-control" placeholder="Ex: matemática" name="nome" required>
                     </div>
                 </div>
 
                 <fieldset class="form-group">
                     <div class="row">
-                        <legend class="col-form-label col-sm-2 pt-0">Modalidade</legend>
-                        <div class="col-sm-10">
+                        <legend class="col-form-label col-sm-12 mt-1 MensagemDisciplina">Modalidade:</legend>
+                        <div class="col-sm-12">
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="ensino" value="1" checked>
-                                <label class="form-check-label" >
+                                <label class="form-check-label strong" >
                                     Ensino Medio
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="ensino" value="2">
-                                <label class="form-check-label">
+                                <label class="form-check-label strong">
                                     Ensino Fundamental
                                 </label>
                             </div>
@@ -60,17 +98,17 @@ include_once ("../conexao.php");
 
                 <fieldset class="form-group">
                     <div class="row">
-                        <legend class="col-form-label col-sm-2 pt-0">Turno</legend>
-                        <div class="col-sm-10">
+                        <legend class="col-form-label col-sm-12 mt-1 MensagemDisciplina">Turno:</legend>
+                        <div class="col-sm-12">
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="turno" value="1" checked>
-                                <label class="form-check-label" >
+                                <label class="form-check-label strong" >
                                     Matutino
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="turno" value="2">
-                                <label class="form-check-label">
+                                <label class="form-check-label strong">
                                     Noturno
                                 </label>
                             </div>
@@ -80,8 +118,8 @@ include_once ("../conexao.php");
                 </fieldset>
 
                 <div class="form-group row">
-                    <label class="col-sm-2 col-form-label">Professor</label>
-                    <div class="col-sm-10">
+                    <label class="col-sm-12 col-form-label mt-1 MensagemDisciplina">Professor:</label>
+                    <div class="col-sm-12">
                         <select class="form-control" name="prof">
                             <?php
                             /*Faz a busca por todos os usuários do tipo porfessor no banco
@@ -97,24 +135,36 @@ include_once ("../conexao.php");
                 </div>
 
                 <div class="form-group row">
-                    <label class="col-sm-2 col-form-label">Horário</label>
-                    <div class="col-sm-10">
-                        <input type="time" class="form-control" name="horario" required>
+                    <label class="col-sm-12 col-form-label mt-1  MensagemDisciplina">Horário:</label>
+                    <div class=" mx-auto HorarioSizeDis">
+                        <input type="time" class="form-control " name="horario" required>
                     </div>
                 </div>
-
-                <div class="form-group row">
-                    <div class="col-sm-10">
-                        <button type="submit" class="btn btn-primary">Cadastrar</button>
-                        <a href="../disciplina/controleDisciplinas.php" class="btn btn-primary">Voltar</a>
+			<?php
+            /*Verifica se a variável global que indica falha na inserção está
+            Setada, o que indica uma falha na inserção no banco*/
+			echo'<div class="text-center">';
+            if (isset($_SESSION['msn'])) {
+				echo '<hr class="hrBranco">';
+                echo $_SESSION['msn'];
+                unset($_SESSION['msn']);
+				echo '<hr class="hrBranco">';
+            }
+			echo'</div>';
+            ?>
+                <div class="pl-4 pr-4 mb-3">
+                    
+                        <button type="submit" class="btn btn-light mt-2 form-control botõesDisciplina">Cadastrar</button>
+                        <a href="../disciplina/controleDisciplinas.php" class="mt-2 btn btn-light botõesDisciplina form-control">Voltar</a>
                         
-                    </div>
+
                 </div>
             </form> 
-
+			</div>
+		</div>
+    </body>
             <script src="../js/jquery-3.3.1.slim.min.js"></script>
             <script src="../js/popper.min.js"></script>
             <script src="../js/bootstrap.min.js"></script>
-        </div>
-    </body>
+    
 </html>

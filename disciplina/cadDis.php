@@ -33,8 +33,3 @@ if ($resultado) {
     $_SESSION['msn'] = "<div class='alert alert-danger' role='alert'> Falha ao Inserir!</div>";
     header("Location: ../disciplina/cadastraDis.php");
 }
-
-
-
-
-
