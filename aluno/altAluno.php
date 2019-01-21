@@ -3,6 +3,12 @@
     //Inclui os arquvis de conexão e funções
     include_once ("../conexao.php");
     include_once ("../funcoes.php");
+
+    if ($_SESSION['tipoUsuario'] != 'adm') {
+    echo $_SESSION['tipoUsuario'];
+    $_SESSION['msg'] = "<script>alert('sem permissão de acesso');</script>";
+    header("location: ../index.php");
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -10,12 +16,9 @@
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="../css/bootstrap.css" >
-
         <title>Cadastro Aluno</title>
-
     </head>
     <body>
         <div class = "container" style="background-color: #71dd8a" >
@@ -32,7 +35,7 @@
                 $cpf = filter_input(INPUT_POST, 'cpf', FILTER_SANITIZE_STRING);
                 $nomedamae = filter_input(INPUT_POST, 'nomedamae', FILTER_SANITIZE_STRING);
                 $nomedopai = filter_input(INPUT_POST, 'nomedopai', FILTER_SANITIZE_STRING);
-                $tituloeleitor = filter_input(INPUT_POST, 'tituloeleitor', FILTER_SANITIZE_STRING);
+                $tituloeleitor = filter_input(INPUT_POST, 'tituloEleitor', FILTER_SANITIZE_STRING);
                 $reservista = filter_input(INPUT_POST, 'reservista', FILTER_SANITIZE_STRING);
                 $sexo = filter_input(INPUT_POST, 'sexo', FILTER_SANITIZE_STRING);
                 $estadocivil = filter_input(INPUT_POST, 'estadocivil', FILTER_SANITIZE_STRING);
@@ -49,23 +52,23 @@
                 $status = filter_input(INPUT_POST, 'status', FILTER_SANITIZE_STRING);
                 $grauensino = filter_input(INPUT_POST, 'grauensino', FILTER_SANITIZE_STRING);
                 $orgaoexpedidor = filter_input(INPUT_POST, 'orgaoexpedidor', FILTER_SANITIZE_STRING);
-                $query = "UPDATE aluno set rg = '$rg',cpf = '$cpf',nome = '$nome',orgaoExpedidor = '$orgaoexpedidor',mae = '$nomedamae',"
-                        . "pai = '$nomedopai',tituloEleitor = '$tituloeleitor', reservista = '$reservista',sexo = '$sexo',"
-                        . "estadoCivil = '$estadocivil',logradouro = '$logradouro',bairro = '$bairro',complemento = '$complemento',numeroResidencial = '$numeroresidencia',"
-                        . "cidade = '$cidade',cep = '$cep',estado = '$estado',telefone = '$telefone',email = '$email',celular = '$celular',status = '$status',grauensino = '$grauensino' where id = '$id'";
+                $turno = filter_input(INPUT_POST, 'turno', FILTER_SANITIZE_STRING);
+                $query = "UPDATE aluno SET rg = '$rg',cpf = '$cpf',nome = '$nome',orgaoExpedidor = '$orgaoexpedidor',mae = '$nomedamae', pai = '$nomedopai',tituloEleitor = '$tituloeleitor', reservista = '$reservista',sexo = '$sexo', estadoCivil = '$estadocivil',logradouro = '$logradouro',bairro = '$bairro',complemento = '$complemento',numeroResidencial = '$numeroresidencia',cidade = '$cidade',cep = '$cep',estado = '$estado',telefone = '$telefone',email = '$email',celular = '$celular',status = '$status',grauensino = '$grauensino', turno = '$turno' WHERE id = '$id'";
                 //Executa a $query2 no banco através da função Executa
-                $resultado = executa($query, $con);
-                /* Verifica se a inserção foi feita corretamente e direciona à outras 
-                 * paginas confome o resultado, também define a mensagem a ser exibida através 
-                 * da variável Global $_SESSION['msn']
-                 */
+                $res = mysqli_query($con, $query);
+
+                /*
+                    Verifica se a inserção foi feita corretamente e direciona à outras 
+                    paginas confome o res, também define a mensagem a ser exibida através 
+                    da variável Global $_SESSION['msn']
+                */
                 
-                if ($resultado) {
+                if ($res) {
                     Echo "<div class='alert alert-success' role='alert'>Aluno Atualizado com sucesso</div>";
                     echo
                     "<div class='row'>"
                     . "<div class='col-sm'>"
-                    . "<a class='btn btn-primary btn-block' href='../matriculas/cadastraMat.php?cod'" . $id . " role='button'>REALIZAR MATRICULAS</a>"
+                    . "<a class='btn btn-primary btn-block' href='../matriculas/cadastraMat.php' role='button'>REALIZAR MATRICULAS</a>"
                     . "</div>";
                     echo ""
                     . "<div class='col-sm'>"
@@ -74,13 +77,14 @@
                     . "</div>";
                 } else {
                     $_SESSION['msg'] = "<div class='alert alert-danger' role='alert'>Falha ao inserir o aluno</div>";
-                    header("Location: ../aluno/cadastroAluno.php");
+                    header("Location: ../aluno/alterarAluno.php");
                 }
             } else {
                 echo $_SESSION['tipoUsuario'];
                 echo"<script>alert sem permissão de acesso</script>";
-                header("location: /PROJETOCESEC/cesecintra/index.php");
+                header("location: ../index.php");
             }
+            //echo $query;
             ?>
             <script src="../js/jquery-3.3.1.slim.min.js"></script>
             <script src="../js/popper.min.js"></script>

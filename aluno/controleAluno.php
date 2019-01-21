@@ -5,7 +5,7 @@ session_start();
 if ($_SESSION['tipoUsuario'] != 'adm') {
     echo $_SESSION['tipoUsuario'];
     $_SESSION['msg'] = "<script>alert sem permissão de acesso</script>";
-    header("location: /PROJETOCESEC/cesecintra/index.php");
+    header("location: ../index.php");
 }
 ?>
 <!DOCTYPE html>
