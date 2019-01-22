@@ -56,16 +56,16 @@
 		</nav>
  
         <div class="container">
-				<div class="corpoDasOpções mt-3 pt-2">
+				<div class="corpoRelatorio mt-3 pt-2">
 				<hr class="hrBranco"/>
 				<h2 class=" mb-3">Relatorios</h2>
 				<hr class="hrBranco"/>
-			<form action="">
-					<input type="submit" class="btn btn-light botõesOpções btn-block mb-3" value="Relatorio de aluno para matriculas" formaction="alunoXmatricula.php"/>
-					<input type="submit" class="btn btn-light botõesOpções btn-block mb-3" value="Relatorio de aluno para disciplina" formaction="alunoXdisciplina.php"/>
-					<input type="submit" class="btn btn-light botõesOpções btn-block mb-3" value="Relatorio de aluno por nivel" formaction="alunoXnivel.php"/>
-					<input type="submit" class="btn btn-light botõesOpções btn-block mb-3" value="Relatorio de aluno concluintes" formaction="#"/>
-					<input type="submit" class="btn btn-light botõesOpções btn-block mb-3" value="Relatorio de Frequência" formaction="#"/>
+			<form action="" class="pl-2 pr-2">
+					<input type="submit" class="btn btn-light botoesRelatorio btn-block mb-3" value="Relatorio de aluno para matriculas" formaction="alunoXmatricula.php"/>
+					<input type="submit" class="btn btn-light botoesRelatorio btn-block mb-3" value="Relatorio de aluno para disciplina" formaction="alunoXdisciplina.php"/>
+					<input type="submit" class="btn btn-light botoesRelatorio btn-block mb-3" value="Relatorio de aluno por nivel" formaction="alunoXnivel.php"/>
+					<input type="submit" class="btn btn-light botoesRelatorio btn-block mb-3" value="Relatorio de aluno concluintes" formaction="#"/>
+					<input type="submit" class="btn btn-light botoesRelatorio btn-block mb-3" value="Relatorio de Frequência" formaction="#"/>
 					<div class="text-center mx-auto">
 					<input type="submit" class="btn btnVoltar btn-light strong form-control" value="Voltar" formaction="../paginaInicialAdm.php"/>
 					</div>
