@@ -2,6 +2,11 @@
 session_start();
 include_once ("../funcoes.php");
 include_once ("../conexao.php");
+if ($_SESSION['tipoUsuario'] != 'adm') {
+    echo $_SESSION['tipoUsuario'];
+    $_SESSION['msg'] = "<div class='alert alert-danger text-center' role='alert'>Para acessar o sistema faça login!</div>";
+    header("location: ../index.php");
+}
 
 //Recebe o código da pessoa referente a matricula a ser alterada
 $cod = filter_input(INPUT_POST, 'matr', FILTER_SANITIZE_NUMBER_INT);

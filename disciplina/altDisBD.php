@@ -3,6 +3,12 @@
 session_start();
 include_once ("../conexao.php");
 
+if ($_SESSION['tipoUsuario'] != 'adm') {
+    echo $_SESSION['tipoUsuario'];
+    $_SESSION['msg'] = "<div class='alert alert-danger text-center' role='alert'>Para acessar o sistema faça login!</div>";
+    header("location: ../index.php");
+}
+
 $nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_STRING);
 $ensino = filter_input(INPUT_POST, 'ensino', FILTER_SANITIZE_STRING);
 $professor = filter_input(INPUT_POST, 'prof', FILTER_SANITIZE_STRING);

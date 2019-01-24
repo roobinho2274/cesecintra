@@ -3,7 +3,11 @@
 	include_once ("../funcoes.php");
 	include_once ("../conexao.php");
 
-
+	if ($_SESSION['tipoUsuario'] != 'adm') {
+        echo $_SESSION['tipoUsuario'];
+        $_SESSION['msg'] = "<div class='alert alert-danger text-center' role='alert'>Para acessar o sistema faça login!</div>";
+        header("location: ../index.php");
+    }
 	if (isset($_POST['sel'])) {
 		foreach ($_POST['sel'] as $codigo) {
 

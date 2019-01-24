@@ -13,6 +13,13 @@
 	session_start();
 	include_once ("../funcoes.php");
 	include_once ("../conexao.php");
+
+	if ($_SESSION['tipoUsuario'] != 'adm') {
+        echo $_SESSION['tipoUsuario'];
+    	$_SESSION['msg'] = "<div class='alert alert-danger text-center' role='alert'>Para acessar o sistema faça login!</div>";
+        header("location: ../index.php");
+    }
+
 	?>
     <body style="background-color:#65AFB2;">
 		
@@ -53,6 +60,10 @@
 						<li class="nav-item botoesDoMenu ml-2 mr-2">
 							<a class="nav-link text-light " href="../frequencia/controleFrequencia.php">Controle de Frequência</a>
 						</li>
+
+						<li class="nav-item botoesDoMenu ml-2 mr-2">
+							<a class="nav-link text-light " href="../relatorios/opcoesrelatorios.php">Menu de Relatórios</a>
+						</li>
 					</ul>
 				</div>
 			</ul>	
@@ -75,9 +86,9 @@
                             $resultado = executa($query, $con);
                             while ($r = mysqli_fetch_assoc($resultado)) {
                                 if ($r['idGrauEnsino'] == 1) {
-                                    echo "<option value=" . $r['id'] . ">" . $r['descricao'] . " - Ensino Médio</option>";
-                                } elseif ($r['idGrauEnsino'] == 2) {
                                     echo "<option value=" . $r['id'] . ">" . $r['descricao'] . " - Ensino Fundamental</option>";
+                                } elseif ($r['idGrauEnsino'] == 2) {
+                                    echo "<option value=" . $r['id'] . ">" . $r['descricao'] . " - Ensino Médio</option>";
                                 }
                             }
                             ?>

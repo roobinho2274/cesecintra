@@ -12,6 +12,11 @@
 		session_start();
 		include_once ("../funcoes.php");
 		include_once ("../conexao.php");
+		if ($_SESSION['tipoUsuario'] != 'adm') {
+            echo $_SESSION['tipoUsuario'];
+        	$_SESSION['msg'] = "<div class='alert alert-danger text-center' role='alert'>Para acessar o sistema faça login!</div>";
+            header("location: ../index.php");
+        }
 		//Recebe o código da disciplina a ser alterada
 		$cod = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_NUMBER_INT);
 		//String de alteração no banco
@@ -61,6 +66,10 @@
 
 						<li class="nav-item botoesDoMenu ml-2 mr-2">
 							<a class="nav-link text-light " href="../frequencia/controleFrequencia.php">Controle de Frequência</a>
+						</li>
+
+						<li class="nav-item botoesDoMenu ml-2 mr-2">
+							<a class="nav-link text-light " href="../relatorios/opcoesrelatorios.php">Menu de Relatórios</a>
 						</li>
 					</ul>
 				</div>

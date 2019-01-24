@@ -2,6 +2,11 @@
     session_start();
     include_once ("../funcoes.php");
     include_once ("../conexao.php");
+    if ($_SESSION['tipoUsuario'] != 'adm') {
+        echo $_SESSION['tipoUsuario'];
+        $_SESSION['msg'] = "<div class='alert alert-danger text-center' role='alert'>Para acessar o sistema faça login!</div>";
+        header("location: ../index.php");
+    }
     $id_aluno = filter_input(INPUT_POST, 'id_aluno', FILTER_SANITIZE_STRING);
     $id_disciplina = filter_input(INPUT_POST, 'id_disciplina', FILTER_SANITIZE_STRING);
     $sql = "SELECT nome from aluno where id=1 or id = '$id_aluno'";

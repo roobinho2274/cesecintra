@@ -3,6 +3,13 @@
 //Inicio da sessão e incluçãos dos arquivos 
 session_start();
 include_once ("../conexao.php");
+
+if ($_SESSION['tipoUsuario'] != 'adm') {
+    echo $_SESSION['tipoUsuario'];
+    $_SESSION['msg'] = "<div class='alert alert-danger text-center' role='alert'>Para acessar o sistema faça login!</div>";
+    header("location: ../index.php");
+}
+
 //Pega o código da disciplina envida por POST do deletaDis.php usando filtro
 $cod = filter_input(INPUT_POST, 'disc', FILTER_SANITIZE_NUMBER_INT);
 //Cria a String com o comando SQL

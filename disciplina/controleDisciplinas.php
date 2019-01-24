@@ -1,8 +1,4 @@
 <!DOCTYPE html>
-<script>
-    function direciona()
-    {}
-</script>
 <html>
     <head>
 		<title>Controle das Disciplinas</title>
@@ -16,6 +12,11 @@
     </head>
 <?php
 session_start();
+if ($_SESSION['tipoUsuario'] != 'adm') {
+    echo $_SESSION['tipoUsuario'];
+    $_SESSION['msg'] = "<div class='alert alert-danger text-center' role='alert'>Para acessar o sistema faça login!</div>";
+    header("location: ../index.php");
+}
 ?>
     <body style="background-color:#65AFB2;">
 		
@@ -55,6 +56,10 @@ session_start();
 
 						<li class="nav-item botoesDoMenu ml-2 mr-2">
 							<a class="nav-link text-light " href="../frequencia/controleFrequencia.php">Controle de Frequência</a>
+						</li>
+
+						<li class="nav-item botoesDoMenu ml-2 mr-2">
+							<a class="nav-link text-light " href="../relatorios/opcoesrelatorios.php">Menu de Relatórios</a>
 						</li>
 					</ul>
 				</div>
