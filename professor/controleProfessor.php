@@ -30,7 +30,7 @@
 					<ul class="navbar-nav">
 						
 						<li class="nav-item botoesDoMenu ml-2 mr-2">
-							<a class="nav-link text-light " href="aluno/controleAluno.php">Controle do Aluno</a>
+							<a class="nav-link text-light " href="../aluno/controleAluno.php">Controle do Aluno</a>
 						</li>
 
 						<li class="nav-item botoesDoMenu ml-2 mr-2">
@@ -64,7 +64,7 @@
                  <input type="submit" class="btn botoesOpcao btn-block strong mb-4 btn-light" value="Deletar funcionários" formaction="deletaProf.php"/>
 				
 				<div class="mb-3">
-				 <a class="btn btnVoltar btn-light strong form-control" href="../paginaInicialAdm.php"> Voltar</a>
+				 <a class="btn btnVoltarMENUADM btn-light strong form-control" href="../paginaInicialAdm.php"> Voltar</a>
 				 </div>
 				 
             </form>

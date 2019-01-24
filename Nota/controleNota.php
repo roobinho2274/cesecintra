@@ -1,14 +1,17 @@
+<!DOCTYPE html>
 <?php
-session_start();
+    session_start();
+    //Inclui os arquvis de conexão e funções
+    include_once ("../conexao.php");
+    include_once ("../funcoes.php");
 
-
-if ($_SESSION['tipoUsuario'] != 'adm') {
+if ($_SESSION['tipoUsuario'] == 'adm' || $_SESSION['tipoUsuario'] == 'secretaria') {
+}else{
     echo $_SESSION['tipoUsuario'];
     $_SESSION['msg'] = "<script>alert sem permissão de acesso</script>";
-    header("location: ../index.php");
+    header("location: /PROJETOCESEC/cesecintra/index.php");
 }
 ?>
-<!DOCTYPE html>
 <html>
     <head>
         <!-- Required meta tags -->
@@ -17,16 +20,17 @@ if ($_SESSION['tipoUsuario'] != 'adm') {
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="../css/bootstrap.css" >
         
-        <title>Controle de Alunos</title>
+        <title>Controle de Notas</title>
 
     </head>
     <body>
         
         <div class = "container" style="background-color: buttonface" >
-            <h2>CONTROLE ALUNO</h2>
+            <h2>CONTROLE NOTA</h2>
             <form >
-                <input type="submit" class="btn btn-secondary btn-block" value="CADASTRA ALUNO" formaction="cadastroAluno.php"/><br><br>
-                <input type="submit" class="btn btn-secondary btn-block" value="CONSULTA ALUNO" formaction="consultaAluno.php"/><br><br>
+                <input type="submit" class="btn btn-secondary btn-block" value="REGISTRAR/ALTERAR NOTA" formaction="listaAluno.php"/><br><br>
+                <input type="submit" class="btn btn-secondary btn-block" value="CONSULTAR NOTAS" formaction="consultaNota.php"/><br><br>
+
             </form>
             <a class="btn btn-secondary text-light strong" href="../paginaInicialAdm.php"> Voltar</a>
 

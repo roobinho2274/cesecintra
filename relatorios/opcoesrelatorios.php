@@ -1,22 +1,16 @@
-<!DOCTYPE html>
-<script>
-    function direciona()
-    {}
-</script>
+
 <html>
     <head>
-		<title>Controle das Disciplinas</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <!-- Bootstrap CSS -->
+        <!-- Required meta tags -->
+        <meta charset="utf-8"> 
+		<title>Opções de relatorios</title>
 		<link rel="shortcut icon" href="../imagens/CesecLogo.png">
-        <link rel="stylesheet" href="../css/bootstrap.css" >
-		<link rel="stylesheet" href="../css/Professor.css" >
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="../css/bootstrap.css" >
+		<link rel="stylesheet" href="../css/Professor.css" >   
     </head>
-<?php
-session_start();
-?>
     <body style="background-color:#65AFB2;">
 		
 		<nav class="container-fluid mx-auto navbar navbar-expand-lg corpoMenu main-nav navbar-dark sticky-top " style="font-weight:bold; ">
@@ -46,7 +40,7 @@ session_start();
 						</li>
 
 						<li class="nav-item botoesDoMenu ml-2 mr-2">
-							<a class="nav-link text-light" href="controleDisciplinas.php">Controle das Disciplinas</a>
+							<a class="nav-link text-light" href="../disciplina/controleDisciplinas.php">Controle das Disciplinas</a>
 						</li>
 
 						<li class="nav-item botoesDoMenu ml-2 mr-2">
@@ -60,27 +54,31 @@ session_start();
 				</div>
 			</ul>	
 		</nav>
-	<div class="pl-2 pr-2">
-        <div class="container mt-5 mb-5">
-          
-            <form class="corpoDaDisciplina pl-2 pr-2"> 
-			<hr class="hrBranco">
-				<h2>Disciplinas</h2>
-			<hr class="hrBranco">
-                 <input type="submit" class="btn btn-light btn-block botõesDisciplina mb-3" value="Cadastrar nova  disciplina" formaction="cadastraDis.php"/>
-                 <input type="submit" class="btn btn-light btn-block botõesDisciplina mb-3" value="Consultar as disciplinas" formaction="listaDis.php"/>
-                 <input type="submit" class="btn btn-light btn-block botõesDisciplina mb-3" value="Alterar as disciplinas" formaction="alteraDis.php"/>
-                 <input type="submit" class="btn btn-light btn-block botõesDisciplina mb-3" value="Deletar as disciplinas" formaction="deletaDis.php"/>
-			<div class="pl-4 pr-4 text-center">
-				 <a class="btn btn-light btnVoltarDisciplina  strong mb-3 form-control" href="../paginaInicialAdm.php"> Voltar</a>
+ 
+        <div class="container">
+				<div class="corpoRelatorio mt-3 pt-2">
+				<hr class="hrBranco"/>
+				<h2 class=" mb-3">Relatorios</h2>
+				<hr class="hrBranco"/>
+			<form action="" class="pl-2 pr-2">
+					<input type="submit" class="btn btn-light botoesRelatorio btn-block mb-3" value="Relatorio de aluno para matriculas" formaction="alunoXmatricula.php"/>
+					<input type="submit" class="btn btn-light botoesRelatorio btn-block mb-3" value="Relatorio de aluno para disciplina" formaction="alunoXdisciplina.php"/>
+					<input type="submit" class="btn btn-light botoesRelatorio btn-block mb-3" value="Relatorio de aluno por nivel" formaction="alunoXnivel.php"/>
+					<input type="submit" class="btn btn-light botoesRelatorio btn-block mb-3" value="Relatorio de aluno concluintes" formaction="#"/>
+					<input type="submit" class="btn btn-light botoesRelatorio btn-block mb-3" value="Relatorio de Frequência" formaction="#"/>
+					<div class="text-center mx-auto">
+					<input type="submit" class="btn btnVoltar btn-light strong form-control" value="Voltar" formaction="../paginaInicialAdm.php"/>
+					</div>
+			</form>
 			</div>
-            </form>
-          
-
-            <script src="../js/jquery-3.3.1.slim.min.js"></script>
-            <script src="../js/popper.min.js"></script>
-            <script src="../js/bootstrap.min.js"></script>
-        </div>
-	</div>
-    </body>
+		</div>
+		
+	</body>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <!--<script src="../js/jquery-3.3.1.slim.min.js"></script>-->
+        <script src="../js/popper.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+    
 </html>
+

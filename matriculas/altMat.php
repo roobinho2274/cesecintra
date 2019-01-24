@@ -1,4 +1,15 @@
-<?php
+
+<!DOCTYPE html>
+<html>
+    <head> 
+	<title>Matricula a ser alterada</title>
+		<link rel="shortcut icon" href="../imagens/CesecLogo.png">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="stylesheet" href="../css/bootstrap.css" >
+		<link rel="stylesheet" href="../css/Professor.css" >
+    </head>
+	<?php
     session_start();
     include_once ("../funcoes.php");
     include_once ("../conexao.php");
@@ -16,33 +27,56 @@
     $r = mysqli_query($con, $query);
     $res = mysqli_fetch_assoc($r);
     $_SESSION['matricula'] = $res['id'];
-?>
+	?>
 
-<!DOCTYPE html>
-<html>
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <body style="background-color:#65AFB2;">
+		
+		<nav class="container-fluid mx-auto navbar navbar-expand-lg corpoMenu main-nav navbar-dark sticky-top " style="font-weight:bold; ">
+				<!-- Brand/logo -->
+			<ul class="nav navbar-nav mx-auto">		
+				<div class="navbar-brand">
+					<a class="navbar-btn mx-auto"  href="../paginaInicialAdm.php">
+						<img src="../imagens/LogoProMenu.png" alt="logo" style="width:60px;">
+					</a>	
+						
+					<button class="navbar-toggler mx-auto" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+						<span class="navbar-toggler-icon"></span>
+					</button>		
+				</div>	
+				
+				
+				<div class="collapse navbar-collapse text-center" id="collapsibleNavbar">
 
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="../css/bootstrap.css" >
+					<ul class="navbar-nav">
+						
+						<li class="nav-item botoesDoMenu ml-2 mr-2">
+							<a class="nav-link text-light " href="../aluno/controleAluno.php">Controle do Aluno</a>
+						</li>
 
-        <title>Matricula a ser alterada</title>
+						<li class="nav-item botoesDoMenu ml-2 mr-2">
+							<a class="nav-link text-light" href="../professor/controleProfessor.php">Controle do Funcionário</a>
+						</li>
 
-    </head>
-    <body>
-        <div class = "container" style="background-color: buttonface" >
-            <h5>MATRÍCULAS</h5>
-            <?php
-                /* Verifica se a variável global que indica falha na inserção está
-                  Setada, o que indica uma falha na inserção no banco */
-                if (isset($_SESSION['msn'])) {
-                    echo $_SESSION['msn'];
-                    unset($_SESSION['msn']);
-                }
-            ?>
-            <form action="altMatBD.php" method="POST">
+						<li class="nav-item botoesDoMenu ml-2 mr-2">
+							<a class="nav-link text-light" href="../disciplina/controleDisciplinas.php">Controle das Disciplinas</a>
+						</li>
+
+						<li class="nav-item botoesDoMenu ml-2 mr-2">
+							<a class="nav-link text-light" href="controleMatriculas.php">Controle das Matriculas</a>
+						</li>					
+
+						<li class="nav-item botoesDoMenu ml-2 mr-2">
+							<a class="nav-link text-light " href="../frequencia/controleFrequencia.php">Controle de Frequência</a>
+						</li>
+					</ul>
+				</div>
+			</ul>	
+		</nav>
+
+	<div class="pl-2 pr-2">
+        <div class="container mt-5 mb-5">
+
+            <form action="altMatBD.php" method="POST" class="corpoDaMatricula">
                 <!--
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Turno</label>
@@ -68,12 +102,13 @@
                         </div>
                     </div>
                 -->
-
-
+				<hr class="hrBranco">
+				<h2 class="text-center strong">MATRÍCULAS</h2>
+				<hr class="hrBranco">
                 <fieldset class="form-group">
                     <div class="row">
-                        <legend class="col-form-label col-sm-2 pt-0">Concluída</legend>
-                        <div class="col-sm-10">
+                        <legend class="col-form-label col-lg-12 text-center Mensagemmatricula">Matéria concluida:</legend>
+                        <div class="col-lg-12 text-center strong">
 
                             <?php 
                                 if ($res['dataConclusao'] == NULL) {
@@ -113,11 +148,11 @@
                         </div>
                     </div>
                 </fieldset>
-
+				<hr class="hrBranco">
                  <fieldset class="form-group">
                     <div class="row">
-                        <legend class="col-form-label col-sm-2 pt-0">Status</legend>
-                        <div class="col-sm-10">
+                        <legend class="col-form-label col-lg-12 Mensagemmatricula text-center ">Status:</legend>
+                        <div class="col-lg-12 text-center strong">
 
                             <?php 
                                 if ($res['status'] == "INATIVO") {
@@ -125,13 +160,13 @@
                                         <div class="form-check">
                                             <input class="form-check-input" type="radio" name="status" value="ATIVO">
                                             <label class="form-check-label" >
-                                                ATIVO
+                                                Ativo
                                             </label>
                                         </div>
                                         <div class="form-check">
                                             <input class="form-check-input" type="radio" name="status" value="INATIVO" checked>
                                             <label class="form-check-label">
-                                                INATIVO
+                                                Inativo
                                             </label>
                                         </div>
                                     ';
@@ -141,13 +176,13 @@
                                         <div class="form-check">
                                             <input class="form-check-input" type="radio" name="status" value="ATIVO" checked>
                                             <label class="form-check-label" >
-                                                ATIVO
+                                                Ativo
                                             </label>
                                         </div>
                                         <div class="form-check">
                                             <input class="form-check-input" type="radio" name="status" value="INATIVO">
                                             <label class="form-check-label">
-                                                INATIVO
+                                                Inativo
                                             </label>
                                         </div>
                                     ';
@@ -157,11 +192,11 @@
                         </div>
                     </div>
                 </fieldset>
-
+				<hr class="hrBranco">
                 <div class="form-group row">
-                    <label class="col-sm-2 col-form-label">Horário</label>
-                    <div class="col-sm-10">
-                        <input type="time" class="form-control" name="horario" value="<?php echo $res['horaAula'] ?>">
+                    <label class="col-form-label col-lg-12 text-center Mensagemmatricula">Horário</label>
+                    <div class="col-lg-12 text-center pl-5 pr-5 ">
+                        <input type="time" class="HorarioSize form-control mx-auto " name="horario" value="<?php echo $res['horaAula'] ?>">
                     </div>
                 </div>
 
@@ -208,19 +243,28 @@
                     </div>
                 </div>
             -->
-
-                <div class="form-group row">
-                    <div class="col-sm-10">
-                        <button type="submit" class="btn btn-primary">Alterar</button>
-                        <button type="submit" class="btn btn-primary" formaction="../matriculas/alteraMat.php">Voltar</button>
-                        <button type="reset" class="btn btn-primary" formaction="../matriculas/altMat.php">Redefinir</button>
-                    </div>
+			<?php
+					
+					//Verifica se a variável global que indica falha na exclusão está setada, o que indica uma falha na inserção no banco ou valor inválido 
+					if (isset($_SESSION['msn'])) {
+						echo'<hr class="hrBranco">';
+						echo $_SESSION['msn'];
+						unset($_SESSION['msn']);
+						echo'<hr class="hrBranco">';
+					}
+					
+			?>
+                <div class="pl-4 pr-4">
+                        <button type="submit" class="btn btn-light botõesMatricula form-control mb-2">Alterar</button>
+                        <button type="submit" class="btn btn-light botõesMatricula form-control mb-2" formaction="../matriculas/alteraMat.php">Voltar</button>
+                        <button type="reset" class="btn btn-light botõesMatricula form-control mb-3" formaction="../matriculas/altMat.php">Redefinir</button>
                 </div>
             </form> 
-
+		</div>
+		</div>
+    </body>
             <script src="../js/jquery-3.3.1.slim.min.js"></script>
             <script src="../js/popper.min.js"></script>
             <script src="../js/bootstrap.min.js"></script>
-        </div>
-    </body>
+      
 </html>

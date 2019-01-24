@@ -147,3 +147,219 @@
 	box-shadow: 2px 2px rgba(0, 0, 0, 0.31);
 }
 /*-----------------------------------------------------------------*/
+/*------------------- ESTILO DO ADM ------------------------------*/
+
+.botõesOpções{
+	background-color:rgba(102,205,208,0.70);
+	color:white;
+	font-size:16px;
+	border:1px solid white;
+	border-radius:8px;
+	box-shadow: 2px 2px rgba(0, 0, 0, 0.31);
+	font-weight:bold;
+}
+.corpoDasOpções{
+	background-color:rgba(116,183,185,0.70);
+	color:white;
+	border:3px solid white;
+	border-radius:10px;
+	box-shadow: 4px 5px rgba(0, 0, 0, 0.21);
+}
+.btnVoltarMENUADM{
+	background-color:rgba(102,205,208,0.70);
+	color:white;
+	border:2px solid white;
+	border-radius:5px;
+	box-shadow: 2px 2px rgba(0, 0, 0, 0.31);
+	max-width: 50%;
+}
+
+/*-----------------------------------------------------------------*/
+/*------------------- ESTILO DO MATRICULA ------------------------------*/
+.botõesMatricula{
+	margin-top:3px;
+	margin-bottom:3px;
+	background-color:rgba(102,205,208,0.70);
+	color:white;
+	border:2px solid white;
+	border-radius:5px;
+	box-shadow: 2px 2px rgba(0, 0, 0, 0.31);
+	font-weight:bold;
+}
+.corpoDaMatricula{
+	background-color:rgba(116,183,185,0.70);
+	color:white;
+	border:3px solid white;
+	border-radius:10px;
+	box-shadow: 4px 5px rgba(0, 0, 0, 0.21);
+}
+.btnVoltarMatricula{
+	background-color:rgba(102,205,208,0.70);
+	color:white;
+	border:2px solid white;
+	border-radius:5px;
+	box-shadow: 2px 2px rgba(0, 0, 0, 0.31);
+	max-width: 50%;
+}
+.Mensagemmatricula{
+	font-weight:bold;
+	text-align:center;
+	color:white;
+	font-size:18px;
+}
+.opçãoMatricula{
+	border:2px solid white;
+	border-radius:5px;
+	box-shadow: 2px 2px rgba(0, 0, 0, 0.31);
+}
+.HorarioSize{
+    height: auto; 
+    width: auto; 
+    max-width: 200px; 
+    max-height: 200px;	
+}
+/*-----------------------------------------------------------------*/
+
+/*------------------- ESTILO DO LOGIN ------------------------------*/
+
+.corpoDoLogin{
+	background-color:rgba(116,183,185,0.70);
+	color:white;
+	border:3px solid white;
+	border-radius:10px;
+	box-shadow: 4px 5px rgba(0, 0, 0, 0.21);
+}
+.MensagemLogin{
+	font-weight:bold;
+	text-align:center;
+	color:white;
+	font-size:18px;
+}
+.imageLogin{
+    height: auto; 
+    width: auto; 
+    max-width: 200px; 
+    max-height: 200px;	
+}
+.botaoEntrar{
+	border:2px solid white;
+	border-radius:5px;
+	box-shadow: 2px 3px rgba(0, 0, 0, 0.31);
+	font-weight:bold;
+}
+/*-----------------------------------------------------------------*/
+/*------------------- ESTILO DA DISCIPLINA ------------------------------*/
+
+.botõesDisciplina{
+	margin-top:3px;
+	margin-bottom:3px;
+	background-color:rgba(102,205,208,0.70);
+	color:white;
+	border:2px solid white;
+	border-radius:5px;
+	box-shadow: 2px 2px rgba(0, 0, 0, 0.31);
+	font-weight:bold;
+}
+.corpoDaDisciplina{
+	background-color:rgba(116,183,185,0.70);
+	color:white;
+	border:3px solid white;
+	border-radius:10px;
+	box-shadow: 4px 5px rgba(0, 0, 0, 0.21);
+}
+.btnVoltarDisciplina{
+	background-color:rgba(102,205,208,0.70);
+	color:white;
+	border:2px solid white;
+	border-radius:5px;
+	box-shadow: 2px 2px rgba(0, 0, 0, 0.31);
+	max-width: 50%;
+}
+.MensagemDisciplina{
+	font-weight:bold;
+	text-align:center;
+	color:white;
+	font-size:18px;
+}
+.HorarioSizeDis{
+    height: auto; 
+    width: auto; 
+    max-width: 200px; 
+    max-height: 200px;	
+}
+/*-----------------------------------------------------------------*/
+/*------------------- ESTILO DO ALUNO ------------------------------*/
+
+.botõesAluno{
+	margin-top:3px;
+	margin-bottom:3px;
+	background-color:rgba(102,205,208,0.70);
+	color:white;
+	border:2px solid white;
+	border-radius:5px;
+	box-shadow: 2px 2px rgba(0, 0, 0, 0.31);
+	font-weight:bold;
+}
+.corpoDoAluno{
+	background-color:rgba(116,183,185,0.70);
+	color:white;
+	border:3px solid white;
+	border-radius:10px;
+	box-shadow: 4px 5px rgba(0, 0, 0, 0.21);
+}
+.btnVoltarAluno{
+	background-color:rgba(102,205,208,0.70);
+	color:white;
+	border:2px solid white;
+	border-radius:5px;
+	box-shadow: 2px 2px rgba(0, 0, 0, 0.31);
+	max-width: 50%;
+}
+.MensagemAluno{
+	font-weight:bold;
+	text-align:center;
+	color:white;
+	font-size:18px;
+}
+/*-----------------------------------------------------------------*/
+/*------------------- ESTILO DO RELATORIO ------------------------------*/
+
+.corpoRelatorio{
+	color:white;
+	background-color:rgba(116,183,185,0.70);
+	border:3px solid white;
+	border-radius:10px;
+	box-shadow: 4px 5px rgba(0, 0, 0, 0.21);
+}
+.botoesRelatorio{
+	background-color:rgba(102,205,208,0.70);
+	color:white;
+	border:2px solid white;
+	border-radius:5px;
+	box-shadow: 2px 2px rgba(0, 0, 0, 0.31);
+	font-weight:bold;
+}
+.btnVoltarRelatorio{
+	background-color:rgba(102,205,208,0.70);
+	color:white;
+	border:2px solid white;
+	border-radius:5px;
+	box-shadow: 2px 2px rgba(0, 0, 0, 0.31);
+	max-width: 50%;
+}
+.MensagemRelatorio{
+	font-weight:bold;
+	text-align:center;
+	color:white;
+	font-size:18px;
+}
+.corpoDaTableRelatorios{
+	background-color:rgba(116,183,185,0.70);
+	color:white;
+	font-size:18px;
+	border:3px solid white;
+	border-radius:10px;
+	box-shadow: 4px 5px rgba(0, 0, 0, 0.21);
+}
+
+/*-----------------------------------------------------------------*/

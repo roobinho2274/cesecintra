@@ -5,7 +5,7 @@ session_start();
 if ($_SESSION['tipoUsuario'] != 'adm') {
     echo $_SESSION['tipoUsuario'];
     $_SESSION['msg'] = "<script>alert sem permissão de acesso</script>";
-    header("location: /PROJETOCESEC/cesecintra/index.php");
+    header("location: ../index.php");
 }
 ?>
 <!DOCTYPE html>
@@ -36,49 +36,49 @@ if ($_SESSION['tipoUsuario'] != 'adm') {
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">*NOME :</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="inputEmail3" required  name="nome">
+                        <input type="text" class="form-control" required  name="nome">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">*RG :</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="inputEmail3" required  name="rg">
+                        <input type="text" class="form-control" required  name="rg">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">*CPF :</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="inputEmail3" required  name="cpf">
+                        <input type="number" minlength="11" maxlength="11" placeholder="Somente números!" class="form-control" required  name="cpf">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">*ORGÃO EXPEDIDOR :</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="inputEmail3" required  name="orgaoexpedidor">
+                        <input type="text" class="form-control" required  name="orgaoexpedidor">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">*NOME DA MÃE :</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="inputEmail3" required  name="nomedamae">
+                        <input type="text" class="form-control" required  name="nomedamae">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">NOME DO PAI :</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="inputEmail3" name="nomedopai">
+                        <input type="text" class="form-control" name="nomedopai">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">*TITULO DE ELEITOR :</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="inputEmail3" required  name="tituloeleitor">
+                        <input type="text" class="form-control" required name="tituloeleitor">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">RESERVISTA :</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="inputEmail3"  name="reservista">
+                        <input type="text" class="form-control" name="reservista">
                     </div>
                 </div>
                 <fieldset class="form-group">
@@ -109,7 +109,7 @@ if ($_SESSION['tipoUsuario'] != 'adm') {
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">ESTADO CÍVIL :</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="inputEmail3"  name="estadocivil">
+                        <input type="text" class="form-control" name="estadocivil">
                     </div>
                 </div>
                 <div class="form-group row">
@@ -145,19 +145,19 @@ if ($_SESSION['tipoUsuario'] != 'adm') {
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">*TELEFONE :</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="inputEmail3" required name="telefone">
+                        <input type="text" class="form-control" required name="telefone">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">*E-MAIL :</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="inputEmail3" required name="email">
+                        <input type="email" class="form-control" required name="email">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">*CELULAR :</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="inputEmail3" required name="celular">
+                        <input type="text" class="form-control" required name="celular">
                     </div>
                 </div>
                 <fieldset class="form-group">
@@ -171,7 +171,7 @@ if ($_SESSION['tipoUsuario'] != 'adm') {
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="status" value="0">
+                                <input class="form-check-input" type="radio" name="status" value="2">
                                 <label class="form-check-label" for="gridRadios2">
                                     INATIVO
                                 </label>
@@ -184,15 +184,34 @@ if ($_SESSION['tipoUsuario'] != 'adm') {
                         <legend class="col-form-label col-sm-2 pt-0">*NIVEL DE ESCOLARIDADE</legend>
                         <div class="col-sm-10">
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="grauensino" checked value="1">
+                                <input class="form-check-input" type="radio" checked name="grauensino" value="1">
                                 <label class="form-check-label" for="gridRadios1">
-                                    ENSINO MÉDIO
+                                    ENSINO FUNDAMENTAL
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="grauensino" value="0">
+                                <input class="form-check-input" type="radio" name="grauensino" value="2">
                                 <label class="form-check-label" for="gridRadios2">
-                                    ENSINO FUNDAMENTAL
+                                    ENSINO MÉDIO
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset class="form-group">
+                    <div class="row">
+                        <legend class="col-form-label col-sm-2 pt-0">*TURNO EM QUE DESEJA ESTUDAR</legend>
+                        <div class="col-sm-10">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="turno" checked value="1">
+                                <label class="form-check-label" for="gridRadios1">
+                                    MATUTINO
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="turno" value="2">
+                                <label class="form-check-label" for="gridRadios2">
+                                    NOTURNO
                                 </label>
                             </div>
                         </div>
@@ -202,7 +221,7 @@ if ($_SESSION['tipoUsuario'] != 'adm') {
                 <input class="btn btn-primary" type="reset" value="LIMPAR">
                 
             </form>
-            <a href="../aluno/controleAluno.php"<button class="btn btn-primary">VOLTAR</button></a>
+            <a href="../aluno/controleAluno.php"><button class="btn btn-primary">VOLTAR</button></a>
             <script src="../js/jquery-3.3.1.slim.min.js"></script>
             <script src="../js/popper.min.js"></script>
             <script src="../js/bootstrap.min.js"></script>

@@ -3,6 +3,12 @@
     //Inclui os arquvis de conexão e funções
     include_once ("../conexao.php");
     include_once ("../funcoes.php");
+
+    if ($_SESSION['tipoUsuario'] != 'adm') {
+    echo $_SESSION['tipoUsuario'];
+    $_SESSION['msg'] = "<script>alert('sem permissão de acesso');</script>";
+    header("location: ../index.php");
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -48,6 +54,7 @@
                 $status = filter_input(INPUT_POST, 'status', FILTER_SANITIZE_STRING);
                 $grauensino = filter_input(INPUT_POST, 'grauensino', FILTER_SANITIZE_STRING);
                 $orgaoexpedidor = filter_input(INPUT_POST, 'orgaoexpedidor', FILTER_SANITIZE_STRING);
+                $turno = filter_input(INPUT_POST, 'turno', FILTER_SANITIZE_STRING);
                 //Monta a Query SQL que vai retornar o maior ID na tabela Aluno
                 $queryid = "SELECT MAX(id) FROM aluno";
                 //Recebe através da Dunção executa o maior indice cadastrado em Disciplina
@@ -55,26 +62,26 @@
                 //Incrementa o valor recebido para realizar o novo cadastro
                 $id = $idBd['MAX(id)'] + 1;
                 //Monta a Query de inserção no Banco com os dados do POST e o ID calculado na linha anterior
-                $query = "INSERT INTO aluno(rg,cpf,nome,orgaoExpedidor,mae,pai,tituloEleitor,"
+                $query = "INSERT INTO aluno(id,rg,cpf,nome,orgaoExpedidor,mae,pai,tituloEleitor,"
                         . "reservista,sexo,estadoCivil,logradouro,bairro,complemento,numeroResidencial,"
-                        . "cidade,cep,estado,telefone,email,celular,status,datacadastro,grauensino)"
-                        . "VALUES ('$rg',$cpf,'$nome','$orgaoexpedidor','$nomedamae','$nomedopai','$tituloeleitor'"
+                        . "cidade,cep,estado,telefone,email,celular,status,datacadastro,grauensino,turno)"
+                        . "VALUES ('$id','$rg','$cpf','$nome','$orgaoexpedidor','$nomedamae','$nomedopai','$tituloeleitor'"
                         . ",'$reservista','$sexo','$estadocivil','$logradouro','$bairro','$complemento',"
-                        . "'$numeroresidencia','$cidade','$cep','$estado',$telefone,'$email','$celular',"
-                        . "'$status',NOW(),'$grauensino') ";
+                        . "'$numeroresidencia','$cidade','$cep','$estado','$telefone','$email','$celular',"
+                        . "'$status',NOW(),'$grauensino','$turno') ";
                 //Executa a $query2 no banco através da função Executa
-                $resultado = executa($query, $con);
+                $res = mysqli_query($con, $query);
                 /* Verifica se a inserção foi feita corretamente e direciona à outras 
                  * paginas confome o resultado, também define a mensagem a ser exibida através 
                  * da variável Global $_SESSION['msn']
                  */
                 
-                if ($resultado) {
+                if ($res) {
                     Echo "<div class='alert alert-success' role='alert'>Aluno inserido com sucesso</div>";
                     echo
                     "<div class='row'>"
                     . "<div class='col-sm'>"
-                    . "<a class='btn btn-primary btn-block' href='../matriculas/cadastraMat.php?cod'" . $id . " role='button'>REALIZAR MATRICULAS</a>"
+                    . "<a class='btn btn-primary btn-block' href='../matriculas/cadastraMat.php' role='button'>REALIZAR MATRICULAS</a>"
                     . "</div>";
                     echo ""
                     . "<div class='col-sm'>"
@@ -87,9 +94,10 @@
                 }
             } else {
                 echo $_SESSION['tipoUsuario'];
-                echo"<script>alert sem permissão de acesso</script>";
-                header("location: /PROJETOCESEC/cesecintra/index.php");
+                echo"<script>alert('sem permissão de acesso');</script>";
+                header("location: ../index.php");
             }
+            //echo $query;
             ?>
             <script src="../js/jquery-3.3.1.slim.min.js"></script>
             <script src="../js/popper.min.js"></script>

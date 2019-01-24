@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 07-Jan-2019 às 17:35
+-- Generation Time: 13-Jan-2019 às 02:07
 -- Versão do servidor: 10.1.31-MariaDB
 -- versão do PHP: 7.2.4
 
@@ -91,10 +91,11 @@ INSERT INTO `disciplina` (`id`, `descricao`, `idGrauEnsino`, `idProf`, `turno`, 
 (5, 'Fisica', 1, 2, 2, '08:12:00'),
 (6, 'Ingles', 2, 4, 2, '09:18:08'),
 (7, 'PortuguÃªs', 2, 2, 1, '07:23:00'),
-(8, 'Fisica', 2, 2, 2, '17:40:00'),
 (9, 'RedaÃ§Ã£o', 1, 4, 1, '00:00:00'),
 (10, 'ReligiÃ£o', 2, 2, 2, '00:00:00'),
-(11, 'ReligiÃ£o', 1, 5, 1, '00:00:00');
+(11, 'ReligiÃ£o', 1, 5, 1, '00:00:00'),
+(12, 'Desenvolvimento WEB', 1, 6, 2, '21:00:00'),
+(13, 'EdiÃ§Ã£o GrÃ¡fica', 1, 6, 2, '20:10:00');
 
 -- --------------------------------------------------------
 
@@ -138,8 +139,9 @@ CREATE TABLE `matricula` (
 --
 
 INSERT INTO `matricula` (`id`, `idAluno`, `idDisciplina`, `dataMatricula`, `dataConclusao`, `status`, `nota1`, `nota2`, `nota3`, `nota4`, `nota5`, `media`, `horaAula`) VALUES
-(2, 2, 5, '2018-12-27', NULL, 'ATIVO', NULL, NULL, NULL, NULL, NULL, NULL, '08:12:00'),
-(8, 1, 9, '2018-12-28', NULL, 'ATIVO', NULL, NULL, NULL, NULL, NULL, NULL, '00:00:00');
+(8, 1, 9, '2018-12-28', NULL, 'ATIVO', NULL, NULL, NULL, NULL, NULL, NULL, '00:00:00'),
+(9, 3, 2, '2019-01-11', NULL, 'ATIVO', NULL, NULL, NULL, NULL, NULL, NULL, '09:00:00'),
+(11, 3, 11, '2019-01-11', NULL, 'ATIVO', NULL, NULL, NULL, NULL, NULL, NULL, '00:00:00');
 
 -- --------------------------------------------------------
 
