@@ -18,9 +18,9 @@ $_SESSION['tipoUsuario'] = $tipo;
 if ($tipo == "adm") {
     header('location: paginaInicialAdm.php');
 } else if ($tipo == "secretaria") {
-    header('location: secretarias/paginaInicialSec.php');
+    header('location: paginaInicialSec.php');
 } else if ($tipo == "professor") {
-    header('location: professor/paginaInicialProf.php');
+    header('location: paginaInicialProf.php');
 }
 else
 {
