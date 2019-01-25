@@ -5,10 +5,10 @@
     include_once ("../funcoes.php");
 
     if ($_SESSION['tipoUsuario'] != 'adm') {
-    echo $_SESSION['tipoUsuario'];
-    $_SESSION['msg'] = "<script>alert('sem permissão de acesso');</script>";
-    header("location: ../index.php");
-}
+        echo $_SESSION['tipoUsuario'];
+        $_SESSION['msg'] = "<div class='alert alert-danger text-center' role='alert'>Para acessar o sistema faça login!</div>";
+        header("location: ../index.php");
+    }
 ?>
 <!DOCTYPE html>
 <html>

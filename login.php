@@ -25,7 +25,7 @@ if ($tipo == "adm") {
 else
 {
     //Variável global de sessão que informa erro de Login quando a senha ou usuário é inválido
-    $_SESSION['msg'] = "<p><span style = 'color: red'>Usuário inválido</span></p> ";
+    $_SESSION['msg'] = "<div class='alert alert-danger text-center' role='alert'>Usuário inválido!</div> ";
     header('location: index.php');
 }
 
