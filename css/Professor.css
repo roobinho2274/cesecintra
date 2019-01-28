@@ -371,3 +371,46 @@
 }
 
 /*-----------------------------------------------------------------*/
+
+/*-----------------------------------------------------------------*/
+/*------------------- ESTILO DO RELATORIO ------------------------------*/
+
+.corpoFrequencia{
+	color:white;
+	background-color:rgba(116,183,185,0.70);
+	border:3px solid white;
+	border-radius:10px;
+	box-shadow: 4px 5px rgba(0, 0, 0, 0.21);
+}
+.botoesFrequencia{
+	background-color:rgba(102,205,208,0.70);
+	color:white;
+	border:2px solid white;
+	border-radius:5px;
+	box-shadow: 2px 2px rgba(0, 0, 0, 0.31);
+	font-weight:bold;
+}
+.btnVoltarFrequencia{
+	background-color:rgba(102,205,208,0.70);
+	color:white;
+	border:2px solid white;
+	border-radius:5px;
+	box-shadow: 2px 2px rgba(0, 0, 0, 0.31);
+	max-width: 50%;
+}
+.MensagemFrequencia{
+	font-weight:bold;
+	text-align:center;
+	color:white;
+	font-size:18px;
+}
+.corpoDaTableFrequencia{
+	background-color:rgba(116,183,185,0.70);
+	color:white;
+	font-size:18px;
+	border:3px solid white;
+	border-radius:10px;
+	box-shadow: 4px 5px rgba(0, 0, 0, 0.21);
+}
+
+/*-----------------------------------------------------------------*/

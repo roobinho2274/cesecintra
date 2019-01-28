@@ -21,9 +21,7 @@ if ($tipo == "adm") {
     header('location: paginaInicialSec.php');
 } else if ($tipo == "professor") {
     header('location: paginaInicialProf.php');
-}
-else
-{
+}else{
     //Variável global de sessão que informa erro de Login quando a senha ou usuário é inválido
     $_SESSION['msg'] = "<div class='alert alert-danger text-center' role='alert'>Usuário inválido!</div> ";
     header('location: index.php');

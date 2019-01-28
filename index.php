@@ -11,17 +11,6 @@
     </head>
     <body style="background-color:#65AFB2;">
 		<!--Verificar as variaveis de sessão-->
-		<?php
-		session_start();
-		if (isset($_SESSION['msg'])) {
-			echo $_SESSION['msg'];
-			unset($_SESSION['msg']);
-		}
-		//Codigo que destroi a variável de sessão que controla o acesso
-		if (isset($_SESSION['tipoUsuario'])) {
-			unset($_SESSION['tipoUsuario']);
-		}
-		?>
 
         <div class="container">
             <form action="login.php" method="POST" class="mt-5 corpoDoLogin">
@@ -42,6 +31,19 @@
                     <h5 class="">Senha</h5>
                     <input type="password" class="form-control" placeholder="Password" name = "pwd">
                 </div>
+						<?php
+				session_start();
+				if (isset($_SESSION['msg'])) {
+					echo'<hr class="hrBranco"/>';
+					echo $_SESSION['msg'];
+					unset($_SESSION['msg']);
+					echo'<hr class="hrBranco"/>';
+				}
+				//Codigo que destroi a variável de sessão que controla o acesso
+				if (isset($_SESSION['tipoUsuario'])) {
+					unset($_SESSION['tipoUsuario']);
+				}
+				?>
 				<div class="mb-3 mt-2 pl-4 pr-4">
                 <input type="submit" class="btn btn-success botaoEntrar form-control" value="ENTRAR">
 				</div>

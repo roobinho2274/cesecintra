@@ -12,7 +12,7 @@
     </head>
 		<?php
 		session_start();
-		if ($_SESSION['tipoUsuario'] != 'adm') {
+		if ($_SESSION['tipoUsuario'] != 'professor') {
 	        echo $_SESSION['tipoUsuario'];
 	        $_SESSION['msg'] = "<div class='alert alert-danger text-center' role='alert'>Para acessar o sistema faça login!</div>";
 	        header("location: index.php");
