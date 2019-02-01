@@ -73,7 +73,7 @@
 			<h2 class="text-light strong">Formulário de Cadastro</h2>
 			<hr class="hrBranco">
 		<div class="Mensagemmatricula mb-3">
-			Prencha todos os campos do formulário para cadastrar um novo aluno.
+			Prencha todos os campos obrigatórios(*) do formulário para cadastrar um novo aluno.
 		</div>
             <form action="cadAluno.php" method="POST" class="text-center strong">
                 <br/>
@@ -99,16 +99,16 @@
                 </div>
 							<hr class="hrBranco">
                 <div class="form-group row">
-                    <label class="col-lg-2 col-form-label">*Orgão expedidor:</label>
+                    <label class="col-lg-2 col-form-label">Orgão expedidor:</label>
                     <div class="col-lg-10">
-                        <input type="text" class="form-control" id="inputEmail3" required  name="orgaoexpedidor">
+                        <input type="text" class="form-control" id="inputEmail3" name="orgaoexpedidor">
                     </div>
                 </div>
 							<hr class="hrBranco">
                 <div class="form-group row">
-                    <label class="col-lg-2 col-form-label">*Nome da Mãe:</label>
+                    <label class="col-lg-2 col-form-label">Nome da Mãe:</label>
                     <div class="col-lg-10">
-                        <input type="text" class="form-control" id="inputEmail3" required  name="nomedamae">
+                        <input type="text" class="form-control" id="inputEmail3" name="nomedamae">
                     </div>
                 </div>
 							<hr class="hrBranco">
@@ -120,9 +120,9 @@
                 </div>
 							<hr class="hrBranco">
                 <div class="form-group row">
-                    <label class="col-lg-2 col-form-label">*Título de eleitor:</label>
+                    <label class="col-lg-2 col-form-label">Título de eleitor:</label>
                     <div class="col-lg-10">
-                        <input type="text" class="form-control" id="inputEmail3" required  name="tituloeleitor">
+                        <input type="text" class="form-control" id="inputEmail3" name="tituloeleitor">
                     </div>
                 </div>
 							<hr class="hrBranco">
@@ -199,21 +199,21 @@
                 </div>
 							<hr class="hrBranco">
                 <div class="form-group row">
-                    <label class="col-lg-2 col-form-label">*Telefone:</label>
+                    <label class="col-lg-2 col-form-label">Whatsapp:</label>
                     <div class="col-lg-10">
-                        <input type="text" class="form-control" id="inputEmail3" required name="telefone">
+                        <input type="text" class="form-control" id="inputEmail3" name="telefone">
                     </div>
                 </div>
 							<hr class="hrBranco">
                 <div class="form-group row">
-                    <label class="col-lg-2 col-form-label">*E-mail:</label>
+                    <label class="col-lg-2 col-form-label">E-mail:</label>
                     <div class="col-lg-10">
-                        <input type="text" class="form-control" id="inputEmail3" required name="email">
+                        <input type="text" class="form-control" id="inputEmail3" name="email">
                     </div>
                 </div>
-							<hr class="hrBranco">
+				<hr class="hrBranco">
                 <div class="form-group row">
-                    <label class="col-lg-2 col-form-label">*Celular:</label>
+                    <label class="col-lg-2 col-form-label">Celular:</label>
                     <div class="col-lg-10">
                         <input type="text" class="form-control" id="inputEmail3" required name="celular">
                     </div>
@@ -230,7 +230,7 @@
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="status" value="0">
+                                <input class="form-check-input" type="radio" name="status" value="2">
                                 <label class="form-check-label" for="gridRadios2">
                                     Inativo
                                 </label>
@@ -244,15 +244,15 @@
                         <legend class="col-form-label col-lg-2 pt-0">*Nivel de escolaridade:</legend>
                         <div class="col-lg-10">
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="grauensino" checked value="1">
-                                <label class="form-check-label" for="gridRadios1">
-                                    Ensino médio
+                                <input class="form-check-input" type="radio" name="grauensino"  checked value="1">
+                                <label class="form-check-label" for="gridRadios2">
+                                    Ensino fundamental
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="grauensino" value="0">
-                                <label class="form-check-label" for="gridRadios2">
-                                    Ensino fundamental
+                                <input class="form-check-input" type="radio" name="grauensino" value="2">
+                                <label class="form-check-label" for="gridRadios1">
+                                    Ensino médio
                                 </label>
                             </div>
                         </div>
@@ -278,7 +278,7 @@
                         </div>
                     </div>
                 </fieldset>
-							<hr class="hrBranco">
+				<hr class="hrBranco">
 			<?PHP
             if(isset($_SESSION['msg']))	
                 {
