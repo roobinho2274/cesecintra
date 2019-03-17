@@ -122,22 +122,15 @@
 					echo' <hr class="hrBranco">';	
 					
 					echo '<div class="pl-4 pr-4 mb-2 mt-2">';
-                    echo"<a class='btn btn-light form-control botõesAluno' href='../matriculas/cadastraMat.php' role='button'>Realizar matricula</a>";
-                    echo "<a class='btn btn-light form-control botõesAluno' href='../aluno/controleAluno.php' role='button'>Voltar para menu</a>";
+                    echo "<a class='btn btn-light form-control botõesAluno' href='../aluno/consultaAluno.php' role='button'>Confirmar</a>";
 					echo '</div>';
 					
                 } else {
 					echo' <hr class="hrBranco">';
-                    $_SESSION['msg'] = "<div class='alert alert-danger text-center strong text-dark' role='alert'>Falha ao inserir o aluno</div>";
+                    $_SESSION['msg'] = "<div class='alert alert-danger text-center strong text-dark' role='alert'>Falha ao atualizar o aluno</div>";
 					echo' <hr class="hrBranco">';
-                    header("Location: ../aluno/alterarAluno.php");
+                    header("Location: ../aluno/consultaAluno.php");
                 }
-            } else {
-                echo $_SESSION['tipoUsuario'];
-				echo' <hr class="hrBranco">';
-                echo"<script class='text-center strong'>alert sem permissão de acesso</script>";
-				echo' <hr class="hrBranco">';
-                header("location: ../index.php");
             }
             //echo $query;
             ?>

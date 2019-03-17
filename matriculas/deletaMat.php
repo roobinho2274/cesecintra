@@ -78,7 +78,7 @@
             <h3 class="text-center">Deletar Matrículas</h3>
 		<hr class="hrBranco">
 		<div class="Mensagemmatricula mb-3">
-		Selecione a matrícula desejada para deletar.
+		Selecione o aluno para deletar suas matrículas.
 		</div>
             <?php
             /* Verifica se a variável global que indica falha na exclusão está

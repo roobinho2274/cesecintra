@@ -5,10 +5,11 @@
     include_once ("../conexao.php");
     include_once ("../funcoes.php");
 
-if ($_SESSION['tipoUsuario'] != 'adm') {
+if ($_SESSION['tipoUsuario'] == 'adm' || $_SESSION['tipoUsuario'] == 'secretaria') {
+}else{
     echo $_SESSION['tipoUsuario'];
-    $_SESSION['msg'] = "<div class='alert alert-danger text-center' role='alert'>Para acessar o sistema faça login!</div>";
-    header("location: ../index.php");
+    $_SESSION['msg'] = "<script>alert sem permissão de acesso</script>";
+    header("location: /PROJETOCESEC/cesecintra/index.php");
 }
 ?>
 <html>

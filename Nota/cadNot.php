@@ -3,11 +3,6 @@
     //Inclui os arquvis de conexão e funções
     include_once ("../conexao.php");
     include_once ("../funcoes.php");
-    if ($_SESSION['tipoUsuario'] != 'adm') {
-        echo $_SESSION['tipoUsuario'];
-        $_SESSION['msg'] = "<div class='alert alert-danger text-center' role='alert'>Para acessar o sistema faça login!</div>";
-        header("location: ../index.php");
-    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -28,16 +23,47 @@
             <?php
             //verifica se o usuario pode estar aqui
             if ($_SESSION['tipoUsuario'] == 'adm' || $_SESSION['tipoUsuario'] == 'secretaria') {
-
+                $id_disciplina = filter_input(INPUT_POST, 'id_disciplina', FILTER_SANITIZE_STRING);
+                $id_aluno = filter_input(INPUT_POST, 'id_aluno', FILTER_SANITIZE_STRING);
                 $nota1 = filter_input(INPUT_POST, 'nota1', FILTER_SANITIZE_STRING);
                 $nota2 = filter_input(INPUT_POST, 'nota2', FILTER_SANITIZE_STRING);
                 $nota3 = filter_input(INPUT_POST, 'nota3', FILTER_SANITIZE_STRING);
                 $nota4 = filter_input(INPUT_POST, 'nota4', FILTER_SANITIZE_STRING);
                 $nota5 = filter_input(INPUT_POST, 'nota5', FILTER_SANITIZE_STRING);
-                $id_aluno = filter_input(INPUT_POST, 'id_aluno', FILTER_SANITIZE_STRING);
-                $id_disciplina = filter_input(INPUT_POST, 'id_disciplina', FILTER_SANITIZE_STRING);
-                                
-                $query = "UPDATE matricula SET nota1 = '$nota1', nota2 = '$nota2', nota3 = '$nota3', nota4 = '$nota4', nota5 = '$nota5' WHERE idAluno='$id_aluno' and idDisciplina='$id_disciplina'";
+                $query = "UPDATE matricula SET nota1 = '$nota1' ";
+                $somatotal = $nota1;
+                $quantidade_notas = 1;
+                if($nota2 == null){
+                } else {
+                    $query = $query .", nota2 = '$nota2' ";
+                    $somatotal = $somatotal + $nota2;
+                    $quantidade_notas++;
+                }
+                
+                if($nota3 == null){
+                } else {
+                    $query = $query.", nota3 = '$nota3' ";
+                    $somatotal = $somatotal + $nota3;
+                    $quantidade_notas++;
+                }
+                
+                if($nota4 == null){
+                } else {
+                    $query = $query.", nota4 = '$nota4' ";
+                    $somatotal = $somatotal + $nota4;
+                    $quantidade_notas++;
+                }
+                
+                if($nota5 == null){
+                } else {
+                    $query = $query.", nota5 = '$nota5' ";
+                    $somatotal = $somatotal + $nota5;
+                    $quantidade_notas++;
+                }
+                
+                $media = $somatotal/$quantidade_notas;
+                
+                $query = $query.", media = '$media' WHERE idAluno='$id_aluno' and idDisciplina='$id_disciplina'";
 
                 $resultado = mysqli_query($con, $query);
                 
@@ -54,8 +80,8 @@
                     . "</div>"
                     . "</div>";
                 } else {
+                    $query;
                     $_SESSION['msg'] = "<div class='alert alert-danger' role='alert'>Falha ao registrar Nota</div>";
-                    header("Location: ../Nota/listaAluno.php");
                 }
             } else {
                 echo $_SESSION['tipoUsuario'];

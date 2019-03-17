@@ -2,11 +2,6 @@
     session_start();
     include_once ("../funcoes.php");
     include_once ("../conexao.php");
-    if ($_SESSION['tipoUsuario'] != 'adm') {
-        echo $_SESSION['tipoUsuario'];
-        $_SESSION['msg'] = "<div class='alert alert-danger text-center' role='alert'>Para acessar o sistema faça login!</div>";
-        header("location: ../index.php");
-    }
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -25,7 +20,7 @@
     </head>
     <body>
         <div class = "container" style="background-color: buttonface" >
-            <h5>MATRÍCULAS</h5>
+            <h5>SELECIONE O ALUNO</h5>
             <?php
                 
                 //Verifica se a variável global que indica falha na exclusão está setada, o que indica uma falha na inserção no banco ou valor inválido 
@@ -39,10 +34,10 @@
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">Alunos</label>
                     <div class="col-sm-10"> 
-                        <select class="form-control" name="id_aluno" id="combobox_aluno">
+                        <select class="form-control" name="id_aluno" id="combobox_aluno" required>
                             <option value="">Selecione o aluno</option>
                             <?php 
-                                $sql = "SELECT * FROM aluno ORDER BY nome";
+                                $sql = "SELECT * FROM aluno WHERE STATUS = 'ATIVO' ORDER BY nome ";
                                 $res = mysqli_query($con, $sql);
                                 while($r = mysqli_fetch_assoc($res) ) {
                                     $sql2 = "SELECT * FROM matricula WHERE idAluno = '".$r['id']."'";
@@ -66,7 +61,7 @@
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">Disciplinas</label>
                     <div class="col-sm-10"> 
-                        <select class="form-control" name="id_disciplina" id="combobox_disc">
+                        <select class="form-control" name="id_disciplina" id="combobox_disc" required>
                             <option value="">Selecione a disciplina</option>
                         </select>
                     </div>
@@ -76,10 +71,11 @@
                 <div class="form-group row">
                     <div class="col-sm-10">
                         <button type="submit" class="btn btn-primary">Inserir Nota(s)</button>
-                        <button type="submit" class="btn btn-primary" formaction="../Nota/controleNota.php">Voltar</button>
+                        <a href="../Nota/controleNota.php" class="btn btn-primary" role="button">Voltar</a>
                     </div>
                 </div>
             </form>            
+            
             <script type="text/javascript">
                 $(function(){
                     $('#combobox_aluno').change(function(){

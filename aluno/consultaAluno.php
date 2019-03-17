@@ -90,14 +90,14 @@
                 <thead class="table-dark text-light">
                     <td>ID</td>
                     <td>Nome</td>
-                    <td>Email</td>
+                    <td>Whatsapp</td>
                     <td>CPF</td>
                     <td>Status</td>
                     <td colspan="2">Ações</td>
                 </thead>
 
                 <?php 
-                    $sql = "SELECT nome,email,id,cpf,status from aluno";
+                    $sql = "SELECT nome,telefone,id,cpf,status from aluno";
                     $dados = mysqli_query($con, $sql);
                     while($row = mysqli_fetch_assoc($dados)){
                         if($row['status'] == 1){
@@ -105,7 +105,14 @@
                         }else{ 
                             $status = "INATIVO";
                         } 
-                        echo '<tr class="strong text-center text-light"><td>'.$row['id'].'</td><td>'.$row['nome'].'</td><td>'.$row['email'].'</td><td>'.$row['cpf'].'</td><td>'.$status.'</td>';
+
+                        if ($row['telefone'] == 0) {
+                        	$whats = "";
+                        }else{
+                        	$whats = $row['telefone'];
+                        }
+
+                        echo '<tr class="strong text-center text-light"><td>'.$row['id'].'</td><td>'.$row['nome'].'</td><td>'.$whats.'</td><td>'.$row['cpf'].'</td><td>'.$status.'</td>';
                         echo '<td><form method="post" action = "alterarAluno.php"><input type="hidden" value="'.$row['id'].'" name = "id"><input type = "submit" value="Alterar" class="form-control btn btn-light botõesAluno"></form></td>';
                         echo '<td><form method="post" action = "deleteAluno.php"><input type="hidden" value="'.$row['id'].'" name = "id"><input type = "submit" value="Deletar" class="form-control btn btn-light botõesAluno"></form></td>';
                         echo '</tr>';
@@ -117,7 +124,7 @@
             </div>
             <a class="btn btn-light form-control botõesAluno mt-4 mb-2" href="../aluno/controleAluno.php">Voltar</a>
         </div>
-        <small id="usurHelp" class="form-text  text-danger strong text-center ">*Ao deletar aluno, certifique-se de que não haja nenhum vínculo com as matrículas!</small>
+        <p id="usurHelp" class="form-text text-danger strong text-center ">*Ao deletar aluno, certifique-se de que não haja nenhum vínculo com as matrículas!</p>
     </div>
 	</body>
 	

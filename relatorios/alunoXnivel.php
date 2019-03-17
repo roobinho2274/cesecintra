@@ -159,7 +159,7 @@
                             $('#tbody').html('');
                             return;
                         }
-                        $('#tbody').html('<td colspan = "12" class="alert alert-danger text-center"><h5>Não há matrículas disponíveis para o aluno selecionado!</h5></td>').show();
+                        $('#tbody').html('<td colspan = "12" class="alert alert-danger text-center"><h5>Não há matrículas disponíveis para o nível selecionado!</h5></td>').show();
                     });
                 });
             </script>

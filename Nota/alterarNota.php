@@ -2,11 +2,6 @@
     session_start();
     include_once ("../funcoes.php");
     include_once ("../conexao.php");
-    if ($_SESSION['tipoUsuario'] != 'adm') {
-        echo $_SESSION['tipoUsuario'];
-        $_SESSION['msg'] = "<div class='alert alert-danger text-center' role='alert'>Para acessar o sistema faça login!</div>";
-        header("location: ../index.php");
-    }
     $id_aluno = filter_input(INPUT_POST, 'id_aluno', FILTER_SANITIZE_STRING);
     $id_disciplina = filter_input(INPUT_POST, 'id_disciplina', FILTER_SANITIZE_STRING);
     $sql = "SELECT nome from aluno where id=1 or id = '$id_aluno'";
@@ -22,11 +17,11 @@
     $sqln = "SELECT nota1,nota2,nota3,nota4,nota5 from matricula where idDisciplina = '$id_disciplina' and idAluno = '$id_aluno'";
     $dadosn = mysqli_query($con, $sqln);
     while($rown = mysqli_fetch_assoc($dadosn)){
-        $nota1 = $rown['nota1'];
-        $nota2 = $rown['nota2'];
-        $nota3 = $rown['nota3'];
-        $nota4 = $rown['nota4'];
-        $nota5 = $rown['nota5'];
+            $nota1 = $rown['nota1'];
+            $nota2 = $rown['nota2'];
+            $nota3 = $rown['nota3'];
+            $nota4 = $rown['nota4'];
+            $nota5 = $rown['nota5'];
     }
     
     
@@ -64,7 +59,7 @@
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">NOTA 1 :</label>
                     <div class="col-sm-10">
-                        <input type="number" <?php echo 'value ="'.$nota1.'"'; ?> class="form-control"  name="nota1">
+                        <input type="number" <?php echo 'value ="'.$nota1.'"'; ?> class="form-control"  name="nota1" required>
                     </div>
                 </div>
                 <div class="form-group row">
@@ -93,6 +88,7 @@
                 </div>
 
                 <button type="submit" class="btn btn-primary">Inserir Notas</button>
+                <p class = "text-info">Obs.: Insira ao menos a primeira Nota</p>
                 <button type="submit" class="btn btn-primary" formaction="../Nota/listaAluno.php">Voltar</button>
             </form>
         </div>

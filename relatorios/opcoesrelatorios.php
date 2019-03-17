@@ -78,7 +78,7 @@ session_start();
 					<input type="submit" class="btn btn-light botoesRelatorio btn-block mb-3" value="Relatorio de aluno para matriculas" formaction="alunoXmatricula.php"/>
 					<input type="submit" class="btn btn-light botoesRelatorio btn-block mb-3" value="Relatorio de aluno para disciplina" formaction="alunoXdisciplina.php"/>
 					<input type="submit" class="btn btn-light botoesRelatorio btn-block mb-3" value="Relatorio de aluno por nivel" formaction="alunoXnivel.php"/>
-					<input type="submit" class="btn btn-light botoesRelatorio btn-block mb-3" value="Relatorio de aluno concluintes" formaction="#"/>
+					<input type="submit" class="btn btn-light botoesRelatorio btn-block mb-3" value="Relatorio de aluno concluintes" formaction="../AlunosConcluintes.php"/>
 					<input type="submit" class="btn btn-light botoesRelatorio btn-block mb-3" value="Relatorio de Frequência" formaction="#"/>
 					<div class="text-center mx-auto">
 					<input type="submit" class="btn btnVoltar btn-light strong form-control" value="Voltar" formaction="../paginaInicialAdm.php"/>
