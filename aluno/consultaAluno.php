@@ -91,13 +91,13 @@
                     <td>ID</td>
                     <td>Nome</td>
                     <td>Whatsapp</td>
-                    <td>CPF</td>
+                    <td>RG</td>
                     <td>Status</td>
                     <td colspan="2">Ações</td>
                 </thead>
 
                 <?php 
-                    $sql = "SELECT nome,telefone,id,cpf,status from aluno";
+                    $sql = "SELECT nome,telefone,id,rg,status from aluno";   
                     $dados = mysqli_query($con, $sql);
                     while($row = mysqli_fetch_assoc($dados)){
                         if($row['status'] == 1){
@@ -112,7 +112,7 @@
                         	$whats = $row['telefone'];
                         }
 
-                        echo '<tr class="strong text-center text-light"><td>'.$row['id'].'</td><td>'.$row['nome'].'</td><td>'.$whats.'</td><td>'.$row['cpf'].'</td><td>'.$status.'</td>';
+                        echo '<tr class="strong text-center text-light"><td>'.$row['id'].'</td><td>'.$row['nome'].'</td><td>'.$whats.'</td><td>'.$row['rg'].'</td><td>'.$status.'</td>';
                         echo '<td><form method="post" action = "alterarAluno.php"><input type="hidden" value="'.$row['id'].'" name = "id"><input type = "submit" value="Alterar" class="form-control btn btn-light botõesAluno"></form></td>';
                         echo '<td><form method="post" action = "deleteAluno.php"><input type="hidden" value="'.$row['id'].'" name = "id"><input type = "submit" value="Deletar" class="form-control btn btn-light botõesAluno"></form></td>';
                         echo '</tr>';

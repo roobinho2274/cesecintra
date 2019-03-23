@@ -113,9 +113,9 @@
                         </div>
                 <hr class="hrBranco">
                         <div class="form-group row">
-                            <label class="col-lg-2 col-form-label">*CPF:</label>
+                            <label class="col-lg-2 col-form-label">CPF:</label>
                             <div class="col-lg-10">
-                                <input type="text" class="form-control" value="<?php echo $row['cpf'];?>" maxlength="14" required name="cpf">
+                                <input type="text" class="form-control" value="<?php echo $row['cpf'];?>" maxlength="14" name="cpf">
                             </div>
                         </div>
                 <hr class="hrBranco">
