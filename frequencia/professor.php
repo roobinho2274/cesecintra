@@ -18,6 +18,6 @@
 			'prof' => $r['prof'],
 		);
 	}
-	
+
 	echo(json_encode($result));
 ?>

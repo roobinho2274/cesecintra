@@ -80,39 +80,21 @@
                             <select class="form-control" name="aluno" id="combobox_aluno" required>
                                 <option value="">Selecione o aluno</option>
                                 <?php
-                                /*Faz a busca por todos os usuários do tipo porfessor no banco
-                                e preenche um select*/
-                                $query = "SELECT * FROM aluno ORDER BY nome";
-                                $resultado = executa($query, $con);
-                                while ($r = mysqli_fetch_assoc($resultado)) {
-                                    echo "<option value=" . $r['id'] . ">" . $r['nome'] . "</option>";
-                                }
+                                    $sql = "SELECT * FROM aluno ORDER BY nome";
+                                    $res = mysqli_query($con, $sql);
+                                    while($r = mysqli_fetch_assoc($res) ) {
+                                        $sql2 = "SELECT * FROM matricula WHERE idAluno = '".$r['id']."'";
+                                        $res2 = mysqli_query($con, $sql2);
+                                        $r2 = mysqli_fetch_assoc($res2);
+                                        if ($r2) {
+                                            echo '<option value="'.$r['id'].'">'.$r['nome'].'</option>';
+                                            
+                                        }
+                                    }
                                 ?>
                             </select>
                         </div>
                     </div>
-
-                    <!-- 
-                    <fieldset class="form-group">
-                        <div class="row">
-                            <legend class="col-form-label col-lg-2 pt-0">Modalidade:</legend>
-                            <div class="col-lg-10">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="ensino" value="1" checked>
-                                    <label class="form-check-label" >
-                                        Ensino Medio
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="ensino" value="2">
-                                    <label class="form-check-label">
-                                        Ensino Fundamental
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </fieldset>
-                    -->
 
                     <div class="form-group row">
                         <label class="col-lg-2 col-form-label">Disciplina:</label>
@@ -152,11 +134,15 @@
                 $('#combobox_aluno').change(function(){
                     if( $(this).val() ) {
                         $.getJSON('professor.php?search=',{combobox_aluno: $(this).val(), ajax: 'true'}, function(j){
-                            var options = '<option value="">Selecione a disciplina</option>'; 
-                            for (var i = 0; i < j.length; i++) {
-                                options += '<option value="' + j[i].id + '">' + j[i].disciplina + ' - ' + j[i].prof + '</option>';
-                            }   
-                            $('#combobox_professor').html(options).show();
+                                var options = '<option value="">Selecione a disciplina</option>'; 
+                                
+                                for (var i = 0; i < j.length; i++) {
+                                    options += '<option value="' + j[i].id + '">' + j[i].disciplina + ' - ' + j[i].prof + '</option>';
+                                }   
+                                
+                                $('#combobox_professor').html('').show();
+                                $('#combobox_professor').html(options).show();
+                            
                         });
                     } else {
                         $('#combobox_professor').html('<option value="">Selecione a disciplina</option>');
