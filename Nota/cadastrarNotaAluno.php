@@ -14,13 +14,11 @@
 
         <title>Selecionar Aluno</title>
         
-        <script src="../js/jquery-3.3.1.min.js">
-            
-        </script>
+        <script src="../js/jquery-3.3.1.min.js"></script>
     </head>
     <body>
         <div class = "container" style="background-color: buttonface" >
-            <h5>SELECIONE O ALUNO</h5>
+            <h5>SELECIONE O</h5>
             <?php
                 
                 //Verifica se a variável global que indica falha na exclusão está setada, o que indica uma falha na inserção no banco ou valor inválido 
@@ -37,7 +35,7 @@
                         <select class="form-control" name="id_aluno" id="combobox_aluno" required>
                             <option value="">Selecione o aluno</option>
                             <?php 
-                                $sql = "SELECT * FROM aluno WHERE STATUS = 'ATIVO' ORDER BY nome ";
+                                $sql = "SELECT * FROM aluno WHERE status = '1' ORDER BY nome ";
                                 $res = mysqli_query($con, $sql);
                                 while($r = mysqli_fetch_assoc($res) ) {
                                     $sql2 = "SELECT * FROM matricula WHERE idAluno = '".$r['id']."'";

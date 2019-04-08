@@ -9,7 +9,7 @@ if ($_SESSION['tipoUsuario'] == 'adm' || $_SESSION['tipoUsuario'] == 'secretaria
 }else{
     echo $_SESSION['tipoUsuario'];
     $_SESSION['msg'] = "<script>alert sem permissão de acesso</script>";
-    header("location: /PROJETOCESEC/cesecintra/index.php");
+    header("location: ../index.php");
 }
 ?>
 <html>
@@ -24,17 +24,14 @@ if ($_SESSION['tipoUsuario'] == 'adm' || $_SESSION['tipoUsuario'] == 'secretaria
 
     </head>
     <body>
-        
         <div class = "container" style="background-color: buttonface" >
             <h2>CONTROLE NOTA</h2>
             <form >
-                <input type="submit" class="btn btn-secondary btn-block" value="REGISTRAR/ALTERAR NOTA" formaction="listaAluno.php"/><br><br>
-                <input type="submit" class="btn btn-secondary btn-block" value="CONSULTAR NOTAS" formaction="consultaNota.php"/><br><br>
-
+                <input type="submit" class="btn btn-secondary btn-block" value="Registrar Nota" formaction="cadastarNotaAluno.php"/><br><br>
+                <input type="submit" class="btn btn-secondary btn-block" value="Alterar Nota" formaction="alterarNotaAluno.php"/><br><br>
+                <input type="submit" class="btn btn-secondary btn-block" value="Consultar Notas" formaction="consultaNota.php"/><br><br>
             </form>
             <a class="btn btn-secondary text-light strong" href="../paginaInicialAdm.php"> Voltar</a>
-
-            
         </div>
         
         <script src="../js/jquery-3.3.1.slim.min.js"></script>

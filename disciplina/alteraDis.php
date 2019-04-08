@@ -88,9 +88,9 @@
                             $resultado = executa($query, $con);
                             while ($r = mysqli_fetch_assoc($resultado)) {
                                 if ($r['idGrauEnsino'] == 1) {
-                                    echo "<option value=" . $r['id'] . ">" . $r['descricao'] . " - Ensino Médio</option>";
-                                } elseif ($r['idGrauEnsino'] == 2) {
                                     echo "<option value=" . $r['id'] . ">" . $r['descricao'] . " - Ensino Fundamental</option>";
+                                } elseif ($r['idGrauEnsino'] == 2) {
+                                    echo "<option value=" . $r['id'] . ">" . $r['descricao'] . " - Ensino Médio</option>";
                                 }
                             }
                             ?>
