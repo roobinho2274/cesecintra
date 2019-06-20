@@ -115,7 +115,7 @@
                         <div class="col-lg-6 row">
                             <label class="col-lg-3 col-form-label MensagemDisciplina">Mês: </label>
                             <div class="col-lg-3">
-                                <input type="text" class="form-control" value="<?php echo $r['mes'];?>" name="mes" disabled>
+                                <input type="text" class="form-control" value="<?php echo $r['mes'];?>" name="mes">
                             </div>
                         </div>
                         <div class="col-lg-6 row">

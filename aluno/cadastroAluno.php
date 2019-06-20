@@ -10,14 +10,14 @@
     <link rel="stylesheet" href="../css/Professor.css" >
 
     </head>
-  <?php
-  session_start();
-    if ($_SESSION['tipoUsuario'] != 'adm') {
-        echo $_SESSION['tipoUsuario'];
-        $_SESSION['msg'] = "<div class='alert alert-danger text-center' role='alert'>Para acessar o sistema faça login!</div>";
-        header("location: ../index.php");
-    }
-  ?>
+    <?php
+      session_start();
+        if ($_SESSION['tipoUsuario'] != 'adm') {
+            echo $_SESSION['tipoUsuario'];
+            $_SESSION['msg'] = "<div class='alert alert-danger text-center' role='alert'>Para acessar o sistema faça login!</div>";
+            header("location: ../index.php");
+        }
+    ?>
     <body style="background-color:#65AFB2;">
     
     <nav class="container-fluid mx-auto navbar navbar-expand-lg corpoMenu main-nav navbar-dark sticky-top " style="font-weight:bold; ">

@@ -11,12 +11,13 @@ if ($_SESSION['tipoUsuario'] != 'adm') {
 
 $idFreq = filter_input(INPUT_POST, 'idFreq', FILTER_SANITIZE_STRING);
 $horas = filter_input(INPUT_POST, 'horas', FILTER_SANITIZE_STRING);
+$mes = filter_input(INPUT_POST, 'mes', FILTER_SANITIZE_STRING);
 //$aluno = filter_input(INPUT_POST, 'aluno', FILTER_SANITIZE_STRING);
 //$disciplina = filter_input(INPUT_POST, 'disciplina', FILTER_SANITIZE_STRING);
 //$mes = filter_input(INPUT_POST, 'mes', FILTER_SANITIZE_STRING);
 //$ano = filter_input(INPUT_POST, 'ano', FILTER_SANITIZE_STRING);
 
-$query = "UPDATE frequencia SET horas = '$horas' WHERE id = '$idFreq'";
+$query = "UPDATE frequencia SET horas = '$horas', mes = '$mes' WHERE id = '$idFreq'";
 $resultado = executa($query, $con);
 
 if ($resultado) {

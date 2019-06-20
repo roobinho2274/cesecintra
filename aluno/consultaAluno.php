@@ -93,7 +93,7 @@
                     <td>Whatsapp</td>
                     <td>RG</td>
                     <td>Status</td>
-                    <td colspan="2">Ações</td>
+                    <td colspan="3">Ações</td>
                 </thead>
 
                 <?php 
@@ -115,6 +115,7 @@
                         echo '<tr class="strong text-center text-light"><td>'.$row['id'].'</td><td>'.$row['nome'].'</td><td>'.$whats.'</td><td>'.$row['rg'].'</td><td>'.$status.'</td>';
                         echo '<td><form method="post" action = "alterarAluno.php"><input type="hidden" value="'.$row['id'].'" name = "id"><input type = "submit" value="Alterar" class="form-control btn btn-light botõesAluno"></form></td>';
                         echo '<td><form method="post" action = "deleteAluno.php"><input type="hidden" value="'.$row['id'].'" name = "id"><input type = "submit" value="Deletar" class="form-control btn btn-light botõesAluno"></form></td>';
+                        echo '<td><form method="post" action = "printFicha.php"><input type="hidden" value="'.$row['id'].'" name = "id"><input type = "submit" value="Imprimir" class="form-control btn btn-light botõesAluno"></form></td>';
                         echo '</tr>';
 
                     }
