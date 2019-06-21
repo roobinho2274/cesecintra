@@ -11,7 +11,7 @@ if ($_SESSION['tipoUsuario'] != 'adm') {
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Controle dos Funcionários</title>
+        <title>Controle dos Usuários</title>
 		<link rel="shortcut icon" href="../imagens/CesecLogo.png">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -44,7 +44,7 @@ if ($_SESSION['tipoUsuario'] != 'adm') {
 						</li>
 
 						<li class="nav-item botoesDoMenu ml-2 mr-2">
-							<a class="nav-link text-light" href="controleProfessor.php">Controle do Funcionário</a>
+							<a class="nav-link text-light" href="controleProfessor.php">Controle dos Usuários</a>
 						</li>
 
 						<li class="nav-item botoesDoMenu ml-2 mr-2">
@@ -70,12 +70,12 @@ if ($_SESSION['tipoUsuario'] != 'adm') {
 		<div class="container">
             <form class="text-center mt-5  p-2 corpodasOpcpoes">
 			<hr class="hrBranco"/>
-			<h2 class="text-center strong mt-2 mb-2 text-light">Funcionários</h2>
+			<h2 class="text-center strong mt-2 mb-2 text-light">Usuários</h2>
 			<hr class="hrBranco"/>
-                 <input type="submit" class="mt-4 btn botoesOpcao btn-block strong mb-4 btn-light" value="Cadastrar novo funcionários" formaction="CadastraProf.php"/>
-                 <input type="submit" class="btn botoesOpcao btn-block strong mb-4 btn-light" value="Consultar os funcionários cadastrados" formaction="listaProfessor.php"/>
-                 <input type="submit" class="btn botoesOpcao btn-block strong mb-4 btn-light" value="Alterar os dados dos funcionários" formaction="alteraProf.php"/>
-                 <input type="submit" class="btn botoesOpcao btn-block strong mb-4 btn-light" value="Deletar funcionários" formaction="deletaProf.php"/>
+                 <input type="submit" class="mt-4 btn botoesOpcao btn-block strong mb-4 btn-light" value="Cadastrar novo Usuários" formaction="CadastraProf.php"/>
+                 <input type="submit" class="btn botoesOpcao btn-block strong mb-4 btn-light" value="Consultar os Usuários cadastrados" formaction="listaProfessor.php"/>
+                 <input type="submit" class="btn botoesOpcao btn-block strong mb-4 btn-light" value="Alterar os dados dos Usuários" formaction="alteraProf.php"/>
+                 <input type="submit" class="btn botoesOpcao btn-block strong mb-4 btn-light" value="Deletar Usuário" formaction="deletaProf.php"/>
 				
 				<div class="mb-3">
 				 <a class="btn btnVoltarMENUADM btn-light strong form-control" href="../paginaInicialAdm.php"> Voltar</a>

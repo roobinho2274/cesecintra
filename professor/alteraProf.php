@@ -34,7 +34,7 @@
 						</li>
 
 						<li class="nav-item botoesDoMenu ml-2 mr-2">
-							<a class="nav-link text-light" href="controleProfessor.php">Controle do Funcionário</a>
+							<a class="nav-link text-light" href="controleProfessor.php">Controle dos Usuários</a>
 						</li>
 
 						<li class="nav-item botoesDoMenu ml-2 mr-2">

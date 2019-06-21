@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Controle de professores</title>
+        <title>Controle de usuários</title>
 				<link rel="shortcut icon" href="../imagens/CesecLogo.png">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     </head>
@@ -47,7 +47,7 @@
 						</li>
 
 						<li class="nav-item botoesDoMenu ml-2 mr-2">
-							<a class="nav-link text-light" href="controleProfessor.php">Controle do Funcionário</a>
+							<a class="nav-link text-light" href="controleProfessor.php">Controle dos Usuários</a>
 						</li>
 
 						<li class="nav-item botoesDoMenu ml-2 mr-2">
@@ -72,30 +72,29 @@
 		
 		<div class="container">
              <form class="text-center mt-4 mb-3 p-2 corpoDoCadastro" action="CadProf.php" method="POST">
-				<h2 class="text-center strong  mt-2 mb-2">Cadastro de Funcionário</h2>
+				<h2 class="text-center strong  mt-2 mb-2">Cadastro dos Usuários</h2>
 				
 				<hr class="hrBranco"/>
-				<h5 class="text-center tamanhoDaMensagem mt-2 mb-2"> Preencha todos os campos para efetuar o cadastro do funcionário. </h5>
+				<h5 class="text-center tamanhoDaMensagem mt-2 mb-2"> Preencha todos os campos para efetuar o cadastro dos usuários. </h5>
 				<hr class="hrBranco"/>
 				
-                <h5 class="mt-2">Nome completo: </h5>
-                <input type="text" class="form-control"  placeholder="Entre com o nome completo" name="nome" required> <br/> 
+                <h5 class="mt-2">Nome do usuário: </h5>
+                <input type="text" class="form-control"  placeholder="Entre com o nome da disciplina" name="nome" required> <br/>
 				
 				<h5> Login: </h5>
                 <input type="text" class="form-control"  placeholder="Entre com o nome para login" name="login"  required> <br/> 
 				
 				<h5> Senha: </h5>
-                <input type="password" class="form-control"  placeholder="Entre com a senha(Somente numeros)" name="senha" required> <br/> 
+                <input type="password" class="form-control"  placeholder="Entre com a senha" name="senha" required> <br/>
 				
 				
 				<fieldset id="grupoTipo"> 
 				<h5>Ocupação:</h5>				
 					<div class="tamanhoDoRadioOpçoes">
-						<div class="pl-2 pr-2 strong" required>	
-							<input type ="radio" name="tipo"  value = "professor" >Professor(a)   </br>   
-							<input type ="radio" name="tipo"  value = "adm" required>Administrador(a) </br> 
-							<input type ="radio" name="tipo"  value = "secretaria" >Secretario(a)  
-						</div>
+						<div class="pl-2 pr-2 strong" required>
+							<input type="radio" name="tipo" value="disciplina" >Disciplina </br>
+                            <input type="radio" name="tipo" value="adm" required>Administrador(a)
+                        </div>
 					</div>
 				</fieldset>
 				

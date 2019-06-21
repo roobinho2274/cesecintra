@@ -43,7 +43,7 @@
 						</li>
 
 						<li class="nav-item botoesDoMenu ml-2 mr-2">
-							<a class="nav-link text-light" href="professor/controleProfessor.php">Controle do Funcionário</a>
+							<a class="nav-link text-light" href="professor/controleProfessor.php">Controle dos Usuários</a>
 						</li>
 
 						<li class="nav-item botoesDoMenu ml-2 mr-2">
@@ -72,7 +72,7 @@
 			<hr class="hrBranco"/>
 			<form action="">
 					<input type="submit" class="btn btn-light botõesOpções btn-block mb-3" value="Controle do Aluno" formaction="aluno/controleAluno.php"/>
-					<input type="submit" class="btn btn-light botõesOpções btn-block mb-3" value="Controle do Funcionário" formaction="professor/controleProfessor.php"/>
+					<input type="submit" class="btn btn-light botõesOpções btn-block mb-3" value="Controle dos Usuários" formaction="professor/controleProfessor.php"/>
 					<input type="submit" class="btn btn-light botõesOpções btn-block mb-3" value="Controle das Disciplinas" formaction="disciplina/controleDisciplinas.php"/>
 					<input type="submit" class="btn btn-light botõesOpções btn-block mb-3" value="Controle das Matriculas" formaction="matriculas/controleMatriculas.php"/>
 					<input type="submit" class="btn btn-light botõesOpções btn-block mb-3" value="Controle da Frequência" formaction="frequencia/controleFrequencia.php"/>

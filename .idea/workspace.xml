@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="84393935-c4fc-4536-ae20-885e5e58994e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/aluno/altAluno.php" beforeDir="false" afterPath="$PROJECT_DIR$/aluno/altAluno.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aluno/cadAluno.php" beforeDir="false" afterPath="$PROJECT_DIR$/aluno/cadAluno.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aluno/cadastroAluno.php" beforeDir="false" afterPath="$PROJECT_DIR$/aluno/cadastroAluno.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aluno/consultaAluno.php" beforeDir="false" afterPath="$PROJECT_DIR$/aluno/consultaAluno.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aluno/controleAluno.php" beforeDir="false" afterPath="$PROJECT_DIR$/aluno/controleAluno.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/disciplina/altDisc.php" beforeDir="false" afterPath="$PROJECT_DIR$/disciplina/altDisc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/disciplina/alteraDis.php" beforeDir="false" afterPath="$PROJECT_DIR$/disciplina/alteraDis.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/disciplina/cadastraDis.php" beforeDir="false" afterPath="$PROJECT_DIR$/disciplina/cadastraDis.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/disciplina/controleDisciplinas.php" beforeDir="false" afterPath="$PROJECT_DIR$/disciplina/controleDisciplinas.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/disciplina/deletaDis.php" beforeDir="false" afterPath="$PROJECT_DIR$/disciplina/deletaDis.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/disciplina/listaDis.php" beforeDir="false" afterPath="$PROJECT_DIR$/disciplina/listaDis.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frequencia/alterarFreq.php" beforeDir="false" afterPath="$PROJECT_DIR$/frequencia/alterarFreq.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frequencia/cadFrequencia.php" beforeDir="false" afterPath="$PROJECT_DIR$/frequencia/cadFrequencia.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frequencia/controleFrequencia.php" beforeDir="false" afterPath="$PROJECT_DIR$/frequencia/controleFrequencia.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frequencia/listaFrequencia.php" beforeDir="false" afterPath="$PROJECT_DIR$/frequencia/listaFrequencia.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/matriculas/altMat.php" beforeDir="false" afterPath="$PROJECT_DIR$/matriculas/altMat.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/matriculas/alteraMat.php" beforeDir="false" afterPath="$PROJECT_DIR$/matriculas/alteraMat.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/matriculas/cadastraMat.php" beforeDir="false" afterPath="$PROJECT_DIR$/matriculas/cadastraMat.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/matriculas/controleMatriculas.php" beforeDir="false" afterPath="$PROJECT_DIR$/matriculas/controleMatriculas.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/matriculas/deletaMat.php" beforeDir="false" afterPath="$PROJECT_DIR$/matriculas/deletaMat.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/matriculas/listaMat.php" beforeDir="false" afterPath="$PROJECT_DIR$/matriculas/listaMat.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paginaInicialAdm.php" beforeDir="false" afterPath="$PROJECT_DIR$/paginaInicialAdm.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/professor/CadastraProf.php" beforeDir="false" afterPath="$PROJECT_DIR$/professor/CadastraProf.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/professor/ListaProfessor.php" beforeDir="false" afterPath="$PROJECT_DIR$/professor/ListaProfessor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/professor/altProf.php" beforeDir="false" afterPath="$PROJECT_DIR$/professor/altProf.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/professor/alteraProf.php" beforeDir="false" afterPath="$PROJECT_DIR$/professor/alteraProf.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/professor/controleProfessor.php" beforeDir="false" afterPath="$PROJECT_DIR$/professor/controleProfessor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/professor/deletaProf.php" beforeDir="false" afterPath="$PROJECT_DIR$/professor/deletaProf.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/relatorios/alunoXdisciplina.php" beforeDir="false" afterPath="$PROJECT_DIR$/relatorios/alunoXdisciplina.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/relatorios/alunoXmatricula.php" beforeDir="false" afterPath="$PROJECT_DIR$/relatorios/alunoXmatricula.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/relatorios/alunoXnivel.php" beforeDir="false" afterPath="$PROJECT_DIR$/relatorios/alunoXnivel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/relatorios/opcoesrelatorios.php" beforeDir="false" afterPath="$PROJECT_DIR$/relatorios/opcoesrelatorios.php" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/professor/CadastraProf.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="74" column="43" selection-start-line="74" selection-start-column="43" selection-end-line="74" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/professor/controleProfessor.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-862">
+              <caret line="15" column="30" lean-forward="true" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="850">
+              <caret line="50" column="19" lean-forward="true" selection-start-line="50" selection-start-column="19" selection-end-line="50" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>Controle do Funcionário</find>
+      <find>nome da</find>
+      <find>funcionários</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>Controle dos Usuários</replace>
+    </replaceStrings>
+    <dirStrings>
+      <dir>C:\xampp\htdocs\cesecintra</dir>
+    </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/professor/CadastraProf.php" />
+        <option value="$PROJECT_DIR$/professor/controleProfessor.php" />
+        <option value="$PROJECT_DIR$/index.php" />
+      </list>
+    </option>
+  </component>
+  <component name="PhpServers">
+    <servers />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="10" />
+    <option name="y" value="20" />
+    <option name="width" value="1346" />
+    <option name="height" value="688" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="cesecintra" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cesecintra" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cesecintra" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cesecintra" type="462c0819:PsiDirectoryNode" />
+              <item name="professor" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="full.screen.before.presentation.mode" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="84393935-c4fc-4536-ae20-885e5e58994e" name="Default Changelist" comment="" />
+      <created>1561081257520</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1561081257520</updated>
+      <workItem from="1561081266253" duration="2361000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="2361000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <layout>
+      <window_info id="Favorites" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24886535" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3294271" />
+      <window_info anchor="right" id="Database" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Favorites" order="0" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.2496112" />
+      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="1" />
+      <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Database Changes" order="3" />
+      <window_info anchor="bottom" id="Version Control" order="4" />
+      <window_info anchor="bottom" id="Message" order="5" />
+      <window_info anchor="bottom" id="Find" order="6" />
+      <window_info anchor="bottom" id="Run" order="7" />
+      <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="11" />
+      <window_info anchor="right" id="Database" order="0" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/funcoes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-32">
+          <caret line="4" column="60" lean-forward="true" selection-start-line="4" selection-start-column="60" selection-end-line="4" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="850">
+          <caret line="50" column="19" lean-forward="true" selection-start-line="50" selection-start-column="19" selection-end-line="50" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/professor/controleProfessor.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-862">
+          <caret line="15" column="30" lean-forward="true" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/professor/CadastraProf.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="74" column="43" selection-start-line="74" selection-start-column="43" selection-end-line="74" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
