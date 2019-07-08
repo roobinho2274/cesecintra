@@ -2,39 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84393935-c4fc-4536-ae20-885e5e58994e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/aluno/altAluno.php" beforeDir="false" afterPath="$PROJECT_DIR$/aluno/altAluno.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aluno/cadAluno.php" beforeDir="false" afterPath="$PROJECT_DIR$/aluno/cadAluno.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aluno/cadastroAluno.php" beforeDir="false" afterPath="$PROJECT_DIR$/aluno/cadastroAluno.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aluno/consultaAluno.php" beforeDir="false" afterPath="$PROJECT_DIR$/aluno/consultaAluno.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aluno/controleAluno.php" beforeDir="false" afterPath="$PROJECT_DIR$/aluno/controleAluno.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/disciplina/altDisc.php" beforeDir="false" afterPath="$PROJECT_DIR$/disciplina/altDisc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/disciplina/alteraDis.php" beforeDir="false" afterPath="$PROJECT_DIR$/disciplina/alteraDis.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/disciplina/cadastraDis.php" beforeDir="false" afterPath="$PROJECT_DIR$/disciplina/cadastraDis.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/disciplina/controleDisciplinas.php" beforeDir="false" afterPath="$PROJECT_DIR$/disciplina/controleDisciplinas.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/disciplina/deletaDis.php" beforeDir="false" afterPath="$PROJECT_DIR$/disciplina/deletaDis.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/disciplina/listaDis.php" beforeDir="false" afterPath="$PROJECT_DIR$/disciplina/listaDis.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frequencia/alterarFreq.php" beforeDir="false" afterPath="$PROJECT_DIR$/frequencia/alterarFreq.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frequencia/cadFrequencia.php" beforeDir="false" afterPath="$PROJECT_DIR$/frequencia/cadFrequencia.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frequencia/controleFrequencia.php" beforeDir="false" afterPath="$PROJECT_DIR$/frequencia/controleFrequencia.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frequencia/listaFrequencia.php" beforeDir="false" afterPath="$PROJECT_DIR$/frequencia/listaFrequencia.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/matriculas/altMat.php" beforeDir="false" afterPath="$PROJECT_DIR$/matriculas/altMat.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/matriculas/alteraMat.php" beforeDir="false" afterPath="$PROJECT_DIR$/matriculas/alteraMat.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/matriculas/cadastraMat.php" beforeDir="false" afterPath="$PROJECT_DIR$/matriculas/cadastraMat.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/matriculas/controleMatriculas.php" beforeDir="false" afterPath="$PROJECT_DIR$/matriculas/controleMatriculas.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/matriculas/deletaMat.php" beforeDir="false" afterPath="$PROJECT_DIR$/matriculas/deletaMat.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/matriculas/listaMat.php" beforeDir="false" afterPath="$PROJECT_DIR$/matriculas/listaMat.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/paginaInicialAdm.php" beforeDir="false" afterPath="$PROJECT_DIR$/paginaInicialAdm.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frequencia_disc/altFreq.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frequencia_disc/alterarFreq.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frequencia_disc/cadFreq.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frequencia_disc/cadFrequencia.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frequencia_disc/controleFrequencia.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frequencia_disc/deletarFreq.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frequencia_disc/listaFrequencia.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frequencia_disc/professor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paginaInicialProf.php" beforeDir="false" afterPath="$PROJECT_DIR$/paginaInicialProf.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/professor/CadProf.php" beforeDir="false" afterPath="$PROJECT_DIR$/professor/CadProf.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/professor/CadastraProf.php" beforeDir="false" afterPath="$PROJECT_DIR$/professor/CadastraProf.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/professor/ListaProfessor.php" beforeDir="false" afterPath="$PROJECT_DIR$/professor/ListaProfessor.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/professor/altProf.php" beforeDir="false" afterPath="$PROJECT_DIR$/professor/altProf.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/professor/alteraProf.php" beforeDir="false" afterPath="$PROJECT_DIR$/professor/alteraProf.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/professor/controleProfessor.php" beforeDir="false" afterPath="$PROJECT_DIR$/professor/controleProfessor.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/professor/deletaProf.php" beforeDir="false" afterPath="$PROJECT_DIR$/professor/deletaProf.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/relatorios/alunoXdisciplina.php" beforeDir="false" afterPath="$PROJECT_DIR$/relatorios/alunoXdisciplina.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/relatorios/alunoXmatricula.php" beforeDir="false" afterPath="$PROJECT_DIR$/relatorios/alunoXmatricula.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/relatorios/alunoXnivel.php" beforeDir="false" afterPath="$PROJECT_DIR$/relatorios/alunoXnivel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/relatorios/opcoesrelatorios.php" beforeDir="false" afterPath="$PROJECT_DIR$/relatorios/opcoesrelatorios.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,30 +25,91 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/professor/CadastraProf.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="74" column="43" selection-start-line="74" selection-start-column="43" selection-end-line="74" selection-end-column="43" />
+            <state relative-caret-position="85">
+              <caret line="103" column="61" selection-start-line="103" selection-start-column="61" selection-end-line="103" selection-end-column="61" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/professor/controleProfessor.php">
+        <entry file="file://$PROJECT_DIR$/professor/CadProf.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-862">
-              <caret line="15" column="30" lean-forward="true" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
+            <state relative-caret-position="104">
+              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.php">
+        <entry file="file://$PROJECT_DIR$/paginaInicialProf.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="850">
-              <caret line="50" column="19" lean-forward="true" selection-start-line="50" selection-start-column="19" selection-end-line="50" selection-end-column="19" />
+            <state relative-caret-position="952">
+              <caret line="56" column="47" selection-start-line="56" selection-start-column="47" selection-end-line="56" selection-end-column="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/login.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="342">
+              <caret line="28" column="3" selection-start-line="28" selection-start-column="3" selection-end-line="28" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frequencia_disc/altFreq.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="23" column="40" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frequencia_disc/cadFreq.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="20" column="38" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/frequencia_disc/cadFrequencia.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="88" column="55" selection-start-line="88" selection-start-column="55" selection-end-line="88" selection-end-column="55" />
+              <folding>
+                <element signature="n#style#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#ul#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frequencia_disc/controleFrequencia.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="26" column="74" selection-start-line="26" selection-start-column="74" selection-end-line="26" selection-end-column="74" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frequencia_disc/alterarFreq.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="243">
+              <caret line="47" column="56" selection-start-line="47" selection-start-column="56" selection-end-line="47" selection-end-column="56" />
             </state>
           </provider>
         </entry>
@@ -78,12 +121,21 @@
       <find>Controle do Funcionário</find>
       <find>nome da</find>
       <find>funcionários</find>
+      <find>Entre com o nome</find>
+      <find>$_SESSION['tipoUsuario'] !='professor'</find>
+      <find>Entre</find>
+      <find>selecione a dis</find>
+      <find>mysqli_query</find>
+      <find>$_SESSION['tipoUsuario'] != 'adm'</find>
     </findStrings>
     <replaceStrings>
       <replace>Controle dos Usuários</replace>
+      <replace>$_SESSION['tipoUsuario'] !='disciplina'</replace>
+      <replace>$_SESSION['tipoUsuario'] != 'adm' &amp;&amp; $_SESSION['tipoUsuario'] != 'disciplina'</replace>
     </replaceStrings>
     <dirStrings>
       <dir>C:\xampp\htdocs\cesecintra</dir>
+      <dir>C:\xampp\htdocs\cesecintra\frequencia_disc</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -92,9 +144,19 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/professor/CadastraProf.php" />
         <option value="$PROJECT_DIR$/professor/controleProfessor.php" />
         <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/professor/alteraProf.php" />
+        <option value="$PROJECT_DIR$/professor/altProf.php" />
+        <option value="$PROJECT_DIR$/frequencia_disc/alterarFreq.php" />
+        <option value="$PROJECT_DIR$/frequencia_disc/altFreq.php" />
+        <option value="$PROJECT_DIR$/frequencia_disc/controleFrequencia.php" />
+        <option value="$PROJECT_DIR$/paginaInicialProf.php" />
+        <option value="$PROJECT_DIR$/professor/CadastraProf.php" />
+        <option value="$PROJECT_DIR$/professor/CadProf.php" />
+        <option value="$PROJECT_DIR$/frequencia_disc/cadFreq.php" />
+        <option value="$PROJECT_DIR$/login.php" />
+        <option value="$PROJECT_DIR$/frequencia_disc/cadFrequencia.php" />
       </list>
     </option>
   </component>
@@ -112,7 +174,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -123,19 +184,31 @@
             <path>
               <item name="cesecintra" type="b2602c69:ProjectViewProjectNode" />
               <item name="cesecintra" type="462c0819:PsiDirectoryNode" />
+              <item name="frequencia_disc" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cesecintra" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cesecintra" type="462c0819:PsiDirectoryNode" />
               <item name="professor" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="full.screen.before.presentation.mode" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\cesecintra\frequencia_disc" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -160,11 +233,13 @@
       <option name="presentableId" value="Default" />
       <updated>1561081257520</updated>
       <workItem from="1561081266253" duration="2361000" />
+      <workItem from="1561586076704" duration="1905000" />
+      <workItem from="1562459202049" duration="12106000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2361000" />
+    <option name="totallyTimeSpent" value="16372000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -177,15 +252,11 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24886535" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20953101" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -193,10 +264,15 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3294271" />
-      <window_info anchor="right" id="Database" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
     </layout>
     <layout-to-restore>
       <window_info id="Favorites" order="0" side_tool="true" />
@@ -224,38 +300,115 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/funcoes.php">
+    <entry file="file://$PROJECT_DIR$/professor/controleProfessor.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-32">
-          <caret line="4" column="60" lean-forward="true" selection-start-line="4" selection-start-column="60" selection-end-line="4" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+        <state relative-caret-position="255">
+          <caret line="15" column="30" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="850">
-          <caret line="50" column="19" lean-forward="true" selection-start-line="50" selection-start-column="19" selection-end-line="50" selection-end-column="19" />
+        <state relative-caret-position="529">
+          <caret line="50" column="19" selection-start-line="50" selection-start-column="19" selection-end-line="50" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/professor/controleProfessor.php">
+    <entry file="file://$PROJECT_DIR$/professor/alteraProf.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-862">
-          <caret line="15" column="30" lean-forward="true" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
+        <state relative-caret-position="136">
+          <caret line="78" column="33" selection-start-line="78" selection-start-column="33" selection-end-line="78" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/professor/altProf.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="875">
+          <caret line="114" column="29" selection-start-line="114" selection-start-column="29" selection-end-line="114" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="4902" column="1" selection-start-line="4902" selection-start-column="1" selection-end-line="4902" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frequencia_disc/alterarFreq.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="47" column="56" selection-start-line="47" selection-start-column="56" selection-end-line="47" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frequencia_disc/controleFrequencia.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="26" column="74" selection-start-line="26" selection-start-column="74" selection-end-line="26" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/funcoes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="3" selection-start-line="3" selection-start-column="3" selection-end-line="9" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frequencia_disc/cadFreq.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="20" column="38" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frequencia_disc/altFreq.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="40" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/professor/CadProf.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/professor/CadastraProf.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="74" column="43" selection-start-line="74" selection-start-column="43" selection-end-line="74" selection-end-column="43" />
+        <state relative-caret-position="85">
+          <caret line="103" column="61" selection-start-line="103" selection-start-column="61" selection-end-line="103" selection-end-column="61" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/paginaInicialProf.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="952">
+          <caret line="56" column="47" selection-start-line="56" selection-start-column="47" selection-end-line="56" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="28" column="3" selection-start-line="28" selection-start-column="3" selection-end-line="28" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frequencia_disc/cadFrequencia.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="88" column="55" selection-start-line="88" selection-start-column="55" selection-end-line="88" selection-end-column="55" />
+          <folding>
+            <element signature="n#style#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#ul#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

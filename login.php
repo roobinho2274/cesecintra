@@ -12,14 +12,20 @@ $tipo = validasuario($usuario, $senha, $con);
 if (isset($_SESSION['tipoUsuario'])) {
     unset($_SESSION['tipoUsuario']);
 }
-//atribui valor a variável globaç de sessão 
+//atribui valor a variável global de sessão
 $_SESSION['tipoUsuario'] = $tipo;
 //Verifica o tipo de usuário que fez o login e e encaminha para pagina específica
 if ($tipo == "adm") {
     header('location: paginaInicialAdm.php');
-} else if ($tipo == "secretaria") {
-    header('location: paginaInicialSec.php');
-} else if ($tipo == "professor") {
+} else if ($tipo == "disciplina") {
+
+    $query = "SELECT p.*, d.descricao as nome_disc FROM professor AS p JOIN disciplina AS d ON d.id = p.idDisc WHERE p.login LIKE '$usuario' AND p.senha LIKE '$senha'";
+    $result = mysqli_query($con, $query);
+    $r = mysqli_fetch_assoc($result);
+
+    $_SESSION['usuario_disciplina'] = $r['nome_disc'];
+    $_SESSION['usuario_disciplina_id'] = $r['idDisc'];
+
     header('location: paginaInicialProf.php');
 }else{
     //Variável global de sessão que informa erro de Login quando a senha ou usuário é inválido

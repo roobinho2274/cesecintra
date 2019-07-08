@@ -86,16 +86,16 @@
 			</div>
 			
                 <div class="form-group row mx-auto">
-                    <label class="col-sm-12 col-form-label LabelAlterar">Nome Completo:</label>
+                    <label class="col-sm-12 col-form-label LabelAlterar">Nome do Usuário:</label>
                     <div class="col-lg-10 mx-auto">
                         <input type="text" class="form-control" placeholder="Nome" name="nome" value="<?php echo $res['nome'] ?>">
                     </div>
                 </div>
 				
                 <div class="form-group row mx-auto">
-                    <label class="col-sm-12 col-form-label LabelAlterar">Nome de Usuario:</label>
+                    <label class="col-sm-12 col-form-label LabelAlterar">Login:</label>
                     <div class="col-lg-10 mx-auto">
-                        <input type="text" class="form-control" placeholder="Usuario" name="login" value="<?php echo $res['login'] ?>">
+                        <input type="text" class="form-control" placeholder="Usuário" name="login" value="<?php echo $res['login'] ?>">
                     </div>
                 </div>
 				
@@ -105,21 +105,21 @@
                         <input type="text" class="form-control" placeholder="Senha" name="senha" value="<?php echo $res['senha'] ?>">
                     </div>
                 </div>
-				
+
                 <div class="form-group row mx-auto">
                     <label class="col-sm-12 col-form-label LabelAlterar">Função:</label>
-                    <div class="col-lg-10 mx-auto">
-                        <input type="text" class="form-control" placeholder="Professor" name="tipo" value="<?php echo $res['tipo'] ?>">
-                    </div>
+                    <select name="tipo" class="col-lg-10 mx-auto form-control">
+                        <option value=""></option>
+                        <option value="adm" <?php if ($res['tipo'] == 'adm') echo 'selected'; ?>>Administrador</option>
+                        <option value="disciplina" <?php if ($res['tipo'] == 'disciplina') echo 'selected'; ?>>Disciplina</option>
+                    </select>
                 </div>
 
+                <div class="mx-auto">
+                    <button type="submit" class="btn btn-light botões strong form-control rounded mt-2 mb-3">Alterar dados</button>
+                    <button type="submit" class="btn btn-light botões strong form-control rounded mb-3" formaction="../professor/alteraProf.php">Voltar</button>
 
-
-                    <div class="mx-auto">
-                        <button type="submit" class="btn btn-light botões strong form-control rounded mt-2 mb-3">Alterar dados</button>
-                        <button type="submit" class="btn btn-light botões strong form-control rounded mb-3" formaction="../professor/alteraProf.php">Voltar</button>
-
-                    </div>
+                </div>
             </form> 
  </div>
     </body> 

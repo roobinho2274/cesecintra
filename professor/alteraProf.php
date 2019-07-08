@@ -70,14 +70,13 @@
 	<div class="container  p-1 mt-5 mb-3  rounded corpoDoAlterar strong">	 
 		 <form action="altProf.php" method="POST">
 		 <hr class="hrBranco"/>
-		 <h2 class="text-center mt-1"> Alterar dados dos funcionários </h2>
+		 <h2 class="text-center mt-1"> Alterar Usuários </h2>
 		 <hr class="hrBranco"/>
-		 <div class="tamanhoDaMensagem text-center">Selecione o funcionario desejado para alterar seus dados.</div>
+		 <div class="tamanhoDaMensagem text-center">Selecione o usuário desejado para alterar seus dados.</div>
                 <div class="form-group row mt-4 pr-4 pl-4">
                     
                         <select class="form-control " name="nome">
                             <?php
-                            /* Faz a busca por todos as disciplinas para preencher o select */
                             $query = "SELECT * FROM professor";
                             $resultado = executa($query, $con);
                             while ($r = mysqli_fetch_assoc($resultado)) {
