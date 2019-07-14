@@ -66,6 +66,10 @@
                         <li class="nav-item botoesDoMenu ml-2 mr-2">
                             <a class="nav-link text-light " href="../relatorios/opcoesrelatorios.php">Menu de Relatórios</a>
                         </li>
+
+                        <li class="nav-item botoesDoMenu ml-2 mr-2" style="background-color: #dc3545;">
+                            <a class="nav-link text-light" href="../logout.php">Sair</a>
+                        </li>
 					</ul>
 				</div>
 			</ul>	

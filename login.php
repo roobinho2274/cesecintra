@@ -26,7 +26,7 @@ if ($tipo == "adm") {
     $_SESSION['usuario_disciplina'] = $r['nome_disc'];
     $_SESSION['usuario_disciplina_id'] = $r['idDisc'];
 
-    header('location: paginaInicialProf.php');
+    header('location: frequencia_disc/controleFrequencia.php');
 }else{
     //Variável global de sessão que informa erro de Login quando a senha ou usuário é inválido
     $_SESSION['msg'] = "<div class='alert alert-danger text-center' role='alert'>Usuário inválido!</div> ";

@@ -9,6 +9,8 @@ if ($_SESSION['tipoUsuario'] != 'adm') {
     header("location: ../index.php");
 }
 
+$meses = ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
+
 $aluno = filter_input(INPUT_POST, 'aluno', FILTER_SANITIZE_STRING);
 $disciplina = filter_input(INPUT_POST, 'prof', FILTER_SANITIZE_STRING);
 $horas = filter_input(INPUT_POST, 'horas', FILTER_SANITIZE_STRING);
@@ -24,7 +26,9 @@ $hoje = mysqli_fetch_assoc($databd);
 $ano = substr(strval($hoje["today"]),0, 4);
 $mesNumber = substr(strval($hoje["today"]),4, 2);
 
-$mes = mes($mesNumber - 1);
+$beforeMes = $mesNumber - 2 == -1 ? 11 : $mesNumber - 2;
+
+$mes = $meses[$beforeMes];
 
 $id = $idBd['MAX(id)'] + 1;
 $query2 = "INSERT INTO frequencia(id,idDisciplina,idAluno,mes,ano, horas)VALUES ('$id','$disciplina','$aluno','$mes','$ano','$horas') ";
@@ -37,36 +41,4 @@ if ($resultado) {
 } else {
     $_SESSION['msn'] = "<div class='alert alert-danger' role='alert'> Falha ao Inserir!</div>";
     header("Location: ../frequencia/cadFrequencia.php");
-}
-
-
-
-
-function mes($mes){
-
-  if($mes == 1){
-  return "Janeiro";
-  }elseif($mes == 2){
-  return "Fevereiro";
-  }elseif($mes == 3){
-  return "Março";
-  }elseif($mes == 4){
-  return "Abril";
-  }elseif($mes == 5){
-  return "Maio";
-  }elseif($mes == 6){
-  return "Junho";
-  }elseif($mes == 7){
-  return "Julho";
-  }elseif($mes == 8){
-  return "Agosto";
-  }elseif($mes == 9){
-  return "Setembro";
-  }elseif($mes == 10){
-  return "Outubro";
-  }elseif($mes == 11){
-  return "Novembro";
-  }elseif($mes == 12){
-  return "Dezembro";
-  }
 }

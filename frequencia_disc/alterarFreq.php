@@ -14,7 +14,7 @@
     session_start();
     include_once ("../funcoes.php");
     include_once ("../conexao.php");
-    if ($_SESSION['tipoUsuario'] !='adm' && $_SESSION['tipoUsuario'] !='disciplina') {
+    if ( $_SESSION['tipoUsuario'] !='disciplina') {
         $_SESSION['msg'] = "<div class='alert alert-danger text-center' role='alert'>Para acessar o sistema faça login!</div>";
         header("location: ../index.php");
     }
@@ -38,28 +38,17 @@
     ?>	
 	<body style="background-color:#65AFB2;">
 		<nav class="container-fluid mx-auto navbar navbar-expand-lg corpoMenu main-nav navbar-dark sticky-top " style="font-weight:bold; ">
-				<!-- Brand/logo -->
-			<ul class="nav navbar-nav mx-auto">		
-				<div class="navbar-brand">
-					<a class="navbar-btn mx-auto"  href="../paginaInicialAdm.php">
-						<img src="../imagens/LogoProMenu.png" alt="logo" style="width:60px;">
-					</a>	
-
-					<button class="navbar-toggler mx-auto" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-						<span class="navbar-toggler-icon"></span>
-					</button>		
-				</div>	
-				<div class="collapse navbar-collapse text-center" id="collapsibleNavbar">
-					<ul class="navbar-nav">
-						<li class="nav-item botoesDoMenu ml-2 mr-2">
-							<a class="nav-link text-light " href="controleFrequencia.php">Controle de Frequência</a>
-						</li>
-					</ul>
-				</div>
-			</ul>	
+            <div class="navbar-brand w-100 d-flex">
+                <a class="navbar-btn mx-auto"  href="controleFrequencia.php">
+                    <img src="../imagens/LogoProMenu.png" alt="logo" style="width:60px;">
+                </a>
+                <div class="nav-item botoesDoMenu ml-2 mr-2 position-absolute" style="right: 1%;background-color: #dc3545;">
+                    <a class="nav-link text-light"  href="../logout.php">Sair</a>
+                </div>
+            </div>
 		</nav>
-		<div class="pl-2 pr-2">
-            <div class="mt-5 mb-3 container corpoFrequencia">
+		 <h2 class="mt-2" style="font-weight: bold; color: white;"><?php echo $_SESSION['usuario_disciplina']?></h2>  <div class="pl-2 pr-2">
+            <div class="mt-3 mb-3 container corpoFrequencia">
         		<hr class="hrBranco"/>
                 <h2  class="mb-3">Alterar frequência</h2>
         		<hr class="hrBranco"/>
@@ -75,12 +64,10 @@
                     </div>
 
                     <div class="form-group row">
-                        <label class="col-lg-2 col-form-label">Disciplina:</label>
+                        <label class="col-lg-2 col-form-label MensagemDisciplina" >Disciplina:</label>
                         <div class="col-lg-10">
-                            <select class="form-control" name="disciplina" id="combobox_professor" required>
-                                <option value="<?php echo $r['isDisciplina'];?>"><?php echo $r['disciplina'];?></option>
-                            </select>
-                        </div>  
+                            <input type="text" class="form-control" value="<?php echo $_SESSION['usuario_disciplina'];?>" name="disciplina" required disabled>
+                        </div>
                     </div>
 
                     <div class="form-group row">

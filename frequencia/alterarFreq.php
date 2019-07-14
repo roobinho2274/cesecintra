@@ -66,7 +66,7 @@
 
 						<li class="nav-item botoesDoMenu ml-2 mr-2">
 							<a class="nav-link text-light" href="../matriculas/controleMatriculas.php">Controle das Matriculas</a>
-						</li>					
+						</li>
 
 						<li class="nav-item botoesDoMenu ml-2 mr-2">
 							<a class="nav-link text-light " href="controleFrequencia.php">Controle de Frequência</a>
@@ -74,6 +74,10 @@
 
                         <li class="nav-item botoesDoMenu ml-2 mr-2">
                             <a class="nav-link text-light " href="../relatorios/opcoesrelatorios.php">Menu de Relatórios</a>
+                        </li>
+
+                        <li class="nav-item botoesDoMenu ml-2 mr-2" style="background-color: #dc3545;">
+                            <a class="nav-link text-light" href="../logout.php">Sair</a>
                         </li>
 					</ul>
 				</div>
@@ -113,13 +117,22 @@
 
                     <div class="form-group row">
                         <div class="col-lg-6 row">
-                            <label class="col-lg-3 col-form-label MensagemDisciplina">Mês: </label>
-                            <div class="col-lg-3">
-                                <input type="text" class="form-control" value="<?php echo $r['mes'];?>" name="mes">
+                            <label class="col-lg-2 col-form-label MensagemDisciplina text-center">Mês: </label>
+                            <div class="col-lg-4">
+                                <select name="mes" class="form-control">
+                                    <?php
+                                    $meses = ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
+
+                                    foreach ($meses as $mes){
+                                        if($mes == $r['mes']) $selected = 'selected'; else $selected = '';
+                                        echo '<option value="'.$mes.'" '.$selected.'>'.$mes.'</option>';
+                                    }
+                                    ?>
+                                </select>
                             </div>
                         </div>
                         <div class="col-lg-6 row">
-                            <label class="col-lg-3 col-form-label MensagemDisciplina">Ano:</label>
+                            <label class="col-lg-3 col-form-label MensagemDisciplina text-center">Ano:</label>
                             <div class="col-lg-3">
                                 <input type="text" class="form-control" value="<?php echo $r['ano'];?>" name="ano" disabled>
                             </div>

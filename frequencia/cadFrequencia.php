@@ -4,12 +4,13 @@
 	    <title>Cadastro de frequência</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <!-- Bootstrap CSS -->
 		<link rel="shortcut icon" href="../imagens/CesecLogo.png">
         <link rel="stylesheet" href="../css/bootstrap.css">
 		<link rel="stylesheet" href="../css/Professor.css">
+
         <script src="../js/jquery-3.3.1.min.js"></script>
     </head>
+
     <?php
     session_start();
     include_once ("../funcoes.php");
@@ -51,7 +52,7 @@
 
 						<li class="nav-item botoesDoMenu ml-2 mr-2">
 							<a class="nav-link text-light" href="../matriculas/controleMatriculas.php">Controle das Matriculas</a>
-						</li>					
+						</li>
 
 						<li class="nav-item botoesDoMenu ml-2 mr-2">
 							<a class="nav-link text-light " href="controleFrequencia.php">Controle de Frequência</a>
@@ -59,6 +60,10 @@
 
                         <li class="nav-item botoesDoMenu ml-2 mr-2">
                             <a class="nav-link text-light " href="../relatorios/opcoesrelatorios.php">Menu de Relatórios</a>
+                        </li>
+
+                        <li class="nav-item botoesDoMenu ml-2 mr-2" style="background-color: #dc3545;">
+                            <a class="nav-link text-light" href="../logout.php">Sair</a>
                         </li>
 					</ul>
 				</div>
@@ -72,8 +77,21 @@
         		<div class="MensagemFrequencia mb-3">
         			Selecione o aluno e o professor para lançar a frequência.
         		</div>
+
+                <div class="row">
+                    <div class="col-md-2 text-center">
+                        <label for="input_matricula" class="control-label" style="font-weight: bold;">Matrícula</label>
+                    </div>
+                    <div class="col-md-8">
+                        <input id="input_matricula" type="text" class="form-control">
+                    </div>
+                    <div class="col-md-2">
+                        <button id="btn_matricula" class="btn btn-light botoesFrequencia btn-block mb-2">Buscar</button>
+                    </div>
+                </div>
+
+
                 <form action="cadFreq.php" method="POST" class="strong text-center">
-                    
                      <div class="form-group row">
                         <label class="col-lg-2 col-form-label">Aluno:</label>
                         <div class="col-lg-10">
@@ -112,47 +130,54 @@
                             <input type="text" class="form-control" placeholder="Ex: 20:00" name="horas" required>
                         </div>
                     </div>
-
-
-                <?php
-                if (isset($_SESSION['msn'])) {
-        			echo'<hr class="hrBranco"/>';
-                    echo $_SESSION['msn'];
-                    unset($_SESSION['msn']);
-        			echo'<hr class="hrBranco"/>';				
-                }
-                ?>
+                    <?php
+                    if (isset($_SESSION['msn'])) {
+                        echo'<hr class="hrBranco"/>';
+                        echo $_SESSION['msn'];
+                        unset($_SESSION['msn']);
+                        echo'<hr class="hrBranco"/>';
+                    }
+                    ?>
                     <div class=" pl-5 pr-5">
                         <button type="submit" class=" btn btn-light botoesFrequencia btn-block mb-2">Dar presença</button>
                         <a class="btn btn-light botoesFrequencia btn-block mb-3" href="controleFrequencia.php">Voltar</a>
                     </div>
-                </form> 
+                </form>
+                <script type="text/javascript">
+
+                    $('#btn_matricula').click(function(){
+
+                        if($('#input_matricula').val()) {
+                            var data = {
+                                'acao' : 'buscar_aluno',
+                                'matricula' : $('#input_matricula').val()
+                            };
+
+                            $.ajax({
+                                type: 'POST',
+                                dataType: 'json',
+                                url: 'ajax.php',
+                                data: data,
+                                success: function(data){
+                                    if(data['error']){
+                                        alert(data['error']);
+                                    }else{
+                                        $('#combobox_aluno option[value="'+ data['id'] +'"]').prop('selected', 'selected');
+                                        $('#combobox_professor').append(data['disciplina']);
+                                    }
+                                },
+                                error: function(){
+                                    alert('ERRO!');
+                                }
+                            });
+                        }
+                    });
+                </script>
         	</div>
-	    </div>
-        <script type="text/javascript">
-            $(function(){
-                $('#combobox_aluno').change(function(){
-                    if( $(this).val() ) {
-                        $.getJSON('professor.php?search=',{combobox_aluno: $(this).val(), ajax: 'true'}, function(j){
-                                var options = '<option value="">Selecione a disciplina</option>'; 
-                                
-                                for (var i = 0; i < j.length; i++) {
-                                    options += '<option value="' + j[i].id + '">' + j[i].disciplina + ' - ' + j[i].prof + '</option>';
-                                }   
-                                
-                                $('#combobox_professor').html('').show();
-                                $('#combobox_professor').html(options).show();
-                            
-                        });
-                    } else {
-                        $('#combobox_professor').html('<option value="">Selecione a disciplina</option>');
-                    }
-                });
-            });
-        </script>
+        </div>
     </body>
-    <!--<script src="../js/jquery-3.3.1.slim.min.js"></script>-->
+    <!-- <script src="../js/jquery-3.3.1.slim.min.js"></script> -->
     <script src="../js/popper.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
-        
+
 </html>
