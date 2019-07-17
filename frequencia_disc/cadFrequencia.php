@@ -37,9 +37,28 @@
         		<hr class="hrBranco"/>
                 <h2  class="mb-3">Lançar frequência</h2>
         		<hr class="hrBranco"/>
-        		<div class="MensagemFrequencia mb-3">
-        			Selecione o aluno para lançar a frequência.
-        		</div>
+                <div class="MensagemFrequencia mb-3">
+                    Insira a matricula
+                </div>
+
+                <div class="row">
+                    <div class="col-md-2 text-center">
+                        <label for="input_matricula" class="control-label" style="font-weight: bold;">Matrícula</label>
+                    </div>
+                    <div class="col-md-8">
+                        <input id="input_matricula" type="text" class="form-control">
+                    </div>
+                    <div class="col-md-2">
+                        <button id="btn_matricula" class="btn btn-light botoesFrequencia btn-block mb-2">Buscar</button>
+                    </div>
+                </div>
+
+                <div class="MensagemFrequencia mb-3">
+                    - Ou -
+                </div>
+                <div class="MensagemFrequencia mb-3">
+                    Ou Selecione o aluno
+                </div>
                 <form action="cadFreq.php" method="POST" class="strong text-center">
                     
                      <div class="form-group row">
@@ -95,25 +114,45 @@
         	</div>
 	    </div>
         <script type="text/javascript">
-            $(function(){
-                $('#combobox_aluno').change(function(){
-                    if( $(this).val() ) {
-                        $.getJSON('professor.php?search=',{combobox_aluno: $(this).val(), ajax: 'true'}, function(j){
-                                var options = '<option value="">Selecione a disciplina</option>'; 
-                                
-                                for (var i = 0; i < j.length; i++) {
-                                    options += '<option value="' + j[i].id + '">' + j[i].disciplina + ' - ' + j[i].prof + '</option>';
-                                }   
-                                
-                                $('#combobox_professor').html('').show();
-                                $('#combobox_professor').html(options).show();
-                            
+
+            $('#btn_matricula').click(function(){
+
+                if($('#input_matricula').val() != '') {
+                    if (!isNaN($('#input_matricula').val())) {
+                        var data = {
+                            'acao': 'buscar_aluno',
+                            'matricula': $('#input_matricula').val(),
+                            'disciplina': <?php echo $_SESSION['usuario_disciplina_id'];?>
+                        };
+
+                        $.ajax({
+                            method: 'POST',
+                            dataType: 'json',
+                            url: 'ajax.php',
+                            data: data,
+                            success: function (data) {
+                                if (data['error']) {
+                                    alert(data['error']);
+                                    $("#combobox_aluno").prop("selectedIndex", 0);
+                                } else {
+                                    $('#combobox_aluno option[value="' + data['id'] + '"]').prop('selected', 'selected');
+                                }
+                            },
+                            error: function (data) {
+                                if(data['error']){
+                                    alert(data['error']);
+                                    $("#combobox_aluno").prop("selectedIndex", 0);
+                                }else {
+                                    alert('Erro tente reiniciar o navegador!');
+                                }
+                            }
                         });
-                    } else {
-                        $('#combobox_professor').html('<option value="">Selecione a disciplina</option>');
+                    }else{
+                        alert('Insira uma matricula válida (Somente números).');
                     }
-                });
+                }
             });
+
         </script>
     </body>
     <!--<script src="../js/jquery-3.3.1.slim.min.js"></script>-->

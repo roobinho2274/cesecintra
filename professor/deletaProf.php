@@ -4,7 +4,7 @@
     <head>
         <!-- Required meta tags -->
         <meta charset="utf-8">
-		<title>Deleta Funcionários</title>
+		<title>Deleta usuário</title>
 		<link rel="shortcut icon" href="../imagens/CesecLogo.png">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -82,10 +82,10 @@
 
             <form action="delProf.php" method="POST" class="corpoDoDeletar">
 			<hr class="hrBranco"/>
-			<h2>Deletar cadastro do funcionário</h2>
+			<h2>Deletar cadastro do usuário</h2>
 			<hr class="hrBranco"/>
 			<div class="MensagemDeletar mb-3">
-			Selecione o funcionário desejado para deletar.
+			    Selecione o usuário que deseja deletar.
 			</div>
                 <div class="form-group row pl-2 pr-2">
                     <div class="col-lg-10 mx-auto">
@@ -95,7 +95,7 @@
                             $query = "SELECT * FROM professor";
                             $resultado = executa($query, $con);
                             while ($r = mysqli_fetch_assoc($resultado)) {
-                                    echo "<option value=" . $r['id'] . ">" ."<b>Nome: ". $r['nome'] . "   |   Ocupação: ".$r['tipo'];   
+                                    echo "<option value=" . $r['id'] . ">" ."<b>". $r['nome'] . " - ".$r['tipo'];
                             }
                             ?>
                         </select>
@@ -113,7 +113,7 @@
             ?>
 				<div class="form-group pl-5 pr-5">
                     <div class="text-center">
-                        <button type="submit" class="btn botõesDeletar text-light strong form-control rounded mb-3">Excluir funcionario</button>
+                        <button type="submit" class="btn botõesDeletar text-light strong form-control rounded mb-3">Excluir usuário</button>
                         <button type="submit" class="btn botõesDeletar text-light strong form-control rounded" formaction="../professor/controleProfessor.php">Voltar</button>
                     </div>
                 </div>

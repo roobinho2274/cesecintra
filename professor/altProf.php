@@ -80,29 +80,29 @@
 			</ul>	
 		</nav>
 
-		 <div class="container mt-5 mb-3">
-		 <form action="altProfBD.php" method="POST" class="corpoDoAlterar pr-3 pl-3 mx-auto">
-			
-			<div class="text-center">
-			<hr class="hrBranco"/>
-			<h2> Dados do funcionario </h2>
-			<hr class="hrBranco"/>
-			</div>
-			
+        <div class="container mt-5 mb-3">
+            <form action="altProfBD.php" method="POST" class="corpoDoAlterar pr-3 pl-3 mx-auto">
+
+                <div class="text-center">
+                <hr class="hrBranco"/>
+                <h2> Dados do funcionario </h2>
+                <hr class="hrBranco"/>
+                </div>
+
                 <div class="form-group row mx-auto">
                     <label class="col-sm-12 col-form-label LabelAlterar">Nome do Usuário:</label>
                     <div class="col-lg-10 mx-auto">
                         <input type="text" class="form-control" placeholder="Nome" name="nome" value="<?php echo $res['nome'] ?>">
                     </div>
                 </div>
-				
+
                 <div class="form-group row mx-auto">
                     <label class="col-sm-12 col-form-label LabelAlterar">Login:</label>
                     <div class="col-lg-10 mx-auto">
                         <input type="text" class="form-control" placeholder="Usuário" name="login" value="<?php echo $res['login'] ?>">
                     </div>
                 </div>
-				
+
                 <div class="form-group row mx-auto">
                     <label class="col-sm-12 col-form-label LabelAlterar">Senha:</label>
                     <div class="col-lg-10 mx-auto">
@@ -112,22 +112,51 @@
 
                 <div class="form-group row mx-auto">
                     <label class="col-sm-12 col-form-label LabelAlterar">Função:</label>
-                    <select name="tipo" class="col-lg-10 mx-auto form-control">
+                    <select id="select_tipo" name="tipo" class="col-lg-10 mx-auto form-control">
                         <option value=""></option>
                         <option value="adm" <?php if ($res['tipo'] == 'adm') echo 'selected'; ?>>Administrador</option>
                         <option value="disciplina" <?php if ($res['tipo'] == 'disciplina') echo 'selected'; ?>>Disciplina</option>
                     </select>
                 </div>
 
+                <div id="select_disc" style="display: <?php echo $res['tipo'] == 'disciplina' ? 'block' : 'none';?>">
+                    <br>
+                    <h5> Disciplina: </h5>
+                    <select class="col-lg-10 mx-auto form-control" name="disciplina">
+                        <option value="">Selecione a disciplina</option>
+
+                        <?php
+                        $query = "SELECT * FROM disciplina";
+                        $resultado = mysqli_query($con, $query);
+                        while($dados = mysqli_fetch_assoc($resultado)){
+                            $selected = $res['idDisc'] == $dados['id']? 'selected' : '';
+                            echo '<option value="'. $dados['id'] .'" '. $selected .'>'. $dados['descricao'] .'</option>';
+                        }
+                        ?>
+
+                    </select>
+
+                </div>
+
                 <div class="mx-auto">
                     <button type="submit" class="btn btn-light botões strong form-control rounded mt-2 mb-3">Alterar dados</button>
                     <button type="submit" class="btn btn-light botões strong form-control rounded mb-3" formaction="../professor/alteraProf.php">Voltar</button>
-
                 </div>
-            </form> 
- </div>
-    </body> 
-	<script src="../js/jquery-3.3.1.slim.min.js"></script>
+            </form>
+        </div>
+    </body>
+    <script src="../js/jquery-3.3.1.slim.min.js"></script>
+    <script type="text/javascript">
+        $('#select_tipo').change(function () {
+           if ($(this).val() == 'adm'){
+               $('#select_disc').css('display', 'none');
+
+           }else if($('#select_tipo').val() == 'disciplina'){
+               $('#select_disc').css('display', 'block');
+           }
+        });
+
+    </script>
     <script src="../js/popper.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
 </html>

@@ -75,7 +75,7 @@
                 <h2  class="mb-3">Lançar frequência</h2>
         		<hr class="hrBranco"/>
         		<div class="MensagemFrequencia mb-3">
-        			Selecione o aluno e o professor para lançar a frequência.
+        			Insira a matricula
         		</div>
 
                 <div class="row">
@@ -90,6 +90,12 @@
                     </div>
                 </div>
 
+                <div class="MensagemFrequencia mb-3">
+                     - Ou -
+                </div>
+                <div class="MensagemFrequencia mb-3">
+                    Ou Selecione o aluno
+                </div>
 
                 <form action="cadFreq.php" method="POST" class="strong text-center">
                      <div class="form-group row">
@@ -147,14 +153,46 @@
 
                     $('#btn_matricula').click(function(){
 
-                        if($('#input_matricula').val()) {
-                            var data = {
-                                'acao' : 'buscar_aluno',
-                                'matricula' : $('#input_matricula').val()
-                            };
+                        if($('#input_matricula').val() != '') {
+                            if (!isNaN($('#input_matricula').val())) {
+                                var data = {
+                                    'acao': 'buscar_aluno',
+                                    'matricula': $('#input_matricula').val()
+                                };
 
+                                $.ajax({
+                                    method: 'POST',
+                                    dataType: 'json',
+                                    url: 'ajax.php',
+                                    data: data,
+                                    success: function (data) {
+                                        if (data['error']) {
+                                            alert(data['error']);
+                                            $('#combobox_aluno').html(data['aluno']);
+                                        } else {
+                                            $('#combobox_aluno option[value="' + data['id'] + '"]').prop('selected', 'selected');
+                                            $('#combobox_professor').html(data['disciplina']);
+                                        }
+                                    },
+                                    error: function () {
+                                        alert('Erro tente reiniciar o navegador!');
+                                    }
+                                });
+                            }else{
+                                alert('Insira uma matricula válida (Somente números).');
+                            }
+                        }
+                    });
+
+                    $('#combobox_aluno').change(function(){
+                        var data = {
+                            'acao' : 'buscar_matriculas',
+                            'aluno' : $('#combobox_aluno').val()
+                        };
+
+                        if ($('#combobox_aluno').val()){
                             $.ajax({
-                                type: 'POST',
+                                method: 'POST',
                                 dataType: 'json',
                                 url: 'ajax.php',
                                 data: data,
@@ -162,16 +200,20 @@
                                     if(data['error']){
                                         alert(data['error']);
                                     }else{
-                                        $('#combobox_aluno option[value="'+ data['id'] +'"]').prop('selected', 'selected');
-                                        $('#combobox_professor').append(data['disciplina']);
+                                        $('#combobox_professor').html(data['matricula']);
                                     }
                                 },
-                                error: function(){
-                                    alert('ERRO!');
+                                error: function(data){
+                                    if(data['error']){
+                                        alert(data['error']);
+                                    }else{
+                                        alert('Erro tente reiniciar o navegador!');
+                                    }
                                 }
                             });
                         }
                     });
+
                 </script>
         	</div>
         </div>

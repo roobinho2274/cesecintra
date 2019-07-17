@@ -102,7 +102,7 @@
                         . "<td>" . $r['nome'] . "</td>"
 						. "<td>" . $r['login'] . "</td>"
 						. "<td>" . $r['senha'] . "</td>"
-						. "<td>" . $r['tipo'] . "</td>";
+						. "<td>" . ucfirst($r['tipo'] == 'adm' ? 'administrador' : $r['tipo']) . "</td>";
                         echo"</tr>";
                     }
                     ?>

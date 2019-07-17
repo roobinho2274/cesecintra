@@ -81,7 +81,7 @@
                     
                         <select class="form-control " name="nome">
                             <?php
-                            $query = "SELECT * FROM professor";
+                            $query = "SELECT * FROM professor ORDER BY nome";
                             $resultado = executa($query, $con);
                             while ($r = mysqli_fetch_assoc($resultado)) {
                                     echo "<option value=" . $r['id'] . ">" . $r['nome'] .	"  -  "	. $r['tipo']."</option>";               

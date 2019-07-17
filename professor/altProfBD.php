@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-include_once ("../conexao.php");7
+include_once ("../conexao.php");
 if ($_SESSION['tipoUsuario'] != 'adm') {
     echo $_SESSION['tipoUsuario'];
     $_SESSION['msg'] = "<div class='alert alert-danger text-center' role='alert'>Para acessar o sistema faça login!</div>";
@@ -10,12 +10,17 @@ if ($_SESSION['tipoUsuario'] != 'adm') {
 
 $nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_STRING);
 $login = filter_input(INPUT_POST, 'login', FILTER_SANITIZE_STRING);
-$senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_NUMBER_INT);
+$senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_STRING);
 $tipo = filter_input(INPUT_POST, 'tipo', FILTER_SANITIZE_STRING);
-
+if($tipo == 'disciplina'){
+    $disciplina = filter_input(INPUT_POST, 'disciplina', FILTER_SANITIZE_STRING);
+    $query_disc = ", idDisc = '$disciplina' ";
+}else{
+    $query_disc = '';
+}
 if (isset($_SESSION['funcionario'])) {
     $codigo = $_SESSION['funcionario'];
-    $queryAltera = "UPDATE professor SET nome = '$nome',login = '$login',senha = '$senha' ,tipo = '$tipo' ". "WHERE professor.id = $codigo";
+    $queryAltera = "UPDATE professor SET nome = '$nome', login = '$login', senha = '$senha', tipo = '$tipo' $query_disc WHERE professor.id = $codigo";
 
     unset($_SESSION['funcionario']);
 

@@ -76,10 +76,10 @@ if ($_SESSION['tipoUsuario'] != 'adm') {
 			<hr class="hrBranco"/>
 			<h2 class="text-center strong mt-2 mb-2 text-light">Usuários</h2>
 			<hr class="hrBranco"/>
-                 <input type="submit" class="mt-4 btn botoesOpcao btn-block strong mb-4 btn-light" value="Cadastrar novo Usuários" formaction="CadastraProf.php"/>
-                 <input type="submit" class="btn botoesOpcao btn-block strong mb-4 btn-light" value="Consultar os Usuários cadastrados" formaction="listaProfessor.php"/>
-                 <input type="submit" class="btn botoesOpcao btn-block strong mb-4 btn-light" value="Alterar os dados dos Usuários" formaction="alteraProf.php"/>
-                 <input type="submit" class="btn botoesOpcao btn-block strong mb-4 btn-light" value="Deletar Usuário" formaction="deletaProf.php"/>
+                 <input type="submit" class="mt-4 btn botoesOpcao btn-block strong mb-4 btn-light" value="Cadastrar novo usuário" formaction="CadastraProf.php"/>
+                 <input type="submit" class="btn botoesOpcao btn-block strong mb-4 btn-light" value="Consultar usuários cadastrados" formaction="listaProfessor.php"/>
+                 <input type="submit" class="btn botoesOpcao btn-block strong mb-4 btn-light" value="Alterar dados dos usuários" formaction="alteraProf.php"/>
+                 <input type="submit" class="btn botoesOpcao btn-block strong mb-4 btn-light" value="Deletar usuário" formaction="deletaProf.php"/>
 				
 				<div class="mb-3">
 				 <a class="btn btnVoltarMENUADM btn-light strong form-control" href="../paginaInicialAdm.php"> Voltar</a>

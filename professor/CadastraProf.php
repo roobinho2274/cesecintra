@@ -111,6 +111,7 @@
 				</fieldset>
 
                  <div id="select_disc" style="display: none;">
+                     <br>
                      <h5> Disciplina: </h5>
                      <select class="form-control" name="disciplina">
                          <option value="">Selecione a disciplina</option>
