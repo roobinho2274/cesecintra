@@ -53,6 +53,34 @@ if($data['acao'] == 'buscar_aluno'){
     }
 
     echo json_encode($response);
+}else if($data['acao'] == 'buscar_frequencias'){
+    $query = "SELECT f.*, a.nome AS aluno, d.descricao AS disciplina FROM frequencia AS f
+            JOIN disciplina AS d ON f.idDisciplina = d.id
+            JOIN aluno AS a ON a.id = f.idAluno WHERE f.idAluno = ".$data['idAluno'];
+
+    $res = mysqli_query($con, $query);
+
+    if($res){
+        $response['error'] = '';
+        $response['frequencias'] = '';
+
+        while ($r = mysqli_fetch_assoc($res)) {
+            $response['frequencias'] .= "<tr>"
+                                            . "<th scope = 'row'>" . $r['id'] . "</th>"
+                                            . "<td>" . $r['aluno'] . "</td>"
+                                            . "<td>" . $r['disciplina'] . "</td>"
+                                            . "<td>" . $r['horas'] . "</td>"
+                                            . "<td>" . $r['mes'] . "</td>"
+                                            . "<td>" . $r['ano'] . "</td>"
+                                            . "<td>" . '<form method="post" action = "alterarFreq.php"><input type="hidden" value="'.$r['id'].'" name = "id"><input type = "submit" value="Alterar" class="form-control btn btn-light botõesAluno"></form>'."</td>"
+                                            . "<td>" . '<form method="post" action = "deletarFreq.php"><input type="hidden" value="'.$r['id'].'" name = "id"><input type = "submit" value="Deletar" class="form-control btn btn-light botõesAluno"></form>' . "</td>"
+                                        . "</tr>";
+        }
+    }else{
+        $response['error'] = 'Não foram encontradas frequencias para o aluno.';
+    }
+
+    echo json_encode($response);
 }else{
     $response['error'] = "Ação desconhecida.";
     echo json_encode($response);

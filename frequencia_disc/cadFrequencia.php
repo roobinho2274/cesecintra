@@ -57,7 +57,7 @@
                     - Ou -
                 </div>
                 <div class="MensagemFrequencia mb-3">
-                    Ou Selecione o aluno
+                    Selecione o aluno
                 </div>
                 <form action="cadFreq.php" method="POST" class="strong text-center">
                     

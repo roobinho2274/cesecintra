@@ -9,6 +9,8 @@
 		<link rel="shortcut icon" href="../imagens/CesecLogo.png">
         <link rel="stylesheet" href="../css/bootstrap.css" >
 		<link rel="stylesheet" href="../css/Professor.css" >
+
+        <script src="../js/jquery-3.3.1.min.js"></script>
     </head>
 <?php
 	session_start();
@@ -20,6 +22,11 @@
 	    $_SESSION['msg'] = "<div class='alert alert-danger text-center' role='alert'>Para acessar o sistema faça login!</div>";
 	    header("location: ../index.php");
 	}
+
+
+    $query = "SELECT DISTINCT a.nome AS aluno, a.id AS idAluno FROM frequencia AS f
+                JOIN aluno AS a ON a.id = f.idAluno ORDER BY a.nome DESC";
+	$resultadoAlunos = mysqli_query($con, $query);
 
 	//Query para consulta no banco de todas as disciplinas
 	$query = "SELECT f.*, a.nome AS aluno, d.descricao AS disciplina FROM frequencia AS f
@@ -81,8 +88,29 @@
 				</div>
 			</ul>	
 		</nav>
+
+
+
 		<div class="pl-2 pr-2">
 	        <div class = "container mt-5 mb-3">
+                <div class="row">
+                    <div class="col-md-2 text-center">
+                        <label for="select_aluno" class="control-label" style="font-weight: bold;color: white">Aluno</label>
+                    </div>
+                    <div class="col-md-8">
+                        <select class="form-control" name="aluno" id="select_aluno">
+                            <option value=""></option>
+                            <?php
+                            while($aluno = mysqli_fetch_array($resultadoAlunos)){
+                                echo '<option value="'.$aluno['idAluno'].'">'.$aluno['aluno'].'</option>';
+                            }
+                            ?>
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <button id="btn_aluno" class="btn btn-light botoesFrequencia btn-block mb-2">Buscar</button>
+                    </div>
+                </div>
 				<h2 class="strong text-center text-light mb-2">Lista de Frequencias</h2>
             	<div class="table-responsive corpoDaTable strong">
 					<table class="table table-striped table-bordered">
@@ -131,4 +159,38 @@
 			</div>
 		</div>
     </body>
+    <script type="text/javascript">
+        $('#btn_aluno').click(function(){
+
+            if($('#select_aluno').val() != '') {
+                if (!isNaN($('#select_aluno').val())) {
+                    var data = {
+                        'acao': 'buscar_frequencias',
+                        'idAluno': $('#select_aluno').val()
+                    };
+
+                    $.ajax({
+                        method: 'POST',
+                        dataType: 'json',
+                        url: 'ajax.php',
+                        data: data,
+                        success: function (data) {
+                            if (data['error']) {
+                                alert(data['error']);
+                            } else {
+                                $('tbody').html(data['frequencias']);
+                            }
+                        },
+                        error: function () {
+                            alert('Erro tente reiniciar o navegador!');
+                        }
+                    });
+                }else{
+                    alert('Erro! Aluno inválido.');
+                }
+            }
+        });
+    </script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
 </html>
