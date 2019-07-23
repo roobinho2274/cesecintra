@@ -25,7 +25,7 @@
                 width: 75vw;
                 padding: 10px;
                 border: 2px solid black;
-                margin: 40px auto;
+                margin: 40px auto 70px;
             }
             #dados_ficha p{
                 margin: 0 0 7px 0;
@@ -74,7 +74,7 @@
 
 	$sql = "SELECT * FROM aluno WHERE id = '$id'";
 
-
+    $standart = '';
 
 	$res = mysqli_query($con, $sql);
 
@@ -85,24 +85,24 @@
 	$ano = date('Y');
 	$nivel = $dados['grauensino'] == 1 ? 'Fundamental' : 'Médio';
 	$numero = $dados['id'];
-	$orgao_expeditor = $dados['orgaoExpedidor'];
-	$cpf = $dados['cpf'];
-	$nome_mae = $dados['mae'];
-	$nome_pai = $dados['pai'];
-    $titulo_eleitor = $dados['tituloEleitor'];
-    $reservista = $dados['reservista'];
+	$orgao_expeditor = $dados['orgaoExpedidor'] ? $dados['orgaoExpedidor'] : $standart;
+	$cpf = $dados['cpf'] ? $dados['cpf'] : $standart;
+	$nome_mae = $dados['mae'] ? $dados['mae'] : $standart;
+	$nome_pai = $dados['pai'] ? $dados['pai'] : $standart;
+    $titulo_eleitor = $dados['tituloEleitor'] ? $dados['tituloEleitor'] : $standart;
+    $reservista = $dados['reservista'] ? $dados['reservista'] : $standart;
     $sexo = $dados['sexo'];
-    $estado_civil = $dados['estadoCivil'];
-    $logradouro = $dados['logradouro'];
-    $numero_casa = $dados['numeroResidencial'];
-    $bairro = $dados['bairro'];
-    $complemento = $dados['complemento'];
-    $cidade = $dados['cidade'];
-    $cep = $dados['cep'];
-    $whatsapp = $dados['telefone'];
-    $celular = $dados['celular'];
-    $email = $dados['email'];
-    $status = $dados['email'] == 1 ? 'Ativo' : 'Inativo';
+    $estado_civil = $dados['estadoCivil'] ? $dados['estadoCivil'] : $standart;
+    $logradouro = $dados['logradouro'] ? $dados['logradouro'] : $standart;
+    $numero_casa = $dados['numeroResidencial'] ? $dados['numeroResidencial'] : $standart;
+    $bairro = $dados['bairro'] ? $dados['bairro'] : $standart;
+    $complemento = $dados['complemento'] ? $dados['complemento'] : $standart;
+    $cidade = $dados['cidade'] ? $dados['cidade'] : $standart;
+    $cep = $dados['cep'] ? $dados['cep'] : $standart;
+    $whatsapp = $dados['telefone'] ? $dados['telefone'] : $standart;
+    $celular = $dados['celular'] ? $dados['celular'] : $standart;
+    $email = $dados['email'] ? $dados['email'] : $standart;
+    $status = $dados['status'] == 1 ? 'Ativo' : 'Inativo';
 
     echo "<script>document.title = 'Ficha de $nome'</script>";
 	?>
@@ -168,9 +168,6 @@
             </div>
             <p style="margin: 0 0 0 10px; font-weight: bold;">Diretor: </p>
         </div>
-
-
-
 	</body>
 
     <script>

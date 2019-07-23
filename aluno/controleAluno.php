@@ -82,7 +82,9 @@
 						<input type="submit" class="btn btn-light btn-block mt-3 mb-3 botõesAluno form-control" value="Consultar cadastro dos alunos" formaction="consultaAluno.php"/>
 
 						<input type="submit" class="btn btn-light btn-block mt-1 mb-3 botõesAluno form-control" value="Desativar todos alunos" formaction="desativaAluno.php"/>
-						
+
+                        <input type="submit" class="btn btn-light btn-block mt-1 mb-3 botõesAluno form-control" value="Alterar para Ensino Médio" formaction="ensino_medio.php"/>
+
 					</form>
 					<div class="pl-4 pr-4 text-center mb-2">
 						<a class="btn btn-light form-control strong btnVoltarAluno" href="../paginaInicialAdm.php"> Voltar</a>
