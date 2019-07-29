@@ -141,7 +141,6 @@
                                         </div>
                                     ';
                                 }else{
-
                                     echo '
                                         <div class="form-check">
                                             <input class="form-check-input" type="radio" name="conclusao" value="sim" checked>
@@ -213,6 +212,13 @@
                         <input type="time" class="HorarioSize form-control mx-auto " name="horario" value="<?php echo $res['horaAula'] ?>">
                     </div>
                 </div>
+                <hr class="hrBranco">
+                <div class="form-group row">
+                    <label class="col-form-label col-lg-12 text-center Mensagemmatricula">Média</label>
+                    <div class="col-lg-12 text-center pl-5 pr-5 ">
+                        <input type="number" min="0" class="HorarioSize form-control mx-auto" name="media" value="<?php echo $res['media'] ?>">
+                    </div>
+                </div>
 
             <!--
                 <div class="form-group row">
@@ -253,11 +259,13 @@
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">Média</label>
                     <div class="col-sm-10">
-                        <input type="number" step="any" min="0" class="form-control" name="media" value="<?php //echo $res['media'] ?>">
+                        <input type="number" step="any" min="0" class="form-control" name="media" value="<?php echo $res['media'] ?>">
                     </div>
                 </div>
-            -->
-			<?php
+                -->
+
+
+                <?php
 					
 					//Verifica se a variável global que indica falha na exclusão está setada, o que indica uma falha na inserção no banco ou valor inválido 
 					if (isset($_SESSION['msn'])) {

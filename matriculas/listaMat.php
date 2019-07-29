@@ -88,21 +88,22 @@
                 
                 <thead class = "table-dark">
                     <tr>
-                        <th scope = "col">ID</th>
-                        <th scope = "col">Nome</th>
-                        <th scope = "col">Disciplina</th>
-                        <th scope = "col">Horário</th>
-                        <th scope = "col">Status</th>
-                        <th scope = "col">Data Matrícula</th>
+                        <th scope="col">ID</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Disciplina</th>
+                        <th scope="col">Horário</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Data Matrícula</th>
+                        <th scope="col">Data Conclusão</th>
+                        <th scope="col">Média</th>
+                        <!--
                         <th scope = "col" class = "d-none d-md-table-cell">Nota 1</th>
                         <th scope = "col" class = "d-none d-md-table-cell">Nota 2</th>
                         <th scope = "col" class = "d-none d-md-table-cell">Nota 3</th>
                         <th scope = "col" class = "d-none d-md-table-cell">Nota 4</th>
                         <th scope = "col" class = "d-none d-md-table-cell">Nota 5</th>
-                        <th scope = "col" class = "d-none d-md-table-cell">Média</th>
-                        <!--
-                            <th scope = "col">Turno</th>
-                            <th scope = "col">Professor</th>
+                        <th scope = "col">Turno</th>
+                        <th scope = "col">Professor</th>
                         -->
                     </tr>
                 </thead>
@@ -128,8 +129,25 @@
 
                             echo "<td>".$r['status']."</td>";
 
-                            echo "<td>".$r['dataMatricula']."</td>";
-                    
+                            $data_mat = str_replace("-", "/", $r['dataMatricula']);
+                            $data_mat = date('d/m/Y', strtotime($data_mat));
+
+                            echo "<td>$data_mat</td>";
+
+                            if ($r['dataConclusao']){
+                                $data_conc = str_replace("-", "/", $r['dataConclusao']);
+                                $data_conc = date('d/m/Y', strtotime($data_conc));
+                            }else{
+                                $data_conc = '';
+                            }
+
+                            echo "<td>$data_conc</td>";
+
+                            echo "<td>".$r['media']."</td>";
+
+                            echo"</tr>";
+
+                            /*
                             echo "<td class='d-none d-md-table-cell'>".$r['nota1']."</td>";
 
                             echo "<td class='d-none d-md-table-cell'>".$r['nota2']."</td>";
@@ -140,21 +158,17 @@
 
                             echo "<td class='d-none d-md-table-cell'>".$r['nota5']."</td>";
 
-                            echo "<td class='d-none d-md-table-cell'>".$r['media']."</td>";
+                            if ($r['idGrauEnsino'] == 1) {
+                                echo "<td class='d-none d-md-table-cell'>Ensino Médio</td>";
+                            } elseif ($r['idGrauEnsino'] == 2) {
+                                echo "<td class='d-none d-md-table-cell'>Ensino Fundamental</td>";
+                            } else {
+                                echo "<td class='d-none d-md-table-cell'>Não encontrado</td>";
+                            }
 
-                            echo"</tr>";
-                            /*
-                                if ($r['idGrauEnsino'] == 1) {
-                                    echo "<td class='d-none d-md-table-cell'>Ensino Médio</td>";
-                                } elseif ($r['idGrauEnsino'] == 2) {
-                                    echo "<td class='d-none d-md-table-cell'>Ensino Fundamental</td>";
-                                } else {
-                                    echo "<td class='d-none d-md-table-cell'>Não encontrado</td>";
-                                }
-                                
-                                $queryProf = "SELECT professor.nome FROM professor WHERE professor.id =" . $r['idProf'] . ";";
-                                $resProf = mysqli_fetch_assoc(executa($queryProf, $con));
-                                echo "<td >" . $resProf['nome'] . "</td>";  
+                            $queryProf = "SELECT professor.nome FROM professor WHERE professor.id =" . $r['idProf'] . ";";
+                            $resProf = mysqli_fetch_assoc(executa($queryProf, $con));
+                            echo "<td >" . $resProf['nome'] . "</td>";
                             */
                         }
                     ?>

@@ -114,9 +114,10 @@
                     </div>
                 </div>
 		
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend strong mx-auto" id="div_checkbox"></div>
+                <div class="input-group mb-3" id="div_checkbox">
+                <!-- Ajax -->
                 </div>
+
 				<hr class="hrBranco">
 				<div class="form-group pl-5 pr-5">
                     <div class="text-center">
@@ -127,30 +128,28 @@
 				
             </form> 
 
-            <script type="text/javascript">
-                $(function(){
-                    $('#combobox_aluno').change(function(){
-                        //alert("asdas");
-                        if( $(this).val() ) {
-                            $.getJSON('matriculasD.php?search=',{combobox_aluno: $(this).val(), ajax: 'true'}, function(j){
-                                var checkbox = ''; 
-                                for (var i = 0; i < j.length; i++) {
-                                    checkbox += '<div class="input-group-text ml-1"><input type="checkbox" aria-label="Checkbox for following text input" value="' + j[i].id + '" name="sel[]">' + j[i].nome + '</div>';
-                                }   
+                <script type="text/javascript">
+                    $(function(){
+                        $('#combobox_aluno').change(function(){
+                            if( $(this).val() ) {
+                                $.getJSON('matriculasD.php?search=',{combobox_aluno: $(this).val(), ajax: 'true'}, function(j){
+                                    var checkbox = '';
+                                    for (var i = 0; i < j.length; i++) {
+                                        checkbox += '<div class="col-md-3 input-group-text ml-1"><input type="checkbox" value="' + j[i].id + '" name="sel[]">' + j[i].nome + '</div>';
+                                    }
+                                    $('#div_checkbox').html('').show();
+                                    $('#div_checkbox').html(checkbox).show();
+                                });
+                            } else {
                                 $('#div_checkbox').html('').show();
-                                $('#div_checkbox').html(checkbox).show();
-                            });
-                        } else {
-                            $('#div_checkbox').html('').show();
-                        }
+                            }
+                        });
                     });
-                });
-            </script>
+                </script>
 			</div>
-           </div>
-    </body> 
-           <!-- <script src="../js/jquery-3.3.1.slim.min.js"></script> -->
-            <script src="../js/popper.min.js"></script>
-            <script src="../js/bootstrap.min.js"></script>
-       
+        </div>
+    </body>
+
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
 </html>

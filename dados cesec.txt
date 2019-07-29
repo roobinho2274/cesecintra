@@ -2,7 +2,7 @@
 
 Projeto Cesec
 
-Turno:
+Turno
 1 - Matutino
 2 - Noturno
 
@@ -13,6 +13,11 @@ Status
 Grau ensino
 1 - Fundamental
 2 - Medio
+
+Ftp
+host - ftp.cesecitajuba.com.br
+user - cesecitajuba
+pass - cesec@2019
 
 ========================================================================
 

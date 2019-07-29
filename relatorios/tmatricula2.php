@@ -4,7 +4,7 @@
 
 	$id_aluno = $_REQUEST['combobox_aluno'];
 	
-	$sql = "SELECT * FROM matricula WHERE idAluno = $id_aluno ORDER BY idAluno";
+	$sql = "SELECT * FROM matricula WHERE idAluno = $id_aluno AND dataConclusao <> '' ORDER BY idAluno";
 	$res = mysqli_query($con, $sql);
 	$nome = getNome($con, $id_aluno);
 	
@@ -58,13 +58,8 @@
 
         $data_mat = str_replace("-", "/", $r['dataMatricula']);
         $data_mat = date('d/m/Y', strtotime($data_mat));
-        if($r['dataConclusao']){
-            $data_conc = str_replace("-", "/", $r['dataConclusao']);
-            $data_conc = date('d/m/Y', strtotime($data_conc));
-        }else{
-            $data_conc = '';
-        }
-
+        $data_conc = str_replace("-", "/", $r['dataConclusao']);
+        $data_conc = date('d/m/Y', strtotime($data_conc));
 
         $result[] = array(
 			'id'   => $r['id'],

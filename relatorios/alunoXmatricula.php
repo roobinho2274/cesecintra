@@ -118,15 +118,16 @@
                         <th scope = "col">Horário</th>
                         <th scope = "col">Status</th>
                         <th scope = "col">Data Matrícula</th>
+                        <th scope = "col">Data Conclusão</th>
+                        <th scope = "col">Média</th>
+                        <!--
                         <th scope = "col" class = "d-none d-md-table-cell">Nota 1</th>
                         <th scope = "col" class = "d-none d-md-table-cell">Nota 2</th>
                         <th scope = "col" class = "d-none d-md-table-cell">Nota 3</th>
                         <th scope = "col" class = "d-none d-md-table-cell">Nota 4</th>
                         <th scope = "col" class = "d-none d-md-table-cell">Nota 5</th>
-                        <th scope = "col" class = "d-none d-md-table-cell">Média</th>
-                        <!--
-                            <th scope = "col">Turno</th>
-                            <th scope = "col">Professor</th>
+                        <th scope = "col">Turno</th>
+                        <th scope = "col">Professor</th>
                         -->
                     </tr>
                 </thead>
@@ -151,13 +152,9 @@
                                     options += "<td class=' text-light strong text-center'>" + j[i].horaAula + "</td>";
                                     options += "<td class=' text-light strong text-center'>" + j[i].status + "</td>";
                                     options += "<td class=' text-light strong text-center'>" + j[i].dataMatricula + "</td>";
-                                    options += "<td class='d-none d-md-table-cell  text-light strong text-center'>" + j[i].nota1 + "</td>";
-                                    options += "<td class='d-none d-md-table-cell  text-light strong text-center'>" + j[i].nota2 + "</td>";
-                                    options += "<td class='d-none d-md-table-cell  text-light strong text-center'>" + j[i].nota3 + "</td>";
-                                    options += "<td class='d-none d-md-table-cell  text-light strong text-center'>" + j[i].nota4 + "</td>";
-                                    options += "<td class='d-none d-md-table-cell  text-light strong text-center'>" + j[i].nota5 + "</td>";
-                                    options += "<td class='d-none d-md-table-cell  text-light strong text-center'>" + j[i].media + "</td>";
-                                	options += '</tr>'; 
+                                    options += "<td class=' text-light strong text-center'>" + j[i].dataConclusao + "</td>";
+                                    options += "<td class=' text-light strong text-center'>" + j[i].media + "</td>";
+                                    options += '</tr>';
                                 }   
                                 $('#tbody').html(options).show();
                             });

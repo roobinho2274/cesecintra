@@ -138,7 +138,7 @@
                             <?php
                             /*Faz a busca por todos os usuários do tipo porfessor no banco
                             e preenche um select*/
-                            $query = "SELECT * FROM professor WHERE professor.tipo = 'professor'";
+                            $query = "SELECT * FROM professor WHERE professor.tipo = 'disciplina'";
                             $resultado = executa($query, $con);
                             while ($r = mysqli_fetch_assoc($resultado)) {
                                 echo "<option value=" . $r['id'] . ">" . $r['nome'] . "</option>";

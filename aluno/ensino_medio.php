@@ -27,7 +27,7 @@ $resultadoAlunos = mysqli_query($con, $query);
 
 
 
-if (isset($_POST['aluno']) && isset($_POST['alterar'])){
+if (isset($_POST['aluno']) && isset($_POST['alterar']) && $_POST['aluno'] != ''){
 
     $query = "SELECT * FROM aluno WHERE id = ".$_POST['aluno'];
     $resultado = mysqli_query($con, $query);

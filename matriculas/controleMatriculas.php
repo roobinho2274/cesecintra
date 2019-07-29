@@ -79,6 +79,7 @@
 					<input type="submit" class="btn btn-light botõesMatricula btn-block mb-3" value="Consultar matrículas" formaction="listaMat.php"/>
 					<input type="submit" class="btn btn-light botõesMatricula btn-block mb-3" value="Alterar dados da matrícula" formaction="alteraMat.php"/>
 					<input type="submit" class="btn btn-light botõesMatricula btn-block mb-3" value="Deletar matrícula" formaction="deletaMat.php"/>
+					<input type="submit" class="btn btn-light botõesMatricula btn-block mb-3" value="Concluir matrícula" formaction="concluirMat.php"/>
 					<div class="text-center">
 					<a class="btn btn-light strong form-control btnVoltarMatricula mb-3" href="../paginaInicialAdm.php"> Voltar</a>
 					</div>
