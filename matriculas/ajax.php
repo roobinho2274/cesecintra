@@ -1,7 +1,7 @@
 <?php
 
 require '../conexao.php';
-    
+
 $data = $_POST;
 
 if($data['acao'] == 'buscar_matriculas_concluir'){

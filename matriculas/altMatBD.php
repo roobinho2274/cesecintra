@@ -26,7 +26,7 @@
 
 
         $media = $media != '' ? ",media = '$media'" : '';
-        $conclu = $conclusao == 'nao' ? NULL : 'NOW()';
+        $conclu = $conclusao == 'nao' ? 'NULL' : 'NOW()';
 
         $queryAltera = "UPDATE matricula SET dataConclusao = $conclu, status = '$status', horaAula = '$horario' $media WHERE id = '$codigo'";
 
