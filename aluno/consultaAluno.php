@@ -101,7 +101,7 @@
                 </thead>
 
                 <?php 
-                    $sql = "SELECT nome,telefone,id,rg,status from aluno order by nome";
+                    $sql = "SELECT nome,telefone,id,rg,status from aluno order by id DESC";
                     $dados = mysqli_query($con, $sql);
                     while($row = mysqli_fetch_assoc($dados)){
                         if($row['status'] == 1){
