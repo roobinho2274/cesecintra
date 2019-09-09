@@ -1,14 +1,10 @@
 <?php
 
 
-	/** Quando for upar, substituir */
-/*	$servidor = "cesecbd.mysql.dbaas.com.br";
-	$usuario = "cesecbd";
-	$senha = "cesec@bd2019";
-	$dbname = "cesecbd";*/
+	/* Quando for upar, verificar os dados no repositório privado */
 
 
-  //Local
+	//Local
 	$servidor = "localhost";
 	$usuario = "root";
 	$senha = "";
