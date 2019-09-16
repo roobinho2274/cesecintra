@@ -139,10 +139,14 @@
             <script type="text/javascript">
                 $(function(){
                     $('#combobox_nivel').change(function(){
-                        if( $(this).val() ) {
-                            $.getJSON('tnivel.php?search=',{combobox_nivel: $(this).val(), ajax: 'true'}, function(j){
+                        if($(this).val()){
+                            $.getJSON('tnivel.php?search=',{
+                                combobox_nivel: $(this).val(),
+                                ajax: 'true'
+                            }, function(j){
                                 var options = '<tr>'; 
                                 for (var i = 0; i < j.length; i++) {
+
                                     options += "<th class=' text-light strong text-center' scope = 'row'>" + j[i].id + "</th>";
                                     options += "<td class=' text-light strong text-center'>" + j[i].nome + "</td>";
                                     options += "<td class=' text-light strong text-center'>" + j[i].disciplina + "</td>";
@@ -165,6 +169,53 @@
                         }
                         $('#tbody').html('<td colspan = "12" class="alert alert-danger text-center"><h5>Não há matrículas disponíveis para o nível selecionado!</h5></td>').show();
                     });
+                });
+
+                $('#combobox_nivel').change(function(){
+                    if($(this).val()){
+
+                        $.ajax({
+                            method : 'POST',
+                            datatype : 'json'
+                            url : 'tnivel.php',
+                            data : {combobox_nivel: $(this).val()},
+                            success: function(data){
+
+                                if(data['error']){
+                                    alert(data['error']);        
+                                }else{
+
+                                    if(data.length > 0){
+
+                                        var options = '<tr>'; 
+                                        for (var i = 0; i < j.length; i++) {
+
+                                            options += "<th class=' text-light strong text-center' scope = 'row'>" + j[i].id + "</th>";
+                                            options += "<td class=' text-light strong text-center'>" + j[i].nome + "</td>";
+                                            options += "<td class=' text-light strong text-center'>" + j[i].disciplina + "</td>";
+                                            options += "<td class=' text-light strong text-center'>" + j[i].horaAula + "</td>";
+                                            options += "<td class=' text-light strong text-center'>" + j[i].status + "</td>";
+                                            options += "<td class=' text-light strong text-center'>" + j[i].dataMatricula + "</td>";
+                                            options += "<td class='d-none d-md-table-cell text-light strong text-center'>" + j[i].nota1 + "</td>";
+                                            options += "<td class='d-none d-md-table-cell text-light strong text-center'>" + j[i].nota2 + "</td>";
+                                            options += "<td class='d-none d-md-table-cell text-light strong text-center'>" + j[i].nota3 + "</td>";
+                                            options += "<td class='d-none d-md-table-cell text-light strong text-center'>" + j[i].nota4 + "</td>";
+                                            options += "<td class='d-none d-md-table-cell text-light strong text-center'>" + j[i].nota5 + "</td>";
+                                            options += "<td class='d-none d-md-table-cell text-light strong text-center'>" + j[i].media + "</td>";
+                                            options += '</tr>'; 
+                                        }
+
+                                        $('#tbody').html(options).show();
+                                    }else{
+                                        $('#tbody').html('<td colspan = "12" class="alert alert-danger text-center"><h5>Não há matrículas disponíveis para o nível selecionado!</h5></td>').show();
+                                    }
+                                }
+                            },
+                            error : function(){
+                                alert('Erro no servidor!');
+                            }
+                        });
+                    }
                 });
             </script>
 

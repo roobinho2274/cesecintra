@@ -6,6 +6,12 @@
 
 	$sql = "SELECT * FROM matricula";
 	$res = mysqli_query($con, $sql);
+
+
+	$query = "SELECT * FROM matricula AS m 
+				JOIN disciplina AS d ON d.id = m.idDisciplina
+				JOIN aluno as a ON a.id = m.idAluno";
+
 	
 	while ($r = mysqli_fetch_assoc($res) ) {
 		$idAluno = $r['idAluno'];
@@ -18,41 +24,12 @@
 				
 			$disciplina = getDisciplina($con, $idDisciplin);
 			
-			if ($r['nota1'] == null) {
-				$nota1 = '';
-			}else{
-				$nota1 = $r['nota1'];
-			}
-
-			if ($r['nota2'] == null) {
-				$nota2 = '';
-			}else{
-				$nota2 = $r['nota2'];
-			}
-
-			if ($r['nota3'] == null) {
-				$nota3 = '';
-			}else{
-				$nota3 = $r['nota3'];
-			}
-
-			if ($r['nota4'] == null) {
-				$nota4 = '';
-			}else{
-				$nota4 = $r['nota4'];
-			}
-
-			if ($r['nota5'] == null) {
-				$nota5 = '';
-			}else{
-				$nota5 = $r['nota5'];
-			}
-
-			if ($r['media'] == null) {
-				$media = '';
-			}else{
-				$media = $r['media'];
-			}
+			$nota1 = $r['nota1'] == null ? '' : $r['nota1'];
+			$nota2 = $r['nota2'] == null ? '' : $r['nota2'];
+			$nota3 = $r['nota3'] == null ? '' : $r['nota3'];
+			$nota4 = $r['nota4'] == null ? '' : $r['nota4'];
+			$nota5 = $r['nota5'] == null ? '' : $r['nota5'];
+			$nota1 = $r['media'] == null ? '' : $r['media'];
 
 			$result[] = array(
 				'id'   => $r['id'],

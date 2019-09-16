@@ -21,6 +21,14 @@
         $_SESSION['msg'] = "<div class='alert alert-danger text-center' role='alert'>Para acessar o sistema faça login!</div>";
         header("location: ../index.php");
     }
+
+
+    $aluno = isset($_POST['aluno']) ? $_POST['aluno'] : '';
+
+    $sql = "SELECT nome,telefone,id,rg,status from aluno WHERE nome LIKE '%$aluno%' OR id LIKE '%$aluno%' order by id DESC";
+    $dados = mysqli_query($con, $sql);
+
+    $total = mysqli_num_rows($dados);
 	?>
     <body style="background-color:#65AFB2;">
 		
@@ -76,66 +84,78 @@
 		
 
         <div class="pl-2 pr-2">
-        <div class="mt-5 mb-3 container corpoDoAluno ">	
-		<hr class="hrBranco">
-		<h2 class="text-light strong text-center">Tabela de alunos cadastrados</h2>
-		<hr class="hrBranco">
-	
-            <?PHP
-            if(isset($_SESSION['msg']))
-                {
-                echo $_SESSION['msg'];
-                unset($_SESSION['msg']);
-                }
-            ?>
-            
-	<div class="table-responsive corpoDaTableAlunos strong">
-            <table class="table table-striped table-bordered corpoDaTableAlunos text-center">
-                <thead class="table-dark text-light">
-                    <td>ID</td>
-                    <td>Nome</td>
-                    <td>Whatsapp</td>
-                    <td>RG</td>
-                    <td>Status</td>
-                    <td colspan="3">Ações</td>
-                </thead>
-
-                <?php 
-                    $sql = "SELECT nome,telefone,id,rg,status from aluno order by id DESC";
-                    $dados = mysqli_query($con, $sql);
-                    while($row = mysqli_fetch_assoc($dados)){
-                        if($row['status'] == 1){
-                            $status = "ATIVO"; 
-                        }else{ 
-                            $status = "INATIVO";
-                        } 
-
-                        if ($row['telefone'] == 0) {
-                        	$whats = "";
-                        }else{
-                        	$whats = $row['telefone'];
-                        }
-
-                        echo '<tr class="strong text-center text-light"><td>'.$row['id'].'</td><td>'.$row['nome'].'</td><td>'.$whats.'</td><td>'.$row['rg'].'</td><td>'.$status.'</td>';
-                        echo '<td><form method="post" action = "alterarAluno.php"><input type="hidden" value="'.$row['id'].'" name = "id"><input type = "submit" value="Alterar" class="form-control btn btn-light botõesAluno"></form></td>';
-                        echo '<td><form method="post" action = "deleteAluno.php"><input type="hidden" value="'.$row['id'].'" name = "id"><input type = "submit" value="Deletar" class="form-control btn btn-light botõesAluno"></form></td>';
-                        echo '<td><form method="post" action = "printFicha.php"><input type="hidden" value="'.$row['id'].'" name = "id"><input type = "submit" value="Imprimir" class="form-control btn btn-light botõesAluno"></form></td>';
-                        echo '</tr>';
-
-                    }
+            <div class="mt-5 mb-3 container corpoDoAluno ">	
+        		<hr class="hrBranco">
+                <div class="row">
+                    <div class="col-md-4 form-inline">
+                        <form action="" method="POST">
+                            <input class="form-control" type="text" name="aluno" placeholder="Nome ou matrícula">
+                            <button class="btn" type="submit">Buscar</button>
+                        </form>
+                    </div>
+                    <div class="col-md-5">
+        		        <h2 class="text-light strong text-center">Tabela de alunos cadastrados</h2>
+                    </div>
+                    <div class="col-md-3">
+                        <h4 class="text-light strong text-center mt-2 mb-0">Total: <?php echo $total;?></h4>
+                    </div>
+                </div>  
+        		<hr class="hrBranco">
+    	
+                <?PHP
+                if(isset($_SESSION['msg'])){
+                    echo $_SESSION['msg'];
+                    unset($_SESSION['msg']);
+                }   
                 ?>
                 
-            </table>
+
+
+        	   <div class="table-responsive corpoDaTableAlunos strong">
+                    <table class="table table-striped table-bordered corpoDaTableAlunos text-center">
+                        <thead class="table-dark text-light">
+                            <td>ID</td>
+                            <td>Nome</td>
+                            <td>Whatsapp</td>
+                            <td>RG</td>
+                            <td>Status</td>
+                            <td colspan="3">Ações</td>
+                        </thead>
+
+                        <?php 
+                            while($row = mysqli_fetch_assoc($dados)){
+                                if($row['status'] == 1){
+                                    $status = "ATIVO"; 
+                                }else{ 
+                                    $status = "INATIVO";
+                                } 
+
+                                if ($row['telefone'] == 0) {
+                                	$whats = "";
+                                }else{
+                                	$whats = $row['telefone'];
+                                }
+
+                                echo '<tr class="strong text-center text-light"><td>'.$row['id'].'</td><td>'.$row['nome'].'</td><td>'.$whats.'</td><td>'.$row['rg'].'</td><td>'.$status.'</td>';
+                                echo '<td><form method="post" action = "alterarAluno.php"><input type="hidden" value="'.$row['id'].'" name = "id"><input type = "submit" value="Alterar" class="form-control btn btn-light botõesAluno"></form></td>';
+                                echo '<td><form method="post" action = "deleteAluno.php"><input type="hidden" value="'.$row['id'].'" name = "id"><input type = "submit" value="Deletar" class="form-control btn btn-light botõesAluno"></form></td>';
+                                echo '<td><form method="post" action = "printFicha.php"><input type="hidden" value="'.$row['id'].'" name = "id"><input type = "submit" value="Imprimir" class="form-control btn btn-light botõesAluno"></form></td>';
+                                echo '</tr>';
+
+                            }
+                        ?>
+                        
+                    </table>
+                </div>
+                <a class="btn btn-light form-control botõesAluno mt-4 mb-2" href="../aluno/controleAluno.php">Voltar</a>
             </div>
-            <a class="btn btn-light form-control botõesAluno mt-4 mb-2" href="../aluno/controleAluno.php">Voltar</a>
+            <p id="usurHelp" class="form-text text-danger strong text-center ">*Ao deletar aluno, certifique-se de que não haja nenhum vínculo com as matrículas!</p>
         </div>
-        <p id="usurHelp" class="form-text text-danger strong text-center ">*Ao deletar aluno, certifique-se de que não haja nenhum vínculo com as matrículas!</p>
-    </div>
 	</body>
 	
-            <script src="../js/jquery-3.3.1.slim.min.js"></script>
-            <script src="../js/popper.min.js"></script>
-            <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery-3.3.1.slim.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
 </html>
 
 
