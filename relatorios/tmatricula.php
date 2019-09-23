@@ -79,7 +79,7 @@
 			'nota3' => $nota3,
 			'nota4' => $nota4,
 			'nota5' => $nota5,
-			'media' => $media,
+			'media' => $media
 		);
 	}
 	

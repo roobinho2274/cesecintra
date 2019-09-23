@@ -111,20 +111,10 @@
                     <tr>
                         <th scope = "col">ID</th>
                         <th scope = "col">Nome</th>
-                        <th scope = "col">Disciplina</th>
-                        <th scope = "col">Horário</th>
+                        <th scope = "col">Whatsapp</th>
+                        <th scope = "col">RG</th>
                         <th scope = "col">Status</th>
-                        <th scope = "col">Data Matrícula</th>
-                        <th scope = "col" class = "d-none d-md-table-cell">Nota 1</th>
-                        <th scope = "col" class = "d-none d-md-table-cell">Nota 2</th>
-                        <th scope = "col" class = "d-none d-md-table-cell">Nota 3</th>
-                        <th scope = "col" class = "d-none d-md-table-cell">Nota 4</th>
-                        <th scope = "col" class = "d-none d-md-table-cell">Nota 5</th>
-                        <th scope = "col" class = "d-none d-md-table-cell">Média</th>
-                        <!--
-                            <th scope = "col">Turno</th>
-                            <th scope = "col">Professor</th>
-                        -->
+                        <th scope = "col">Ações</th>
                       </tr>
                 </thead>
                 <tbody id="tbody">
@@ -137,84 +127,45 @@
 			</div>
             
             <script type="text/javascript">
-                $(function(){
-                    $('#combobox_nivel').change(function(){
-                        if($(this).val()){
-                            $.getJSON('tnivel.php?search=',{
-                                combobox_nivel: $(this).val(),
-                                ajax: 'true'
-                            }, function(j){
-                                var options = '<tr>'; 
-                                for (var i = 0; i < j.length; i++) {
-
-                                    options += "<th class=' text-light strong text-center' scope = 'row'>" + j[i].id + "</th>";
-                                    options += "<td class=' text-light strong text-center'>" + j[i].nome + "</td>";
-                                    options += "<td class=' text-light strong text-center'>" + j[i].disciplina + "</td>";
-                                    options += "<td class=' text-light strong text-center'>" + j[i].horaAula + "</td>";
-                                    options += "<td class=' text-light strong text-center'>" + j[i].status + "</td>";
-                                    options += "<td class=' text-light strong text-center'>" + j[i].dataMatricula + "</td>";
-                                    options += "<td class='d-none d-md-table-cell text-light strong text-center'>" + j[i].nota1 + "</td>";
-                                    options += "<td class='d-none d-md-table-cell text-light strong text-center'>" + j[i].nota2 + "</td>";
-                                    options += "<td class='d-none d-md-table-cell text-light strong text-center'>" + j[i].nota3 + "</td>";
-                                    options += "<td class='d-none d-md-table-cell text-light strong text-center'>" + j[i].nota4 + "</td>";
-                                    options += "<td class='d-none d-md-table-cell text-light strong text-center'>" + j[i].nota5 + "</td>";
-                                    options += "<td class='d-none d-md-table-cell text-light strong text-center'>" + j[i].media + "</td>";
-                                	options += '</tr>'; 
-                                }   
-                                $('#tbody').html(options).show();
-                            });
-                        } else {
-                            $('#tbody').html('');
-                            return;
-                        }
-                        $('#tbody').html('<td colspan = "12" class="alert alert-danger text-center"><h5>Não há matrículas disponíveis para o nível selecionado!</h5></td>').show();
-                    });
-                });
 
                 $('#combobox_nivel').change(function(){
                     if($(this).val()){
+                        var data = {
+                            acao : "aluno_nivel",
+                            nivel : $(this).val()
+                        }
 
                         $.ajax({
-                            method : 'POST',
-                            datatype : 'json'
-                            url : 'tnivel.php',
-                            data : {combobox_nivel: $(this).val()},
+                            method: 'POST',
+                            dataType: 'json',
+                            url: 'ajax.php',
+                            data: data,
                             success: function(data){
-
                                 if(data['error']){
-                                    alert(data['error']);        
+                                    alert(data['error']);
                                 }else{
 
-                                    if(data.length > 0){
+                                    var j = data['alunos']; 
 
-                                        var options = '<tr>'; 
-                                        for (var i = 0; i < j.length; i++) {
-
-                                            options += "<th class=' text-light strong text-center' scope = 'row'>" + j[i].id + "</th>";
-                                            options += "<td class=' text-light strong text-center'>" + j[i].nome + "</td>";
-                                            options += "<td class=' text-light strong text-center'>" + j[i].disciplina + "</td>";
-                                            options += "<td class=' text-light strong text-center'>" + j[i].horaAula + "</td>";
-                                            options += "<td class=' text-light strong text-center'>" + j[i].status + "</td>";
-                                            options += "<td class=' text-light strong text-center'>" + j[i].dataMatricula + "</td>";
-                                            options += "<td class='d-none d-md-table-cell text-light strong text-center'>" + j[i].nota1 + "</td>";
-                                            options += "<td class='d-none d-md-table-cell text-light strong text-center'>" + j[i].nota2 + "</td>";
-                                            options += "<td class='d-none d-md-table-cell text-light strong text-center'>" + j[i].nota3 + "</td>";
-                                            options += "<td class='d-none d-md-table-cell text-light strong text-center'>" + j[i].nota4 + "</td>";
-                                            options += "<td class='d-none d-md-table-cell text-light strong text-center'>" + j[i].nota5 + "</td>";
-                                            options += "<td class='d-none d-md-table-cell text-light strong text-center'>" + j[i].media + "</td>";
-                                            options += '</tr>'; 
-                                        }
-
-                                        $('#tbody').html(options).show();
-                                    }else{
-                                        $('#tbody').html('<td colspan = "12" class="alert alert-danger text-center"><h5>Não há matrículas disponíveis para o nível selecionado!</h5></td>').show();
-                                    }
+                                    var options = '<tr>'; 
+                                    for (var i = 0; i < j.length; i++) {
+                                        options += "<th class=' text-light strong text-center' scope='row'>" + j[i].id + "</th>";
+                                        options += "<td class=' text-light strong text-center'>" + j[i].nome + "</td>";
+                                        options += "<td class=' text-light strong text-center'>" + j[i].whatsapp + "</td>";
+                                        options += "<td class=' text-light strong text-center'>" + j[i].rg + "</td>";
+                                        options += "<td class=' text-light strong text-center'>" + j[i].status + "</td>";
+                                        options += "<td class=' text-light strong text-center'>" + j[i].acoes + "</td>";
+                                        options += '</tr>';
+                                    }   
+                                    $('#tbody').html(options).show();
                                 }
                             },
-                            error : function(){
+                            error: function(){
                                 alert('Erro no servidor!');
                             }
                         });
+                    }else{
+                        $('#tbody').html('');
                     }
                 });
             </script>

@@ -137,34 +137,55 @@
             </table>
 			</div>
 			<div class="pl-4 pr-4 mb-2 mt-3">
-				<a class="btn btn-light form-control  botoesRelatorio" href="../relatorios/opcoesrelatorios.php" role="button">Voltar</a>
+				<a class="btn btn-light form-control botoesRelatorio" href="../relatorios/opcoesrelatorios.php" role="button">Voltar</a>
             </div>
             <script type="text/javascript">
                 $(function(){
                     $('#combobox_aluno').change(function(){
-                        if( $(this).val() ) {
-                            $.getJSON('tmatricula.php?search=',{combobox_aluno: $(this).val(), ajax: 'true'}, function(j){
-                                var options = '<tr>'; 
-                                for (var i = 0; i < j.length; i++) {
-                                    options += "<th class=' text-light strong text-center' scope = 'row'>" + j[i].id + "</th>";
-                                    options += "<td class=' text-light strong text-center'>" + j[i].nome + "</td>";
-                                    options += "<td class=' text-light strong text-center'>" + j[i].disciplina + "</td>";
-                                    options += "<td class=' text-light strong text-center'>" + j[i].horaAula + "</td>";
-                                    options += "<td class=' text-light strong text-center'>" + j[i].status + "</td>";
-                                    options += "<td class=' text-light strong text-center'>" + j[i].dataMatricula + "</td>";
-                                    options += "<td class=' text-light strong text-center'>" + j[i].dataConclusao + "</td>";
-                                    options += "<td class=' text-light strong text-center'>" + j[i].media + "</td>";
-                                    options += '</tr>';
-                                }   
-                                $('#tbody').html(options).show();
+                        if($(this).val()) {
+
+                            var data = {
+                                acao : "aluno_matricula",
+                                idAluno : $(this).val()
+                            }
+
+                            $.ajax({
+                                method: 'POST',
+                                dataType: 'json',
+                                url: 'ajax.php',
+                                data: data,
+                                success: function(data){
+                                    if(data['error']){
+                                        alert(data['error']);
+                                    }else{
+
+                                        var j = data['matriculas']; 
+
+                                        var options = '<tr>'; 
+                                        for (var i = 0; i < j.length; i++) {
+                                            options += "<th class=' text-light strong text-center' scope='row'>" + j[i].id + "</th>";
+                                            options += "<td class=' text-light strong text-center'>" + j[i].nome + "</td>";
+                                            options += "<td class=' text-light strong text-center'>" + j[i].disciplina + "</td>";
+                                            options += "<td class=' text-light strong text-center'>" + j[i].horaAula + "</td>";
+                                            options += "<td class=' text-light strong text-center'>" + j[i].status + "</td>";
+                                            options += "<td class=' text-light strong text-center'>" + j[i].dataMatricula + "</td>";
+                                            options += "<td class=' text-light strong text-center'>" + j[i].dataConclusao + "</td>";
+                                            options += "<td class=' text-light strong text-center'>" + j[i].media + "</td>";
+                                            options += '</tr>';
+                                        }   
+                                        $('#tbody').html(options).show();
+                                    }
+                                },
+                                error: function(){
+                                    alert('Erro no servidor!');
+                                }
                             });
-                        } else {
+                        }else{
                             $('#tbody').html('');
                         }
                     });
                 });
             </script>
-		
 		</div>
         </div>
 	</body>

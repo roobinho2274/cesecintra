@@ -119,13 +119,14 @@
                         <th scope = "col">Horário</th>
                         <th scope = "col">Status</th>
                         <th scope = "col">Data Matrícula</th>
-                        <th scope = "col" class = "d-none d-md-table-cell">Nota 1</th>
-                        <th scope = "col" class = "d-none d-md-table-cell">Nota 2</th>
-                        <th scope = "col" class = "d-none d-md-table-cell">Nota 3</th>
-                        <th scope = "col" class = "d-none d-md-table-cell">Nota 4</th>
-                        <th scope = "col" class = "d-none d-md-table-cell">Nota 5</th>
+                        <th scope = "col">Data Conclusão</th>
                         <th scope = "col" class = "d-none d-md-table-cell">Média</th>
                         <!--
+                            <th scope = "col" class = "d-none d-md-table-cell">Nota 1</th>
+                            <th scope = "col" class = "d-none d-md-table-cell">Nota 2</th>
+                            <th scope = "col" class = "d-none d-md-table-cell">Nota 3</th>
+                            <th scope = "col" class = "d-none d-md-table-cell">Nota 4</th>
+                            <th scope = "col" class = "d-none d-md-table-cell">Nota 5</th>
                             <th scope = "col">Turno</th>
                             <th scope = "col">Professor</th>
                         -->
@@ -142,33 +143,51 @@
             <script type="text/javascript">
                 $(function(){
                     $('#combobox_disc').change(function(){
-                        if( $(this).val() ) {
-                            $.getJSON('taluno.php?search=',{combobox_disc: $(this).val(), ajax: 'true'}, function(j){
-                                var options = '<tr>'; 
-                                for (var i = 0; i < j.length; i++) {
-                                    options += "<th class=' text-light strong text-center' scope = 'row'>" + j[i].id + "</th>";
-                                    options += "<td class=' text-light strong text-center'>" + j[i].nome + "</td>";
-                                    options += "<td class=' text-light strong text-center'>" + j[i].disciplina + "</td>";
-                                    options += "<td class=' text-light strong text-center'>" + j[i].horaAula + "</td>";
-                                    options += "<td class=' text-light strong text-center'>" + j[i].status + "</td>";
-                                    options += "<td class=' text-light strong text-center'>" + j[i].dataMatricula + "</td>";
-                                    options += "<td class='d-none d-md-table-cell text-light strong text-center'>" + j[i].nota1 + "</td>";
-                                    options += "<td class='d-none d-md-table-cell text-light strong text-center'>" + j[i].nota2 + "</td>";
-                                    options += "<td class='d-none d-md-table-cell text-light strong text-center'>" + j[i].nota3 + "</td>";
-                                    options += "<td class='d-none d-md-table-cell text-light strong text-center'>" + j[i].nota4 + "</td>";
-                                    options += "<td class='d-none d-md-table-cell text-light strong text-center'>" + j[i].nota5 + "</td>";
-                                    options += "<td class='d-none d-md-table-cell text-light strong text-center'>" + j[i].media + "</td>";
-                                	options += '</tr>'; 
-                                }   
-                                $('#tbody').html(options).show();
+                        if($(this).val()) {
+
+                            var data = {
+                                acao : "aluno_disciplina",
+                                idDisciplina : $(this).val()
+                            }
+
+                            $.ajax({
+                                method: 'POST',
+                                dataType: 'json',
+                                url: 'ajax.php',
+                                data: data,
+                                success: function(data){
+                                    if(data['error']){
+                                        alert(data['error']);
+                                    }else{
+
+                                        var j = data['disciplinas']; 
+
+                                        var options = '<tr>'; 
+                                        for (var i = 0; i < j.length; i++) {
+                                            options += "<th class=' text-light strong text-center' scope='row'>" + j[i].id + "</th>";
+                                            options += "<td class=' text-light strong text-center'>" + j[i].nome + "</td>";
+                                            options += "<td class=' text-light strong text-center'>" + j[i].disciplina + "</td>";
+                                            options += "<td class=' text-light strong text-center'>" + j[i].horaAula + "</td>";
+                                            options += "<td class=' text-light strong text-center'>" + j[i].status + "</td>";
+                                            options += "<td class=' text-light strong text-center'>" + j[i].dataMatricula + "</td>";
+                                            options += "<td class=' text-light strong text-center'>" + j[i].dataConclusao + "</td>";
+                                            options += "<td class=' text-light strong text-center'>" + j[i].media + "</td>";
+                                            options += '</tr>';
+                                        }   
+                                        $('#tbody').html(options).show();
+                                    }
+                                },
+                                error: function(){
+                                    alert('Erro no servidor!');
+                                }
                             });
-                        } else {
+                        }else{
                             $('#tbody').html('');
                         }
                     });
                 });
             </script>
-		</div>
+        </div>
         </div>
 	</body>
         <!-- Optional JavaScript -->
